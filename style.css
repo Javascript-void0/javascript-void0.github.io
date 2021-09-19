@@ -1,0 +1,75 @@
+:root {
+    --main-padding: 40px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(131, 28, 28);
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.center {
+    background-color: #7c6666;
+    height: 100%;
+    display: grid;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    grid-template-columns: 14fr 5fr;
+    grid-template-rows: 4fr 10fr 5fr;
+    grid-template-areas: 
+        "header settings"
+        "content content"
+        "links version";
+}
+
+#header {
+    background-color: #926a6a;
+    grid-area: header;
+    text-align: left;
+    padding: var(--main-padding);
+}
+
+#settings {
+    background-color: #304361;
+    grid-area: settings;
+    text-align: right;
+    padding: var(--main-padding);
+}
+
+#content {
+    background-color: #631d1d;
+    grid-area: content;
+    text-align: center;
+    padding: var(--main-padding);
+}
+
+#links {
+    background-color: #9fad61;
+    grid-area: links;
+    font-size: 13px;
+    text-align: left;
+    padding: var(--main-padding);
+    vertical-align: bottom;
+}
+
+#version {
+    background-color: #3142a0;
+    grid-area: version;
+    font-size: 13px;
+    text-align: right;
+    padding: var(--main-padding);
+    vertical-align: bottom;
+}
