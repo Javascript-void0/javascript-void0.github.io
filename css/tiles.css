@@ -1,0 +1,35 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards a {
+    width: 120px;
+    margin: auto;
+    margin-bottom: 14px;
+    text-decoration: none;
+}
+
+.card-face {
+    background-color: var(--tile-card-background);
+    height: 124px;
+    border-radius: 10%;
+    transition: .3s;
+}
+
+.card-face:hover {
+    background-color: var(--tile-card-hover);
+    transform: scale(1.05);
+}
+
+.card-content {
+    text-align: center;
+    padding-top: 15px;
+    line-height: 12px;
+    font-size: 15px;
+    color: var(--text-color)
+}
+
+.card-content p {
+    font-size: 30px;
+}

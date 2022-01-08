@@ -1,0 +1,189 @@
+:root {
+	--card-background-color: rgb(241, 241, 241);
+	--card-background-color-darker: rgb(210, 214, 206);
+	--text-color: #313330;
+    --tile-card-background: rgb(222, 228, 228);
+    --tile-card-hover: rgb(200, 214, 214);
+	--highlight: rgb(190, 197, 183);
+	--highlight-darker: rgb(170, 180, 160);
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* font-family: 'Roboto Mono', monospace; */
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	background-image: url('/assets/background1.gif');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	background-color: #5a6159;
+	cursor: url('/assets/mouse.png'), auto;	
+}
+
+.menu {
+	display: flex;
+	color: var(--text-color);
+	position: absolute;
+	border-radius: 15px;
+	box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.5);
+	background: var(--card-background-color);
+}
+
+.first {
+	background-color: #424d46;
+	padding: 20px;
+	font-size: x-large;
+}
+
+.menu a {
+	text-decoration: none;
+	flex: 1;
+}
+
+.menu-icon {
+	transition: .3s;
+}
+
+.menu a:hover .menu-icon {
+	transform: rotate(15deg) scale(1.05);
+	transition: .3s;
+}
+
+.menu-button:hover {
+	background-color: var(--card-background-color-darker);
+}
+
+.last:hover {
+	background-color: var(--card-background-color-darker);
+}
+
+.selected:hover {
+	transform: scale(2)
+}
+
+@media (min-width: 750px) {
+	.menu {
+		width: 70px;
+		height: 500px;
+		bottom: 247px;
+		right: -90px;
+		flex-direction: column;
+	}
+
+	.first {
+		border-radius: 12px 12px 0 0;
+	}
+
+	.menu-button {
+		font-size: x-large;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.last {
+		border-radius: 0 0 15px 15px;
+		font-size: x-large;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.selected {
+		background: #000;
+	}
+
+}
+
+@media (max-width: 750px) {
+	.menu {
+		width: 500px;
+		height: 70px;
+		bottom: -100px;
+		right: 12px;
+
+		flex-direction: row;
+	}
+
+	.first {
+		border-radius: 15px 0 0 15px;
+	}
+
+	.menu-button {
+		font-size: x-large;
+		padding-top: 19px;
+		padding-bottom: 19px;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+
+
+	.last {
+		border-radius: 0 15px 15px 0;
+		font-size: x-large;
+		padding-top: 19px;
+		padding-bottom: 19px;
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+}
+
+.card {
+	background: var(--card-background-color);
+	box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.5);
+	width: 520px;
+	height: 760px;
+	border-radius: 15px;
+	position: relative;
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+}
+
+.bar {
+	border-radius: 12px 12px 0 0;
+	padding: 20px;
+	background-color: #424d46;
+	width: 92.5%;
+	height: 45px;
+	align-self: flex-start;
+	display: flex;
+}
+
+.pfp img {
+	float: left;
+	width: 30%;
+	border-radius: 50%;	
+	border: 10px solid var(--card-background-color);
+}
+
+.name {
+	width: 64%;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	margin-left: auto;
+}
+
+.name h2 {
+	margin: 0;
+	padding: 0;
+	font-size: x-large;
+}
+
+.body {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+a:hover {
+	cursor: url('/assets/mouse.png'), auto;
+}
