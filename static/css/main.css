@@ -37,7 +37,6 @@ body {
 		align-self: flex-start;
 		display: flex;
 		position: fixed;
-		left: calc(var(--width) / 2);
 	}
 
 	.pfp img {
@@ -47,14 +46,15 @@ body {
 	}
 
 	.pfp {
-		flex: 1;
+		position: fixed;
+		left: calc((75% - 40px) / 2);
 	}
 
 	.name {
 		width: 64%;
-		padding-top: 100px;
+		padding-top: 180px;
 		padding-bottom: 20px;
-		margin-left: auto;
+		margin-left: calc(36% / 2);
 		flex: 1;
 	}
 
@@ -65,8 +65,29 @@ body {
 	}
 
 	.body {
-		width: 70%;
-		flex: 9;
+		visibility: hidden;
+	}
+
+	.mobile-links {
+		width: 90%;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.link {
+		border-radius: 10px;
+		background-color: #5a6159;
+		flex: 1;
+		height: 50px;
+		margin-bottom: 10px;
+		text-align: center;
+		padding-top: 15px;
+	}
+
+	a {
+		text-decoration: none;
+		color: #fff;
 	}
 }
 
@@ -128,5 +149,9 @@ body {
 	.body {
 		margin-left: 50px;
 		margin-right: 50px;
+	}
+	
+	.mobile-links {
+		visibility: hidden;
 	}
 }

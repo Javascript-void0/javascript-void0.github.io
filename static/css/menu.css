@@ -80,32 +80,6 @@ a:hover {
 
 @media (max-width: 768px) {
 	.menu {
-		width: 500px;
-		height: 70px;
-		position: fixed;
-		left: calc((100% - 500px) / 2);
-		bottom: 50px;
-		flex-direction: row;
-	}
-
-	.first {
-		border-radius: 15px 0 0 15px;
-	}
-
-	.menu-button {
-		font-size: x-large;
-		padding-top: 19px;
-		padding-bottom: 19px;
-		padding-left: 18px;
-		padding-right: 18px;
-	}
-
-	.last {
-		border-radius: 0 15px 15px 0;
-		font-size: x-large;
-		padding-top: 19px;
-		padding-bottom: 19px;
-		padding-left: 18px;
-		padding-right: 18px;
+		visibility: hidden;
 	}
 }
