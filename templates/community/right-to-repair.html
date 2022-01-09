@@ -1,51 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA Compatible' content='IE=edge'>
-    <title> Right to Repair | Java </title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/buttons.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/css/breadcrumb.css'>
-    <link rel='icon' type='image/x-icon' href='/assets/leaf.ico'>
-    <script src='/main.js'></script>
-    <link rel='import' href='/template.html'>
-</head>
-<body>
-    <div class='items'>
-        <div class='card'>
-            <div class='bar'>
-                <div class='pfp'>
-                    <img src='/assets/mio.gif' alt='Mio' style='width:128px;height:128px;'>    
-                </div>
-            </div>
-            <div class='name'>
-                <h2> Right to Repair </h2>
-                iFixit
-            </div>
-            <div class='breadcrumb'>
-                <a href='/'> &nbspHome </a> &nbsp/ <a href='/community/'> &nbspCommunity&nbsp </a>
-            </div>
-            <div class='body'>
-                <div class='body-container'>
-                    <div class='text'>
+{% extends "base.html" %}
 
-                        📱 iPhone 7+ - Battery <br>
-                        📱 iPhone 6+ - Battery <br>
-                        📱 iPad Air 1st Generation - Front Glass <br>
-                        📱 iPhone 7+ - Screen Replacement <br>
-                        💻 Macbook Air 2017 - Screen Replacement <br>
-                        💻 Macbook Air 2017 - Battery Replacement <br>
-                        
-                    </div>
-                </div>
-            <div w3-include-html='/templates/button-links.html'></div>
-        </div>
-        <div w3-include-html='/templates/menu.html'></div>
-    </div>
-</body>
-<script>
-    includeHTML();
-</script>
-</html>
+{% block title %}
+
+Right to Repair | Java
+
+{% endblock %}
+
+
+
+{% block name %}
+
+<h2> Right to Repair </h2>
+iFixit
+
+{% endblock %}
+
+
+
+{% block breadcrumb %}
+
+<div class='breadcrumb'>
+    <a href='/'> &nbspHome </a> &nbsp/ <a href='/community/'> &nbspCommunity&nbsp </a>
+</div>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+📱 iPhone 7+ - Battery <br>
+📱 iPhone 6+ - Battery <br>
+📱 iPad Air 1st Generation - Front Glass <br>
+📱 iPhone 7+ - Screen Replacement <br>
+💻 Macbook Air 2017 - Screen Replacement <br>
+💻 Macbook Air 2017 - Battery Replacement <br>
+
+{% endblock %}
