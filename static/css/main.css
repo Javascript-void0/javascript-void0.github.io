@@ -48,7 +48,6 @@ body {
 
 	.pfp {
 		flex: 1;
-		/* margin-left: auto; */
 	}
 
 	.name {
@@ -81,7 +80,7 @@ body {
 		background-attachment: fixed;
 		background-size: cover;
 		background-blend-mode: multiply;
-		background-color: rgb(15, 19, 15);
+		background-color: #5a6159;
 	}
 
 	.card {
