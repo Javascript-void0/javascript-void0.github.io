@@ -1,6 +1,14 @@
-.breadcrumb {
-    padding-left: 50px;
-    padding-bottom: 30px;
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding-bottom: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .breadcrumb {
+        padding-left: 50px;
+        padding-bottom: 30px;
+    }
 }
 
 .breadcrumb a {

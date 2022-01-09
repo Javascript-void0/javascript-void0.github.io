@@ -1,6 +1,9 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
+    width: 420px;
+    position: fixed;
+    left: calc((100% - 420px) / 2);
 }
 
 .cards a {

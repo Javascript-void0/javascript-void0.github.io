@@ -1,56 +1,64 @@
-.buttons {
-	bottom: 3%;
-	position: absolute;
-	width: auto;
-	height: 50px;
-	left: 37%;
+@media (max-width: 768px) {
+	.buttons {
+		visibility: hidden;
+	}
 }
 
-.github {
-	transition: .3s;
-	width: 35px;
-	height: 35px;
-	position: relative;
-	float: left;
-	align-self: flex-end;
-}
+@media (min-width: 768px) {
+	.buttons {
+		bottom: 3%;
+		position: absolute;
+		width: auto;
+		height: 50px;
+		left: 37%;
+	}
 
-.github:hover {
-	transform: rotate(15deg) scale(1.05);
-}
+	.github {
+		transition: .3s;
+		width: 35px;
+		height: 35px;
+		position: relative;
+		float: left;
+		align-self: flex-end;
+	}
 
-.anilist {
-	transition: .3s;
-	width: 35px;
-	height: 35px;
-	position: relative;
-	float: left;
-	top: 1px;
-	left: 10px;
-}
+	.github:hover {
+		transform: rotate(15deg) scale(1.05);
+	}
 
-.anilist img {
-	border-radius: 50%;
-}
+	.anilist {
+		transition: .3s;
+		width: 35px;
+		height: 35px;
+		position: relative;
+		float: left;
+		top: 1px;
+		left: 10px;
+	}
 
-.anilist:hover {
-	transform: rotate(15deg) scale(1.05);
-}
+	.anilist img {
+		border-radius: 50%;
+	}
 
-.instagram {
-	transition: .3s;
-	width: 35px;
-	height: 35px;
-	position: relative;
-	float: left;
-	top: 1px;
-	left: 20px;
-}
+	.anilist:hover {
+		transform: rotate(15deg) scale(1.05);
+	}
 
-.instagram img {
-	border-radius: 50%;
-}
+	.instagram {
+		transition: .3s;
+		width: 35px;
+		height: 35px;
+		position: relative;
+		float: left;
+		top: 1px;
+		left: 20px;
+	}
 
-.instagram:hover {
-	transform: rotate(15deg) scale(1.05);
+	.instagram img {
+		border-radius: 50%;
+	}
+
+	.instagram:hover {
+		transform: rotate(15deg) scale(1.05);
+	}
 }
