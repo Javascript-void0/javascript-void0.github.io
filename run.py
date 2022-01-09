@@ -13,7 +13,7 @@ app.register_blueprint(docs, url_prefix='/docs')
 app.register_blueprint(portfolio, url_prefix='/portfolio')
 
 @app.route('/')
-def home():
+def app():
     return render_template('home.html')
 
 if __name__ == '__main__':
