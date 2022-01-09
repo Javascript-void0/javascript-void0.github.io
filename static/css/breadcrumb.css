@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+    .breadcrumb {
+        visibility: hidden;
+    }
+}
+
 .breadcrumb {
     padding-left: 50px;
     padding-bottom: 30px;

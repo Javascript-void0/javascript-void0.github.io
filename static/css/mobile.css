@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+    .mobile-links {
+        width: 90%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .link {
+        border-radius: 3px;
+        background-color: #5a6159;
+        flex: 1;
+        height: 50px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .mobile-links a {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+@media (min-width: 768px) {
+    .mobile-links {
+        visibility: hidden;
+        line-height: 0%;
+    }
+}

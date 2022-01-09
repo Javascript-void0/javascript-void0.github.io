@@ -67,28 +67,6 @@ body {
 	.body {
 		visibility: hidden;
 	}
-
-	.mobile-links {
-		width: 90%;
-		height: 200px;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.link {
-		border-radius: 10px;
-		background-color: #5a6159;
-		flex: 1;
-		height: 50px;
-		margin-bottom: 10px;
-		text-align: center;
-		padding-top: 15px;
-	}
-
-	a {
-		text-decoration: none;
-		color: #fff;
-	}
 }
 
 @media (min-width: 768px) {
@@ -153,5 +131,6 @@ body {
 	
 	.mobile-links {
 		visibility: hidden;
+		line-height: 0%;
 	}
 }
