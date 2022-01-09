@@ -17,13 +17,13 @@ body {
 	display: grid;
 	align-items: center;
 	justify-items: center;
-	background-image: url('/assets/background1.gif');
+	background-image: url('/static/assets/background1.gif');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	background-blend-mode: multiply;
 	background-color: #5a6159;
-	cursor: url('/assets/mouse.png'), auto;	
+	cursor: url('/static/assets/mouse.png'), auto;	
 }
 
 .menu {
@@ -185,5 +185,5 @@ body {
 }
 
 a:hover {
-	cursor: url('/assets/mouse.png'), auto;
+	cursor: url('/static/assets/mouse.png'), auto;
 }
