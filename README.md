@@ -1,1 +1,1 @@
-Website @ https://juwaii.herokuapp.com
+Website @ https://juwaii.github.io

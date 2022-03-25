@@ -1,0 +1,29 @@
+:root {
+    --color-1: #bfc2ce;
+    --color-2: #202020;
+}
+
+@font-face {
+    font-family: 'Menlo';
+    src: url('../assets/Menlo-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Menlo';
+    background-color: var(--color-2);
+}
+
+.center {
+    width: 750px;
+    height: 100vh;
+    color: var(--color-1);
+    margin: auto;
+    overflow-wrap: anywhere;
+    background: -webkit-linear-gradient(var(--color-1), var(--color-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select:none;
+}
