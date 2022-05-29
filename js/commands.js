@@ -27,6 +27,7 @@ function RunCommand(text) {
                 temp.innerHTML = fillSpace(line)
                 break
             case 'COLOR':
+                r = document.querySelector(':root')
                 themes = [['#262845', '#eda031', '#e7ffee', '#262845', 'https://lospec.com/palette-list/bumblebit'],
                           ['#181D1A', '#D3E4D3', '#7C8477', '#D3E4D3', 'https://lospec.com/palette-list/tinylittlegirl'],
                           ['#252B2C', '#E1F0F0', '#56AEC4', '#E1F0F0', 'https://lospec.com/palette-list/bluetiger-3c'],
@@ -34,7 +35,11 @@ function RunCommand(text) {
                           ['#AB4949', '#E3E8C9', '#7DA257', '#E3E8C9', 'https://lospec.com/palette-list/tree-frog'],
                           ['#4B4B4B', '#A4A4A4', '#8080FF', '#4B4B4B', 'https://lospec.com/palette-list/blue-snow']]
                 if (typeof texts[1] === 'undefined') {
-                    arg = 0
+                    r.style.setProperty('--primary', themes[0][0])
+                    r.style.setProperty('--secondary', themes[0][1])
+                    r.style.setProperty('--accent', themes[0][2])
+                    r.style.setProperty('--selection-text-color', themes[0][3])
+                    break
                 } else {
                     arg = parseInt(texts[1])
                     if (isNaN(arg)) {
@@ -42,11 +47,10 @@ function RunCommand(text) {
                         return
                     }
                 }
-                if (arg > 6 || arg < 0) {
+                if (arg > 5 || arg < 0) {
                     HelpCommand('help color')
                     return
                 } else {
-                    r = document.querySelector(':root')
                     r.style.setProperty('--primary', themes[arg][0])
                     r.style.setProperty('--secondary', themes[arg][1])
                     r.style.setProperty('--accent', themes[arg][2])

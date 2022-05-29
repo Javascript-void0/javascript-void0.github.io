@@ -1,0 +1,40 @@
+.menu {
+    width: 100%;
+    height: 100%;
+    color: var(--accent);
+    background: var(--primary);
+    position: relative;
+    font-family: Envy-Code-R;
+    display: flex;
+}
+
+.menu p a {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: var(--accent);
+    text-decoration: none;;
+}
+
+#github {
+    background-color: var(--accent);
+    -webkit-mask: url(../assets/brand-github.svg) no-repeat center;
+    mask: url(../assets/brand-github.svg) no-repeat center;
+    width: 50px;
+    height: 50px;
+}
+
+#instagram {
+    background-color: var(--accent);
+    -webkit-mask: url(../assets/brand-instagram.svg) no-repeat center;
+    mask: url(../assets/brand-instagram.svg) no-repeat center;
+    width: 50px;
+    height: 50px;
+}
+
+#last-fm {
+    background-color: var(--accent);
+    -webkit-mask: url(../assets/brand-lastfm.svg) no-repeat center;
+    mask: url(../assets/brand-lastfm.svg) no-repeat center;
+    width: 50px;
+    height: 50px;
+}
