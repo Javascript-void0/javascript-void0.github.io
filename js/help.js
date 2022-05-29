@@ -89,13 +89,20 @@ function HelpCommand(text) {
                 break
         }
     }
-    listToHTML(lines)
+    listToHTML(lines, lines.length + 1, 0)
 }
 
-function listToHTML(lines) {
-    for (i = 0; i < lines.length; i++) {
+function listToHTML(text, total, i) {
+    setTimeout(function() {
+        total--;
+        if(total == 0) {
+            NewLine()
+            return true;
+        }
         temp = document.createElement('div')
         header.append(temp)
-        temp.innerHTML = lines[i].replaceAll(' ', '&nbsp')
-    }
+        temp.innerHTML = text[i].replaceAll(' ', '&nbsp')
+        i++
+        listToHTML(text, total, i);        
+    }, 4);
 }

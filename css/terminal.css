@@ -1,41 +1,5 @@
-:root {
-    --primary: rgb(38, 40, 69);
-    --secondary: rgb(237, 160, 49);
-    --accent: rgb(231, 255, 238);
-
-    --terminal-width: 404px;
-}
-
-@font-face {
-    font-family: Envy-Code-R;
-    src: url(assets/Envy-Code-R.ttf)
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary);
-}
-
 #cursor {
     font-weight: 900;
-}
-
-.main-content-container {
-    width: calc(100vw - (var(--terminal-width) + 3 * 50px));
-    height: 100vh;
-    background-color: var(--secondary);
-    position: fixed;
-    left: 50px;
-}
-
-.main-content {
-    width: 100%;
-    height: 100%;
-    color: var(--secondary);
-    background: var(--primary);
-    position: relative;
-    font-family: Envy-Code-R;
 }
 
 .terminal-container {

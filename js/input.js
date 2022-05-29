@@ -13,6 +13,16 @@ function KeyPress(e) {
             split.splice(-1)
             document.getElementById('input').textContent = split.join(' ') + ' '
             return
+        } else if (e.keyCode == 46) {
+            if (beforeAfterCursor.charAt(1) == ' ') {
+                beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
+            }
+            split = beforeAfterCursor.split(' ')
+            split.splice(0, 1)
+            document.getElementById('input-after-cursor').textContent = split.join(' ')
+            return
+        } else if (e.keyCode == 37 || e.keyCode == 39) {
+            return //move
         }
         return
     }
@@ -26,7 +36,7 @@ function KeyPress(e) {
         MoveCursor(e.keyCode)
     } else if (e.keyCode == 13) {
         RunCommand(before + beforeAfterCursor)
-        NewLine()
+        // NewLine()
         window.scrollTo(0, document.body.scrollHeight);
     }
 }
@@ -60,7 +70,7 @@ function NewLine() {
     header = document.getElementById('lines')
     header.append(temp = document.createElement('span'))
     lines = ['                                               ']
-    listToHTML(lines)
+    temp.innerHTML = lines[0].replaceAll(' ', '&nbsp')
     header.append('C:\\WINDOWS> ')
     input = document.createElement('span')
     header.append(input)

@@ -12,6 +12,7 @@ function RunCommand(text) {
         }
     }
     if (texts.length == 0) {
+        NewLine()
         return
     }
     if (texts[0].length > 0) {
@@ -58,12 +59,12 @@ function RunCommand(text) {
                 break
             case 'EXIT':
                 close()
-                return
+                break
             case 'HELP':
                 HelpCommand(text)
                 break
             case 'REPO':
-                window.open('https://github.com/Javascript-void0/terminal', '_blank')
+                window.open('https://github.com/Javascript-void0/javascript-void0.github.io', '_blank')
                 line = 'Opening the repository...'
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
@@ -155,7 +156,7 @@ function RunCommand(text) {
                          '                           required for Hyper-V',
                          '                           will not be displaye',
                          '                           d.                  ']
-                listToHTML(lines)
+                listToHTML(lines, lines.length + 1, 0)
                 return
             case 'TASKLIST':
                 lines = ['Image Name                     PID    Mem Usage',
@@ -211,8 +212,8 @@ function RunCommand(text) {
                          'conhost.exe                   7288     19,832 K',
                          'tasklist.exe                 15040      9,180 K',
                          'WmiPrvSE.exe                 15824     10,124 K']
-                listToHTML(lines)
-                break
+                listToHTML(lines, lines.length + 1, 0)
+                return
             case 'TIME':
                 current = new Date()
                 hour = current.getHours()
@@ -231,7 +232,7 @@ function RunCommand(text) {
                 } else {
                     document.title = title
                 }
-                return
+                break
             case 'TREE':
                 lines = ['Folder PATH listing for volume Local Disk     ',
                          'Volume serial number is AA2C-008A             ',
@@ -246,7 +247,7 @@ function RunCommand(text) {
                          '├───index.html                                ',
                          '├───README.md                                 ',
                          '└───style.css                                 ']
-                listToHTML(lines)
+                listToHTML(lines, lines.length + 1, 0)
                 return
             case 'VER':
                 line = 'Microsoft Windows [Version 4.10.2222 A]'
@@ -259,12 +260,13 @@ function RunCommand(text) {
                     header.append(temp = document.createElement('div'))
                     temp.innerHTML = fillSpace(lines[line])
                 }
-                return
+                break
             default:
                 line = `'${texts.join(' ')}' is not a recognized command. Type 'help' for list of commands. `
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
-                return
+                break
         }
+    NewLine()
     }
 }

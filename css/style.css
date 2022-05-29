@@ -1,0 +1,18 @@
+:root {
+    --primary: rgb(38, 40, 69);
+    --secondary: rgb(237, 160, 49);
+    --accent: rgb(231, 255, 238);
+
+    --terminal-width: 404px;
+}
+
+@font-face {
+    font-family: Envy-Code-R;
+    src: url(../assets/Envy-Code-R.ttf)
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+}
