@@ -41,7 +41,7 @@
 
 ::selection {
     background-color: var(--accent);
-    color: var(--primary);
+    color: var(--selection-text-color);
 }
 
 br {
@@ -50,4 +50,8 @@ br {
 
 .terminal div {
     overflow-wrap: hidden !important;
+}
+
+.terminal a {
+    color: var(--secondary)
 }

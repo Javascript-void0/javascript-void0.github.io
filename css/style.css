@@ -1,8 +1,40 @@
 :root {
-    --primary: rgb(38, 40, 69);
-    --secondary: rgb(237, 160, 49);
-    --accent: rgb(231, 255, 238);
+    /* https://lospec.com/palette-list/bumblebit */
+    --primary: #262845;
+    --secondary: #eda031;
+    --accent: #e7ffee;
+    --selection-text-color: var(--primary);
 
+    /* https://lospec.com/palette-list/tinylittlegirl */
+    /* --primary: #181D1A;
+    --secondary: #D3E4D3;
+    --accent: #7C8477;
+    --selection-text-color: var(--secondary); */
+
+    /* https://lospec.com/palette-list/bluetiger-3c */
+    /* --primary: #252B2C;
+    --secondary: #E1F0F0;
+    --accent: #56AEC4;
+    --selection-text-color: var(--secondary); */
+
+    /* https://lospec.com/palette-list/rusty-steam */
+    /* --primary: #314E52;
+    --secondary: #D3D3D3;
+    --accent: #F2A154;
+    --selection-text-color: var(--primary); */
+
+    /* https://lospec.com/palette-list/tree-frog */
+    /* --primary: #AB4949;
+    --secondary: #E3E8C9;
+    --accent: #7DA257;
+    --selection-text-color: var(--secondary); */
+    
+    /* https://lospec.com/palette-list/blue-snow */
+    /* --primary: #4B4B4B;
+    --secondary: #A4A4A4;
+    --accent: #8080FF;
+    --selection-text-color: var(--primary); */
+    
     --terminal-width: 404px;
 }
 

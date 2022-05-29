@@ -17,14 +17,47 @@ function RunCommand(text) {
     }
     if (texts[0].length > 0) {
         header = document.getElementById('lines')
-        header.append(temp = document.createElement('br'))
+        header.append(temp = document.createElement('span'))
         upperBase = texts[0].toUpperCase()
         switch (upperBase) {
             case 'CMD':
                 window.open('index.html', '_blank')
                 line = 'Opening new window...'
-                header.append(temp = document.createElement('div'))
+                header.append(temp = document.createElement('br'))
                 temp.innerHTML = fillSpace(line)
+                break
+            case 'COLOR':
+                themes = [['#262845', '#eda031', '#e7ffee', '#262845', 'https://lospec.com/palette-list/bumblebit'],
+                          ['#181D1A', '#D3E4D3', '#7C8477', '#D3E4D3', 'https://lospec.com/palette-list/tinylittlegirl'],
+                          ['#252B2C', '#E1F0F0', '#56AEC4', '#E1F0F0', 'https://lospec.com/palette-list/bluetiger-3c'],
+                          ['#314E52', '#D3D3D3', '#F2A154', '#314E52', 'https://lospec.com/palette-list/rusty-steam'],
+                          ['#AB4949', '#E3E8C9', '#7DA257', '#E3E8C9', 'https://lospec.com/palette-list/tree-frog'],
+                          ['#4B4B4B', '#A4A4A4', '#8080FF', '#4B4B4B', 'https://lospec.com/palette-list/blue-snow']]
+                if (typeof texts[1] === 'undefined') {
+                    arg = 0
+                } else {
+                    arg = parseInt(texts[1])
+                    if (isNaN(arg)) {
+                        HelpCommand('help color')
+                        return
+                    }
+                }
+                if (arg > 6 || arg < 0) {
+                    HelpCommand('help color')
+                    return
+                } else {
+                    r = document.querySelector(':root')
+                    r.style.setProperty('--primary', themes[arg][0])
+                    r.style.setProperty('--secondary', themes[arg][1])
+                    r.style.setProperty('--accent', themes[arg][2])
+                    r.style.setProperty('--selection-text-color', themes[arg][3])
+                    header.append(temp = document.createElement('span'))
+                    temp.innerHTML = `<a href="${themes[arg][4]}" target="_blank" rel="noopener nonreferrer">` + themes[arg][4] + '</a>'
+                    fill = fillSpace(themes[arg][4]).slice(themes[arg][4].length)
+                    for (i = 0; i < (fill.length / 5); i++) {
+                        temp.innerHTML += '&nbsp'
+                    }
+                }
                 break
             case 'DATE':
                 today = new Date().toLocaleDateString()
@@ -48,7 +81,6 @@ function RunCommand(text) {
                 line = `The current date is: ${day} ${today}`
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
-                break
                 break
             case 'ECHO':
                 line = text.slice(5)

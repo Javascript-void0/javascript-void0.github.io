@@ -3,6 +3,8 @@ function HelpCommand(text) {
     if (typeof texts[1] === 'undefined') {
         lines = ['CMD            Starts a new instance of the Win',
                  '               dows command interpreter.       ',
+                 'COLOR          Sets the default console foregro',
+                 '               und and background colors.      ',
                  'DATE           Displays the date.              ',
                  'ECHO           Displays messages, or turns comm',
                  '               and echoing on or off.          ',
@@ -31,6 +33,27 @@ function HelpCommand(text) {
                 lines = ['Starts a new instance of the Windows Command in',
                          'terpreter                                      ']
                 break
+            case 'COLOR':
+                lines = ['Sets the default console foreground and backgro',
+                         'und colors.                                    ',
+                         '                                               ',
+                         'COLOR [theme]                                  ',
+                         '                                               ',
+                         '  theme        Specifies theme of console outpu',
+                         '               t                               ',
+                         '                                               ',
+                         'Themes are assigned to the following values:   ',
+                         '                                               ',
+                         '    0 = BumbleBit                              ',
+                         '    1 = TinyLittleGirl                         ',
+                         '    2 = BlueTiger-3C                           ',
+                         '    3 = Rusty-Steam                            ',
+                         '    4 = Tree-Frog                              ',
+                         '    5 = Blue-Snow                              ',
+                         '                                               ',
+                         'If no argument is given, this command restores ',
+                         'the color to what it was when CMD.EXE started. ']
+                         break
             case 'DATE':
                 lines = ['Displays or sets the date.                     ']
                 break
