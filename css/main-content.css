@@ -3,6 +3,12 @@
     --main-content-height: calc(100vh - 100px);
 }
 
+@media only screen and (max-width: 950px) {
+    .main-content-container {
+        visibility: hidden;
+    }
+}
+
 .main-content-container {
     width: var(--main-content-width);
     height: 100vh;
