@@ -12,7 +12,6 @@ function KeyPress(e) {
             split = before.split(' ')
             split.splice(-1)
             document.getElementById('input').textContent = split.join(' ') + ' '
-            return
         } else if (e.keyCode == 46) {
             if (beforeAfterCursor.charAt(1) == ' ') {
                 beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
@@ -20,7 +19,6 @@ function KeyPress(e) {
             split = beforeAfterCursor.split(' ')
             split.splice(0, 1)
             document.getElementById('input-after-cursor').textContent = split.join(' ')
-            return
         } else if (e.keyCode == 37 || e.keyCode == 39) {
             if (e.keyCode == 37) {
                 anotherSpace = false
@@ -42,8 +40,8 @@ function KeyPress(e) {
                 nextEmpty++
             }
             MoveCursor(e.keyCode, nextEmpty)
-            return 
         }
+        Key(e)
         return
     }
     if ((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 186) || (e.keyCode == 32)) {

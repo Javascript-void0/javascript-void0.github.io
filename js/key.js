@@ -10,6 +10,14 @@ function Key(e) {
     if (letters.length == 0) {
         return
     }
+    // if (e.ctrlKey) {
+    //     ctrlLetters = document.getElementsByClassName('17')
+    //     console.log(letters)
+    //     // if (letters == []) {
+    //         // letters = 
+    //     // }
+    //     letterstest = letters.concat(ctrlLetters)
+    // }
     for (letter in letters) {
         try {
             letters[letter].style.color = 'var(--accent)'
