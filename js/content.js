@@ -1,7 +1,7 @@
 const windowHeader = [' _____________________________________________________________________ ',
                       '|[] Untitled - Notepad                                        |-]|n]|*|',
-                      '|File Edit View """"""""""""""""""""""""""""""""""""""""""""""""""""|"|']
-const windowFooter = ['|___________________________________________________________________|/|']
+                      '| File Edit View """""""""""""""""""""""""""""""""""""""""""""""""""|"|']
+const windowFooter = ['|___________________________________________________________________|⋰|']
 
 header = document.getElementById('header')
 for (line in windowHeader) {
@@ -40,6 +40,12 @@ function updateWidth(width, element, diff=0) {
     while (element.textContent.length > (totalFit - diff)) {
         element.textContent = removeChar(element.textContent)
     }
+    updatePageWidth(width)
+}
+
+function updatePageWidth(width) {
+    r = document.querySelector(':root')
+    r.style.setProperty('--page-width', `${(width - (charWidth * 6))}px`)
 }
 
 leftBorder = document.getElementById('left-border')

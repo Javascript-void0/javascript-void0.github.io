@@ -20,6 +20,14 @@ function RunCommand(text) {
         header.append(temp = document.createElement('span'))
         upperBase = texts[0].toUpperCase()
         switch (upperBase) {
+            case 'ABOUT':
+                template('about')
+                break
+            case 'HOME':
+                template('home')
+                break
+            // Pages ^^^
+
             case 'CMD':
                 window.open('index.html', '_blank')
                 line = 'Opening new window...'
@@ -274,15 +282,26 @@ function RunCommand(text) {
                          'Volume serial number is AA2C-008A             ',
                          'C:.                                           ',
                          '├───asset                                     ',
-                         '│   └───Envy-Code-R.ttf                       ',
+                         '│   ├───brand-discord.svg                     ',
+                         '│   ├───brand-github.svg                      ',
+                         '│   ├───brand-instagram.svg                   ',
+                         '│   ├───brand-lastfm.svg                      ',
+                         '│   ├───Envy-Code-R.ttf                       ',
+                         '│   └───movie.svg                             ',
+                         '├───js                                        ',
+                         '│   ├───content.css                      ',
+                         '│   ├───menu.css                              ',
+                         '│   ├───style.css                             ',
+                         '│   └───terminal.css                          ',
                          '├───js                                        ',
                          '│   ├───commands.js                           ',
+                         '│   ├───content.js                            ',
                          '│   ├───cursor.js                             ',
                          '│   ├───help.js                               ',
                          '│   └───input.js                              ',
                          '├───index.html                                ',
-                         '├───README.md                                 ',
-                         '└───style.css                                 ']
+                         '├───LINCENSE                                  ',
+                         '└───README.md                                 ']
                 listToHTML(lines, lines.length + 1, 0)
                 return
             case 'VER':
