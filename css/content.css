@@ -9,6 +9,10 @@
     .main-content-container {
         visibility: hidden;
     }
+
+    body {
+        overflow-y: hidden;
+    }
 }
 
 .main-content-container {
