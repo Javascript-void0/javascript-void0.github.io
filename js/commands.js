@@ -20,11 +20,41 @@ function RunCommand(text) {
         header.append(temp = document.createElement('span'))
         upperBase = texts[0].toUpperCase()
         switch (upperBase) {
+            case 'PAGES':
+                lines = ['ABOUT          About nobody.                   ',
+                         'CREDITS        Assets and stuff.               ',
+                         'HOME           Home Page.                      ',
+                         'LINKS          Useful links.                   ',
+                         'PROJECTS       (99% failures)                  ',
+                         'RESOURCES      Collection of resources.        ',
+                         '                                               ',
+                         'Pages are displayed on the notepad.            ',
+                         'Enter the page name into CMD.EXE to open.      ']
+                listToHTML(lines, lines.length + 1, 0)
+                break
             case 'ABOUT':
                 template('about')
+                NewLine()
+                break
+            case 'CREDITS':
+                template('credits')
+                NewLine()
                 break
             case 'HOME':
                 template('home')
+                NewLine()
+                break
+            case 'LINKS':
+                template('links')
+                NewLine()
+                break
+            case 'PROJECTS':
+                template('projects')
+                NewLine()
+                break
+            case 'RESOURCES':
+                template('resources')
+                NewLine()
                 break
             // Pages ^^^
 
@@ -33,6 +63,7 @@ function RunCommand(text) {
                 line = 'Opening new window...'
                 header.append(temp = document.createElement('br'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'COLOR':
                 r = document.querySelector(':root')
@@ -47,17 +78,18 @@ function RunCommand(text) {
                     r.style.setProperty('--secondary', themes[0][1])
                     r.style.setProperty('--accent', themes[0][2])
                     r.style.setProperty('--selection-text-color', themes[0][3])
+                    NewLine()
                     break
                 } else {
                     arg = parseInt(texts[1])
                     if (isNaN(arg)) {
                         HelpCommand('help color')
-                        return
+                        break
                     }
                 }
                 if (arg > 5 || arg < 0) {
                     HelpCommand('help color')
-                    return
+                    break
                 } else {
                     r.style.setProperty('--primary', themes[arg][0])
                     r.style.setProperty('--secondary', themes[arg][1])
@@ -70,6 +102,7 @@ function RunCommand(text) {
                         temp.innerHTML += '&nbsp'
                     }
                 }
+                NewLine()
                 break
             case 'DATE':
                 today = new Date().toLocaleDateString()
@@ -93,13 +126,15 @@ function RunCommand(text) {
                 line = `The current date is: ${day} ${today}`
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'ECHO':
                 line = text.slice(5)
                 if (line.length != 0) {
                     header.append(temp = document.createElement('div'))
+                    temp.innerHTML = fillSpace(line)
                 }
-                temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'EXIT':
                 close()
@@ -112,6 +147,7 @@ function RunCommand(text) {
                 line = 'Opening the repository...'
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'SYSTEMINFO':
                 lines = ['                                               ',
@@ -201,7 +237,7 @@ function RunCommand(text) {
                          '                           will not be displaye',
                          '                           d.                  ']
                 listToHTML(lines, lines.length + 1, 0)
-                return
+                break
             case 'TASKLIST':
                 lines = ['Image Name                     PID    Mem Usage',
                          '========================= ======== ============',
@@ -257,7 +293,7 @@ function RunCommand(text) {
                          'tasklist.exe                 15040      9,180 K',
                          'WmiPrvSE.exe                 15824     10,124 K']
                 listToHTML(lines, lines.length + 1, 0)
-                return
+                break
             case 'TIME':
                 current = new Date()
                 hour = current.getHours()
@@ -268,6 +304,7 @@ function RunCommand(text) {
                 line = `The current time is: ${hour}:${minute}:${second}.${millisecond}`
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'TITLE':
                 title = text.slice(5)
@@ -276,6 +313,7 @@ function RunCommand(text) {
                 } else {
                     document.title = title
                 }
+                NewLine()
                 break
             case 'TREE':
                 lines = ['Folder PATH listing for volume Local Disk     ',
@@ -289,7 +327,7 @@ function RunCommand(text) {
                          '│   ├───Envy-Code-R.ttf                       ',
                          '│   └───movie.svg                             ',
                          '├───js                                        ',
-                         '│   ├───content.css                      ',
+                         '│   ├───content.css                           ',
                          '│   ├───menu.css                              ',
                          '│   ├───style.css                             ',
                          '│   └───terminal.css                          ',
@@ -298,16 +336,18 @@ function RunCommand(text) {
                          '│   ├───content.js                            ',
                          '│   ├───cursor.js                             ',
                          '│   ├───help.js                               ',
-                         '│   └───input.js                              ',
+                         '│   ├───input.js                              ',
+                         '│   └───tempalte.js                               ',
                          '├───index.html                                ',
                          '├───LINCENSE                                  ',
                          '└───README.md                                 ']
                 listToHTML(lines, lines.length + 1, 0)
-                return
+                break
             case 'VER':
                 line = 'Microsoft Windows [Version 4.10.2222 A]'
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
             case 'VOL':
                 lines = ['Volume in drive C is Local Disk', 'Volume Serial Number is AA2C-008A']
@@ -315,13 +355,14 @@ function RunCommand(text) {
                     header.append(temp = document.createElement('div'))
                     temp.innerHTML = fillSpace(lines[line])
                 }
+                NewLine()
                 break
             default:
                 line = `'${texts.join(' ')}' is not a recognized command. Type 'help' for list of commands. `
                 header.append(temp = document.createElement('div'))
                 temp.innerHTML = fillSpace(line)
+                NewLine()
                 break
         }
-    NewLine()
     }
 }

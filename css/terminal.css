@@ -55,3 +55,7 @@ br {
 .terminal a {
     color: var(--secondary)
 }
+
+.terminal k {
+    color: var(--accent);
+}

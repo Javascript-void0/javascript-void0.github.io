@@ -11,6 +11,7 @@ function HelpCommand(text) {
                  'EXIT           Quits the CMD.EXE program (comma',
                  '               nd interpreter).                ',
                  'HELP           List the avaiable commands.     ',
+                 'PAGES          List avaiable pages.            ',
                  'REPO           Opens the repository.           ',
                  'SYSTEMINFO     Displays machine specific proper',
                  '               ties and configuration.         ',
@@ -72,6 +73,10 @@ function HelpCommand(text) {
                          '                                               ',
                          '    command - displays help information on that',
                          '              command.                         ']
+                break
+            case 'PAGES':
+                lines = ['Pages are displayed on the notepad.            ',
+                         'Enter the page name into CMD.EXE to open.      ']
                 break
             case 'REPO':
                 lines = ['Opens the repository.                          ']
