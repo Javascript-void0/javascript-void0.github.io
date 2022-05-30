@@ -22,7 +22,27 @@ function KeyPress(e) {
             document.getElementById('input-after-cursor').textContent = split.join(' ')
             return
         } else if (e.keyCode == 37 || e.keyCode == 39) {
-            return //move
+            if (e.keyCode == 37) {
+                anotherSpace = false
+                if (before.charAt(before.length - 1) == ' ') {
+                    before = before.slice(0, -1)
+                    anotherSpace = true
+                }
+                nextEmpty = before.split(' ')
+                nextEmpty = (nextEmpty[nextEmpty.length - 1].length)
+                if (anotherSpace) {
+                    nextEmpty++
+                }
+            } else {
+                if (beforeAfterCursor.charAt(0) == ' ') {
+                    beforeAfterCursor = beforeAfterCursor.slice(1)
+                }
+                nextEmpty = beforeAfterCursor.split(' ')
+                nextEmpty = nextEmpty[0].length
+                nextEmpty++
+            }
+            MoveCursor(e.keyCode, nextEmpty)
+            return 
         }
         return
     }
@@ -39,19 +59,23 @@ function KeyPress(e) {
         // NewLine()
         window.scrollTo(0, document.body.scrollHeight);
     }
+    Key(e)
 }
 
-function MoveCursor(direction) {
+function MoveCursor(direction, count=1) {
     before = document.getElementById('input').textContent
     beforeAfterCursor = document.getElementById('input-after-cursor').textContent
-    if (direction == 37) {
-        letter = before.charAt(before.length - 1)
-        document.getElementById('input').textContent = before.slice(0, -1)
-        document.getElementById('input-after-cursor').textContent = letter + beforeAfterCursor
-    } else {
-        letter = beforeAfterCursor.charAt(0)
-        document.getElementById('input-after-cursor').textContent = beforeAfterCursor.slice(1)
-        document.getElementById('input').textContent = before + letter
+    if (count < 1) {
+        count = 1
+    }
+    if (direction == 37) { // left
+        piece = before.substring(before.length - count)
+        document.getElementById('input').textContent = before.slice(0, -count)
+        document.getElementById('input-after-cursor').textContent = piece + beforeAfterCursor
+    } else { // right
+        piece = beforeAfterCursor.slice(0, count)
+        document.getElementById('input-after-cursor').textContent = beforeAfterCursor.slice(count)
+        document.getElementById('input').textContent = before + piece
     }
 }
 

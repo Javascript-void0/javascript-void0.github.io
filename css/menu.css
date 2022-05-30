@@ -29,6 +29,7 @@
     font-family: Envy-Code-R;
     position: absolute;
     left: -23px;
+    white-space: nowrap;
 }
 
 #github {

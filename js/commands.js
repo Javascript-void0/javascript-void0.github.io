@@ -337,7 +337,8 @@ function RunCommand(text) {
                          '│   ├───cursor.js                             ',
                          '│   ├───help.js                               ',
                          '│   ├───input.js                              ',
-                         '│   └───tempalte.js                               ',
+                         '│   ├───key.js                                ',
+                         '│   └───tempalte.js                           ',
                          '├───index.html                                ',
                          '├───LINCENSE                                  ',
                          '└───README.md                                 ']
