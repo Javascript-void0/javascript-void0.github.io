@@ -16,7 +16,13 @@ temp.innerHTML = windowFooter[0].replaceAll(' ', '&nbsp')
 temp.setAttribute('id', 'footer')
 
 setInterval(function() {
-    width = document.getElementById('main-content').offsetWidth
+    width = document.getElementById('main-content').getBoundingClientRect()
+    for (key in width) {
+        if (key == 'width') {
+            width = width[key]
+            break
+        }
+    }
     height  = window.innerHeight
     if (width > 400) {
         for (i = 0; i < 3; i++) {
@@ -29,7 +35,7 @@ setInterval(function() {
 }, 10);
 
 editPosition = 24
-charWidth = (611 / 71)
+charWidth = (612.71 / 71)
 charHeight = (1054.55 / 58)
 
 function updateWidth(width, element, diff=0) {
@@ -40,8 +46,10 @@ function updateWidth(width, element, diff=0) {
     while (element.textContent.length > (totalFit - diff)) {
         element.textContent = removeChar(element.textContent)
     }
-    updatePageWidth(width)
+    updatePageWidth(Math.floor(width / charWidth) * charWidth + 3.5)
 }
+
+charWidth = (612.71 / 71)
 
 function updatePageWidth(width) {
     r = document.querySelector(':root')
