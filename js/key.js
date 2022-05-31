@@ -6,18 +6,29 @@ function Key(e) {
 
     // console.log(e.keyCode)
 
-    letters = document.getElementsByClassName(e.keyCode)
+    if (e.keyCode == 16) {
+        if (e.code == 'ShiftLeft') {
+            letters = document.getElementsByClassName('16a')
+        } else if (e.code == 'ShiftRight') {
+            letters = document.getElementsByClassName('16b')
+        } else {
+            letters = document.getElementsByClassName('16')
+        }
+    } else if (e.keyCode == 17) {
+        if (e.code == 'ControlLeft') {
+            letters = document.getElementsByClassName('17a')
+        } else if (e.code == 'ControlRight') {
+            letters = document.getElementsByClassName('17b')
+        } else {
+            letters = document.getElementsByClassName('17')
+        }
+    } else {
+        letters = document.getElementsByClassName(e.keyCode)
+    }
     if (letters.length == 0) {
         return
     }
-    // if (e.ctrlKey) {
-    //     ctrlLetters = document.getElementsByClassName('17')
-    //     console.log(letters)
-    //     // if (letters == []) {
-    //         // letters = 
-    //     // }
-    //     letterstest = letters.concat(ctrlLetters)
-    // }
+
     for (letter in letters) {
         try {
             letters[letter].style.color = 'var(--accent)'

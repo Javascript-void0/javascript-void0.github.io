@@ -1,6 +1,7 @@
 document.onkeydown = KeyPress;
 
 function KeyPress(e) {
+    e.preventDefault()
     // console.log(e.keyCode)
     before = document.getElementById('input').textContent;
     beforeAfterCursor = document.getElementById('input-after-cursor').textContent
