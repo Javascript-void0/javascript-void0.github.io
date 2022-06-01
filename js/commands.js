@@ -325,6 +325,7 @@ function RunCommand(text) {
                          '│   ├───brand-instagram.svg                   ',
                          '│   ├───brand-lastfm.svg                      ',
                          '│   ├───Envy-Code-R.ttf                       ',
+                         '│   ├───ina.gif                               ',
                          '│   └───movie.svg                             ',
                          '├───js                                        ',
                          '│   ├───content.css                           ',

@@ -1,7 +1,6 @@
 document.onkeydown = KeyPress;
 
 function KeyPress(e) {
-    e.preventDefault()
     // console.log(e.keyCode)
     before = document.getElementById('input').textContent;
     beforeAfterCursor = document.getElementById('input-after-cursor').textContent
@@ -44,6 +43,8 @@ function KeyPress(e) {
         }
         Key(e)
         return
+    } else {
+        e.preventDefault()
     }
     if ((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 186) || (e.keyCode == 32)) {
         document.getElementById('input').textContent = before + e.key

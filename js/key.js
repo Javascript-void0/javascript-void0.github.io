@@ -43,6 +43,13 @@ function removeKey(e) {
     if (letters.length == 0) {
         return
     }
+
+    if (e.keyCode == 20) {
+        if (e.getModifierState('CapsLock')) {
+            return
+        }
+    }
+
     for (letter in letters) {
         try {
             letters[letter].style.color = 'var(--secondary)'
