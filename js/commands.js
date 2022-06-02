@@ -72,7 +72,14 @@ function RunCommand(text) {
                           ['#252B2C', '#E1F0F0', '#56AEC4', '#E1F0F0', 'https://lospec.com/palette-list/bluetiger-3c'],
                           ['#314E52', '#D3D3D3', '#F2A154', '#314E52', 'https://lospec.com/palette-list/rusty-steam'],
                           ['#AB4949', '#E3E8C9', '#7DA257', '#E3E8C9', 'https://lospec.com/palette-list/tree-frog'],
-                          ['#4B4B4B', '#A4A4A4', '#8080FF', '#4B4B4B', 'https://lospec.com/palette-list/blue-snow']]
+                          ['#4B4B4B', '#A4A4A4', '#8080FF', '#4B4B4B', 'https://lospec.com/palette-list/blue-snow'],
+                          ['#00303b', '#ff7777', '#f1f2da', '#ff7777', 'https://lospec.com/palette-list/ayy4'],
+                          ['#e4d6cf', '#322623', '#7b505c', '#9b9880', 'https://lospec.com/palette-list/the-internet-raised-you'],
+                          ['#40332f', '#95c798', '#fbffe0', '#856d52', 'https://lospec.com/palette-list/minty-fresh'],
+                          ['#788374', '#372a39', '#f5e9bf', '#aa644d', 'https://lospec.com/palette-list/dustbyte'],
+                          ['#426e5d', '#e5b083', '#fbf7f3', '#20283d', 'https://lospec.com/palette-list/en4'],
+                          ['#e8e7cb', '#ff7d6e', '#2176cc', '#fca6ac', 'https://lospec.com/palette-list/soda-cap'],
+                          ['#555568', '#a0a08b', '#e9efec', '#211e20', 'https://lospec.com/palette-list/2bit-demichrome']]
                 if (typeof texts[1] === 'undefined') {
                     r.style.setProperty('--primary', themes[0][0])
                     r.style.setProperty('--secondary', themes[0][1])
@@ -87,7 +94,7 @@ function RunCommand(text) {
                         break
                     }
                 }
-                if (arg > 5 || arg < 0) {
+                if (arg > 12 || arg < 0) {
                     HelpCommand('help color')
                     break
                 } else {
@@ -326,7 +333,9 @@ function RunCommand(text) {
                          '│   ├───brand-lastfm.svg                      ',
                          '│   ├───Envy-Code-R.ttf                       ',
                          '│   ├───ina.gif                               ',
-                         '│   └───movie.svg                             ',
+                         '│   ├───movie.svg                             ',
+                         '│   ├───NotoSansJP-Regular.otf                ',
+                         '│   └───NotoSansSC-Regular.otf                ',
                          '├───js                                        ',
                          '│   ├───content.css                           ',
                          '│   ├───menu.css                              ',
@@ -337,7 +346,9 @@ function RunCommand(text) {
                          '│   ├───content.js                            ',
                          '│   ├───cursor.js                             ',
                          '│   ├───help.js                               ',
+                         '│   ├───history.js                            ',
                          '│   ├───input.js                              ',
+                         '│   ├───insert.js                             ',
                          '│   ├───key.js                                ',
                          '│   └───tempalte.js                           ',
                          '├───index.html                                ',

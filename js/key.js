@@ -22,6 +22,13 @@ function Key(e) {
         } else {
             letters = document.getElementsByClassName('17')
         }
+    } else if (e.keyCode == 18) {
+        console.log(e.code)
+        if (e.code == 'AltLeft') {
+            letters = document.getElementsByClassName('18a')
+        } else {
+            letters = document.getElementsByClassName('18')
+        }
     } else {
         letters = document.getElementsByClassName(e.keyCode)
     }

@@ -2,6 +2,9 @@ document.onkeydown = KeyPress;
 
 function KeyPress(e) {
     // console.log(e.keyCode)
+    tempInput = document.getElementById('input').textContent
+    tempInputAfterCursor = document.getElementById('input-after-cursor').textContent
+
     before = document.getElementById('input').textContent;
     beforeAfterCursor = document.getElementById('input-after-cursor').textContent
     if (e.ctrlKey) {
@@ -43,6 +46,10 @@ function KeyPress(e) {
         }
         Key(e)
         return
+    } else if (e.altKey) {
+        e.preventDefault()
+        Key(e)
+        return
     } else {
         e.preventDefault()
     }
@@ -54,10 +61,20 @@ function KeyPress(e) {
         document.getElementById('input-after-cursor').textContent = beforeAfterCursor.slice(1)
     } else if (e.keyCode == 37 || e.keyCode == 39) {
         MoveCursor(e.keyCode)
+    } else if (e.keyCode == 38) {
+        backwardCommandHistory()
+    } else if (e.keyCode == 40) {
+        forwardCommandHistory()
     } else if (e.keyCode == 13) {
         RunCommand(before + beforeAfterCursor)
         // NewLine()
         window.scrollTo(0, document.body.scrollHeight);
+        tempFull = tempInput + tempInputAfterCursor
+        if (tempFull.replaceAll(' ', '') !== '') {
+            addCommandHistory(tempInput + tempInputAfterCursor)
+        }
+        tempCommandCurrent = null
+        tempCommandHistoryPosition = commandHistory.length - 1
     }
     Key(e)
 }

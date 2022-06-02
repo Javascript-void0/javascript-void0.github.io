@@ -51,6 +51,13 @@ function HelpCommand(text) {
                          '    3 = Rusty-Steam                            ',
                          '    4 = Tree-Frog                              ',
                          '    5 = Blue-Snow                              ',
+                         '    6 = AYY4                                   ',
+                         '    7 = The-Internet-Raised-You                ',
+                         '    8 = Minty-Fresh                            ',
+                         '    9 = Dustbyte                               ',
+                         '   10 = EN4                                    ',
+                         '   11 = Soda-Cap                               ',
+                         '   12 = 2Bit-Demichrome                        ',
                          '                                               ',
                          'If no argument is given, this command restores ',
                          'the color to what it was when CMD.EXE started. ']

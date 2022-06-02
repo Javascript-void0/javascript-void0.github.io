@@ -112,3 +112,11 @@ a {
 [lang=ch] {
     font-family: NotoSansCH;
 }
+
+insert {
+    color: var(--secondary);
+}
+
+insert:hover {
+    cursor: pointer;
+}
