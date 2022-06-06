@@ -24,7 +24,6 @@ function RunCommand(text) {
                 lines = ['ABOUT          About nobody.                   ',
                          'CREDITS        Assets and stuff.               ',
                          'HOME           Home Page.                      ',
-                         'LINKS          Useful links.                   ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
                          '                                               ',

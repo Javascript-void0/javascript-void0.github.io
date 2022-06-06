@@ -120,3 +120,14 @@ insert {
 insert:hover {
     cursor: pointer;
 }
+
+#note {
+    color: var(--accent);
+    padding-top: 25px;
+    position: absolute;
+    left: 35px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
