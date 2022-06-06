@@ -2,9 +2,6 @@ document.onkeydown = KeyPress;
 
 function KeyPress(e) {
     // console.log(e.keyCode)
-
-    togglePane()
-
     tempInput = document.getElementById('input').textContent
     tempInputAfterCursor = document.getElementById('input-after-cursor').textContent
 
