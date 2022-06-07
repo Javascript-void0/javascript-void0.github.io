@@ -23,7 +23,6 @@
 
 .terminal-container {
     width: var(--terminal-width);
-    height: 100vh;
     right: 50px;
 }
 

@@ -48,8 +48,9 @@
 }
 
 #anilist {
-    -webkit-mask: url(../assets/movie.svg) no-repeat center;
-    mask: url(../assets/movie.svg) no-repeat center;
+    -webkit-mask: url(../assets/SimpleIconsAnilist.svg) no-repeat center;
+    mask: url(../assets/SimpleIconsAnilist.svg) no-repeat center;
+    transform: scale(0.7);
 }
 
 #discord {
