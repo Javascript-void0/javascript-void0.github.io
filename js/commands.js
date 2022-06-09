@@ -22,6 +22,7 @@ function RunCommand(text) {
         switch (upperBase) {
             case 'PAGES':
                 lines = ['ABOUT          About nobody.                   ',
+                         'ANIME          Stats and stuff                 ',
                          'CREDITS        Assets and stuff.               ',
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
