@@ -299,6 +299,7 @@ function RunCommand(text) {
                          '│   ├───style.css                             ',
                          '│   └───terminal.css                          ',
                          '├───js                                        ',
+                         '│   ├───anilist.js                            ',
                          '│   ├───commands.js                           ',
                          '│   ├───content.js                            ',
                          '│   ├───cursor.js                             ',
