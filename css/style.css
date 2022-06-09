@@ -1,82 +1,8 @@
 :root {
-    /* https://lospec.com/palette-list/bumblebit */
-    --primary: #262845;
-    --secondary: #eda031;
-    --accent: #e7ffee;
+    --primary: #313537;
+    --secondary: #fefefe;
+    --accent: #b0b0b0;
     --selection-text-color: var(--primary);
-
-    /* https://lospec.com/palette-list/tinylittlegirl */
-    /* --primary: #181D1A;
-    --secondary: #D3E4D3;
-    --accent: #7C8477;
-    --selection-text-color: var(--secondary); */
-
-    /* https://lospec.com/palette-list/bluetiger-3c */
-    /* --primary: #252B2C;
-    --secondary: #E1F0F0;
-    --accent: #56AEC4;
-    --selection-text-color: var(--secondary); */
-
-    /* https://lospec.com/palette-list/rusty-steam */
-    /* --primary: #314E52;
-    --secondary: #D3D3D3;
-    --accent: #F2A154;
-    --selection-text-color: var(--primary); */
-
-    /* https://lospec.com/palette-list/tree-frog */
-    /* --primary: #AB4949;
-    --secondary: #E3E8C9;
-    --accent: #7DA257;
-    --selection-text-color: var(--secondary); */
-    
-    /* https://lospec.com/palette-list/blue-snow */
-    /* --primary: #4B4B4B;
-    --secondary: #A4A4A4;
-    --accent: #8080FF;
-    --selection-text-color: var(--primary); */
-    
-    /* https://lospec.com/palette-list/ayy4 */
-    /* --primary: #00303b;
-    --secondary: #ff7777;
-    --accent: #f1f2da;
-    --selection-text-color: #ff7777; */
-
-    /* https://lospec.com/palette-list/the-internet-raised-you */
-    /* --primary: #e4d6cf;
-    --secondary: #322623;
-    --accent: #7b505c;
-    --selection-text-color: #9b9880; */
-
-    /* https://lospec.com/palette-list/minty-fresh */
-    /* --primary: #40332f;
-    --secondary: #95c798;
-    --accent: #fbffe0;
-    --selection-text-color: #856d52; */
-
-    /* https://lospec.com/palette-list/dustbyte */
-    /* --primary: #788374;
-    --secondary: #372a39;
-    --accent: #f5e9bf;
-    --selection-text-color: #aa644d; */
-
-    /* https://lospec.com/palette-list/en4 */
-    /* --primary: #426e5d;
-    --secondary: #e5b083;
-    --accent: #fbf7f3;
-    --selection-text-color: #20283d; */
-
-    /* https://lospec.com/palette-list/soda-cap */
-    /* --primary: #e8e7cb;
-    --secondary: #ff7d6e;
-    --accent: #2176cc;
-    --selection-text-color: #fca6ac; */
-
-    /* https://lospec.com/palette-list/2bit-demichrome */
-    /* --primary: #555568;
-    --secondary: #a0a08b;
-    --accent: #e9efec;
-    --selection-text-color: #211e20; */
-
     --terminal-width: 404px;
 }
 
@@ -103,6 +29,11 @@ body {
 
 a {
     color: var(--accent) !important;
+}
+
+a:hover {
+    color: var(--secondary) !important;
+    transition: 0.5s;
 }
 
 [lang=jp] {

@@ -35,6 +35,10 @@ function RunCommand(text) {
                 template('about')
                 NewLine()
                 break
+            case 'ANIME':
+                template('anime')
+                NewLine()
+                break
             case 'CREDITS':
                 template('credits')
                 NewLine()
@@ -62,52 +66,6 @@ function RunCommand(text) {
                 line = 'Opening new window...'
                 header.append(temp = document.createElement('br'))
                 temp.innerHTML = fillSpace(line)
-                NewLine()
-                break
-            case 'COLOR':
-                r = document.querySelector(':root')
-                themes = [['#262845', '#eda031', '#e7ffee', '#262845', 'https://lospec.com/palette-list/bumblebit'],
-                          ['#181D1A', '#D3E4D3', '#7C8477', '#D3E4D3', 'https://lospec.com/palette-list/tinylittlegirl'],
-                          ['#252B2C', '#E1F0F0', '#56AEC4', '#E1F0F0', 'https://lospec.com/palette-list/bluetiger-3c'],
-                          ['#314E52', '#D3D3D3', '#F2A154', '#314E52', 'https://lospec.com/palette-list/rusty-steam'],
-                          ['#AB4949', '#E3E8C9', '#7DA257', '#E3E8C9', 'https://lospec.com/palette-list/tree-frog'],
-                          ['#4B4B4B', '#A4A4A4', '#8080FF', '#4B4B4B', 'https://lospec.com/palette-list/blue-snow'],
-                          ['#00303b', '#ff7777', '#f1f2da', '#ff7777', 'https://lospec.com/palette-list/ayy4'],
-                          ['#e4d6cf', '#322623', '#7b505c', '#9b9880', 'https://lospec.com/palette-list/the-internet-raised-you'],
-                          ['#40332f', '#95c798', '#fbffe0', '#856d52', 'https://lospec.com/palette-list/minty-fresh'],
-                          ['#788374', '#372a39', '#f5e9bf', '#aa644d', 'https://lospec.com/palette-list/dustbyte'],
-                          ['#426e5d', '#e5b083', '#fbf7f3', '#20283d', 'https://lospec.com/palette-list/en4'],
-                          ['#e8e7cb', '#ff7d6e', '#2176cc', '#fca6ac', 'https://lospec.com/palette-list/soda-cap'],
-                          ['#555568', '#a0a08b', '#e9efec', '#211e20', 'https://lospec.com/palette-list/2bit-demichrome']]
-                if (typeof texts[1] === 'undefined') {
-                    r.style.setProperty('--primary', themes[0][0])
-                    r.style.setProperty('--secondary', themes[0][1])
-                    r.style.setProperty('--accent', themes[0][2])
-                    r.style.setProperty('--selection-text-color', themes[0][3])
-                    NewLine()
-                    break
-                } else {
-                    arg = parseInt(texts[1])
-                    if (isNaN(arg)) {
-                        HelpCommand('help color')
-                        break
-                    }
-                }
-                if (arg > 12 || arg < 0) {
-                    HelpCommand('help color')
-                    break
-                } else {
-                    r.style.setProperty('--primary', themes[arg][0])
-                    r.style.setProperty('--secondary', themes[arg][1])
-                    r.style.setProperty('--accent', themes[arg][2])
-                    r.style.setProperty('--selection-text-color', themes[arg][3])
-                    header.append(temp = document.createElement('span'))
-                    temp.innerHTML = `<a href="${themes[arg][4]}" target="_blank" rel="noopener nonreferrer">` + themes[arg][4] + '</a>'
-                    fill = fillSpace(themes[arg][4]).slice(themes[arg][4].length)
-                    for (i = 0; i < (fill.length / 5); i++) {
-                        temp.innerHTML += '&nbsp'
-                    }
-                }
                 NewLine()
                 break
             case 'DATE':
@@ -347,7 +305,6 @@ function RunCommand(text) {
                          '│   ├───help.js                               ',
                          '│   ├───history.js                            ',
                          '│   ├───input.js                              ',
-                         '│   ├───insert.js                             ',
                          '│   ├───key.js                                ',
                          '│   └───tempalte.js                           ',
                          '├───index.html                                ',

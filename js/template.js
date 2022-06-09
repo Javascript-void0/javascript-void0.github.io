@@ -5,6 +5,9 @@ function template(name) {
     lines = getTemplate.innerHTML.split('<br>')
     document.getElementById('insert-template').innerHTML = ''
     // document.getElementById('insert-template').innerHTML = getTemplate.innerHTML
+    if (name == 'anime') {
+        lines = addAnimeData(lines)
+    }
     docAnimation(lines, lines.length + 1, 0)
 }
 

@@ -49,3 +49,7 @@
 #page::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+
+#page a {
+    word-break: break-all;
+}

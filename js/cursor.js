@@ -9,3 +9,9 @@ setInterval(() => {
         cursor = true;
     }
 }, 500);
+
+function insert(str) {
+    input = document.getElementById('input')
+    input.textContent = input.textContent + str
+    return
+}

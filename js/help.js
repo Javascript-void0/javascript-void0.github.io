@@ -3,8 +3,8 @@ function HelpCommand(text) {
     if (typeof texts[1] === 'undefined') {
         lines = ['CMD            Starts a new instance of the Win',
                  '               dows command interpreter.       ',
-                 'COLOR          Sets the default console foregro',
-                 '               und and background colors.      ',
+                //  'COLOR          Sets the default console foregro',
+                //  '               und and background colors.      ',
                  'DATE           Displays the date.              ',
                  'ECHO           Displays messages, or turns comm',
                  '               and echoing on or off.          ',
