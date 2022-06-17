@@ -1,7 +1,7 @@
 :root {
-    --primary: #313537;
+    --primary: #2D2B2A;
     --secondary: #fefefe;
-    --accent: #b0b0b0;
+    --accent: #c6c3bb;
     --selection-text-color: var(--primary);
     --terminal-width: 404px;
 }
