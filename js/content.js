@@ -24,7 +24,7 @@ setInterval(function() {
         }
     }
     height  = window.innerHeight
-    if (width > 400) {
+    if (width > 320) {
         for (i = 0; i < 3; i++) {
             updateWidth(width, document.getElementById(`header-${i}`))
         }
