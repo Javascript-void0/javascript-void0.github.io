@@ -285,6 +285,7 @@ function RunCommand(text) {
                          'Volume serial number is AA2C-008A             ',
                          'C:.                                           ',
                          '├───asset                                     ',
+                         '│   ├───404.gif                               ',
                          '│   ├───brand-discord.svg                     ',
                          '│   ├───brand-github.svg                      ',
                          '│   ├───brand-instagram.svg                   ',
@@ -309,6 +310,9 @@ function RunCommand(text) {
                          '│   ├───input.js                              ',
                          '│   ├───key.js                                ',
                          '│   └───tempalte.js                           ',
+                         '├───.gitignore                                ',
+                         '├───404.html                                  ',
+                         '├───CNAME                                     ',
                          '├───index.html                                ',
                          '├───LINCENSE                                  ',
                          '└───README.md                                 ']
