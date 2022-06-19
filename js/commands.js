@@ -292,6 +292,7 @@ function RunCommand(text) {
                          '│   ├───brand-lastfm.svg                      ',
                          '│   ├───Envy-Code-R.ttf                       ',
                          '│   ├───ina.gif                               ',
+                         '│   ├───mugi.png                              ',
                          '│   ├───NotoSansJP-Regular.otf                ',
                          '│   ├───NotoSansSC-Regular.otf                ',
                          '│   └───SimpleIconsAnilist.svg                ',

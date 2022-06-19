@@ -28,7 +28,7 @@ function docAnimation(text, total, i) {
         if (total == 0) {
             return true;
         }
-        insertTemplate.append(temp = document.createElement('span'))
+        insertTemplate.append(temp = document.createElement('div'))
         temp.innerHTML = temp.innerHTML + text[i] + '<br>'
         i++
         docAnimation(text, total, i);        
