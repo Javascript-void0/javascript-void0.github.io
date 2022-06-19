@@ -24,6 +24,7 @@
 .terminal-container {
     width: var(--terminal-width);
     right: 50px;
+    visibility: var(--terminal-visibility);
 }
 
 .terminal {

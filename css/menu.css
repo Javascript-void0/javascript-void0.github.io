@@ -6,7 +6,7 @@
     font-family: Envy-Code-R;
     display: flex;
     margin: auto;
-    width: 70%;
+    width: var(--terminal-width);
     padding-top: 20px;
     user-select: none;
 }

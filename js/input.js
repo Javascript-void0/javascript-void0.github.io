@@ -1,57 +1,74 @@
 document.onkeydown = KeyPress;
 
 function KeyPress(e) {
-    // console.log(e.keyCode)
-    tempInput = document.getElementById('input').textContent
-    tempInputAfterCursor = document.getElementById('input-after-cursor').textContent
+    if (menuIsVisible() == true && e.ctrlKey && e.keyCode == 83) {
+        e.preventDefault()
+        toggleMenu()
+        return
+    } else if (menuIsVisible() == false && e.ctrlKey && e.keyCode == 83) {
+        e.preventDefault()
+        toggleMenu()
+        return
+    } 
+    if (menuIsVisible() == true) {
+        console.log(e.keyCode)
+        tempInput = document.getElementById('input').textContent
+        tempInputAfterCursor = document.getElementById('input-after-cursor').textContent
 
-    before = document.getElementById('input').textContent;
-    beforeAfterCursor = document.getElementById('input-after-cursor').textContent
-    if (e.ctrlKey) {
-        if (e.keyCode == 8) {
-            if (before.charAt(before.length - 1) == ' ') {
-                before = before.slice(0, -1)
-            }
-            split = before.split(' ')
-            split.splice(-1)
-            document.getElementById('input').textContent = split.join(' ') + ' '
-        } else if (e.keyCode == 46) {
-            if (beforeAfterCursor.charAt(1) == ' ') {
-                beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
-            }
-            split = beforeAfterCursor.split(' ')
-            split.splice(0, 1)
-            document.getElementById('input-after-cursor').textContent = split.join(' ')
-        } else if (e.keyCode == 37 || e.keyCode == 39) {
-            if (e.keyCode == 37) {
-                anotherSpace = false
+        before = document.getElementById('input').textContent;
+        beforeAfterCursor = document.getElementById('input-after-cursor').textContent
+        if (e.ctrlKey) {
+            if (e.keyCode == 8) {
                 if (before.charAt(before.length - 1) == ' ') {
                     before = before.slice(0, -1)
-                    anotherSpace = true
                 }
-                nextEmpty = before.split(' ')
-                nextEmpty = (nextEmpty[nextEmpty.length - 1].length)
-                if (anotherSpace) {
+                split = before.split(' ')
+                split.splice(-1)
+                document.getElementById('input').textContent = split.join(' ') + ' '
+            } else if (e.keyCode == 46) {
+                if (beforeAfterCursor.charAt(1) == ' ') {
+                    beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
+                }
+                split = beforeAfterCursor.split(' ')
+                split.splice(0, 1)
+                document.getElementById('input-after-cursor').textContent = split.join(' ')
+            } else if (e.keyCode == 37 || e.keyCode == 39) {
+                if (e.keyCode == 37) {
+                    anotherSpace = false
+                    if (before.charAt(before.length - 1) == ' ') {
+                        before = before.slice(0, -1)
+                        anotherSpace = true
+                    }
+                    nextEmpty = before.split(' ')
+                    nextEmpty = (nextEmpty[nextEmpty.length - 1].length)
+                    if (anotherSpace) {
+                        nextEmpty++
+                    }
+                } else {
+                    if (beforeAfterCursor.charAt(0) == ' ') {
+                        beforeAfterCursor = beforeAfterCursor.slice(1)
+                    }
+                    nextEmpty = beforeAfterCursor.split(' ')
+                    nextEmpty = nextEmpty[0].length
                     nextEmpty++
                 }
-            } else {
-                if (beforeAfterCursor.charAt(0) == ' ') {
-                    beforeAfterCursor = beforeAfterCursor.slice(1)
-                }
-                nextEmpty = beforeAfterCursor.split(' ')
-                nextEmpty = nextEmpty[0].length
-                nextEmpty++
+                MoveCursor(e.keyCode, nextEmpty)
+            } else if (e.keyCode == 83) { // ctrl + s
+                e.preventDefault()
+                toggleMenu()
+                return
             }
-            MoveCursor(e.keyCode, nextEmpty)
+            Key(e)
+            return
+        } else if (e.altKey) {
+            e.preventDefault()
+            Key(e)
+            return
+        } else {
+            e.preventDefault()
         }
-        Key(e)
-        return
-    } else if (e.altKey) {
-        e.preventDefault()
-        Key(e)
-        return
     } else {
-        e.preventDefault()
+        return
     }
     if ((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 186) || (e.keyCode == 32)) {
         document.getElementById('input').textContent = before + e.key

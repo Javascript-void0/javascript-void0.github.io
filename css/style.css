@@ -4,6 +4,7 @@
     --accent: #c6c3bb;
     --selection-text-color: var(--primary);
     --terminal-width: 404px;
+    --terminal-visibility: visible;
 }
 
 @font-face {
@@ -61,4 +62,8 @@ insert:hover {
 
 .line-through {
     text-decoration: line-through;
+}
+
+.secondary {
+    color: var(--secondary);
 }
