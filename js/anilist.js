@@ -69,7 +69,7 @@ function addAnimeData(lines) {
         } else if (i == 7) {
             statNameSingular = 'genre'
         }
-        console.log(statNameSingular)
+        // console.log(statNameSingular)
         statArray = anime[statName]
         // console.log(statNameCap, statValue, anime[statName].length)
         lines.push(`<br>### ${statNameCap}<br>`)
@@ -90,7 +90,7 @@ function addAnimeData(lines) {
         for (j = 0; j < statArray.length; j++) {
             count = statArray[j]['count']
             statName = statArray[j][statNameSingular]
-            console.log(statName)
+            // console.log(statName)
             if (Number.isInteger(statName)) {
                 statName = statName / 10
             }

@@ -8,6 +8,7 @@ function template(name) {
     if (name == 'anime') {
         lines = addAnimeData(lines)
     }
+    document.title = capitalize(name + ' | Java')
     docAnimation(lines, lines.length + 1, 0)
 }
 
@@ -32,4 +33,13 @@ function docAnimation(text, total, i) {
         i++
         docAnimation(text, total, i);        
     }, 15);
+}
+
+function capitalize(text) {
+    words = text.split(' ')
+    for (i = 0; i < words.length; i++) {
+        lower = words[i].toLowerCase()
+        words[i] = words[i].charAt(0).toUpperCase() + lower.slice(1)
+    }
+    return words.join(' ')
 }
