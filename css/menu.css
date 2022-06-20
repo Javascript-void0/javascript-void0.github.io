@@ -9,6 +9,7 @@
     width: var(--terminal-width);
     padding-top: 20px;
     user-select: none;
+    padding-left: 55px;
 }
 
 .menu p a {
