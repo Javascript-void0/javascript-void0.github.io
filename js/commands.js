@@ -296,7 +296,7 @@ function RunCommand(text) {
                          '│   ├───NotoSansJP-Regular.otf                ',
                          '│   ├───NotoSansSC-Regular.otf                ',
                          '│   └───SimpleIconsAnilist.svg                ',
-                         '├───js                                        ',
+                         '├───css                                       ',
                          '│   ├───content.css                           ',
                          '│   ├───menu.css                              ',
                          '│   ├───style.css                             ',

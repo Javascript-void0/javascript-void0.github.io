@@ -11,7 +11,7 @@ function KeyPress(e) {
         return
     } 
     if (menuIsVisible() == true) {
-        console.log(e.keyCode)
+        // console.log(e.keyCode)
         tempInput = document.getElementById('input').textContent
         tempInputAfterCursor = document.getElementById('input-after-cursor').textContent
 

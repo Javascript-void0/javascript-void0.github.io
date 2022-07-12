@@ -16,7 +16,7 @@
 	<script src="js/toggle.js"></script>
     <title> Welcome | Java </title>
 </head>
-<body onload="template('home')">
+<body onload="template('home');returnMenuToggle()">
     <div class="main-content-container" id="main-content-container"> 
 		<div id="main-content">
 			<div id="header"></div>
@@ -96,7 +96,6 @@
 </html>
 
 <template id="template-about">
-
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
 	<br>
 	<br># About
