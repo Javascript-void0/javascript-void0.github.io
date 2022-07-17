@@ -9,6 +9,14 @@
     .main-content-container {
         visibility: hidden;
     }
+
+    .menu {
+        padding-left: calc((100vw - 300px) / 2) !important;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 }
 
 .main-content-container {

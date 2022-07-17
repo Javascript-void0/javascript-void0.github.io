@@ -5,8 +5,8 @@
     position: relative;
     font-family: Envy-Code-R;
     display: flex;
-    margin: auto;
-    width: var(--terminal-width);
+    /* margin: auto; */
+    /* width: var(--terminal-width); */
     padding-top: 20px;
     user-select: none;
     padding-left: 55px;
