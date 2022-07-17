@@ -19,6 +19,12 @@ function RunCommand(text) {
         header = document.getElementById('lines')
         header.append(temp = document.createElement('span'))
         upperBase = texts[0].toUpperCase()
+        const pages = ['ABOUT', 'ANIME', 'CREDITS', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
+        if (pages.includes(upperBase)) {
+            template(texts[0])
+            NewLine()
+            return
+        }
         switch (upperBase) {
             case 'PAGES':
                 lines = ['ABOUT          About nobody.                   ',
@@ -27,41 +33,12 @@ function RunCommand(text) {
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
+                         'SETUP          My EDC (Every-day carry).       ',
                          '                                               ',
                          'Pages are displayed on the notepad.            ',
                          'Enter the page name into CMD.EXE to open.      ']
                 listToHTML(lines, lines.length + 1, 0)
                 break
-            case 'ABOUT':
-                template('about')
-                NewLine()
-                break
-            case 'ANIME':
-                template('anime')
-                NewLine()
-                break
-            case 'CREDITS':
-                template('credits')
-                NewLine()
-                break
-            case 'HOME':
-                template('home')
-                NewLine()
-                break
-            case 'LINKS':
-                template('links')
-                NewLine()
-                break
-            case 'PROJECTS':
-                template('projects')
-                NewLine()
-                break
-            case 'RESOURCES':
-                template('resources')
-                NewLine()
-                break
-            // Pages ^^^
-
             case 'CMD':
                 window.open('index.html', '_blank')
                 line = 'Opening new window...'

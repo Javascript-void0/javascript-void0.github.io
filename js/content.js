@@ -31,6 +31,21 @@ setInterval(function() {
         updateWidth(width, document.getElementById('footer'))
         updateWidth(width, document.getElementById('first-line'), 4)
     }
+    if (window.innerWidth < 870) {
+        if (menuIsVisible()) {
+            toggleMenu(false)
+            toggleContent(true)
+        }
+    } else {
+        toggleContent(true)
+    }
+
+    if (window.innerWidth < 567) {
+        if (!menuIsVisible()) {
+            toggleMenu(true)
+            console.log('test')
+        }
+    }
     updateHeight(height)
 }, 10);
 

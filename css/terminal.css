@@ -24,17 +24,18 @@
 .terminal-container {
     width: var(--terminal-width);
     right: 50px;
-    visibility: var(--terminal-visibility);
+    display: var(--terminal-display);
 }
 
 .terminal {
-    width: 100%;
+    width: var(--terminal-width);
     height: calc(16 * 40px);
     color: var(--secondary);
     background: var(--primary);
     position: relative;
-    margin-top: 50px;
     font-family: Envy-Code-R;
+    margin: auto;
+    margin-top: 50px;
 
     overflow: auto;
     overflow-wrap: anywhere;

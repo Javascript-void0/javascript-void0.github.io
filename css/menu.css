@@ -34,9 +34,11 @@
 #ascii-keyboard {
     color: var(--secondary);
     font-family: Envy-Code-R;
-    position: absolute;
+    position: relative;
     left: -23px;
     white-space: nowrap;
+    width: var(--terminal-width);
+    margin: auto;
 }
 
 #github {

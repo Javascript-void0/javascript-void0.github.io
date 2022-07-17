@@ -57,7 +57,7 @@ function addAnimeData(lines) {
     for (i = 0; i < 5; i++) {
         statName = Object.keys(anime)[i]
         statValue = anime[statName]
-        lines.push('&nbsp> ' + camelCaseToString(statName) + ': ' + statValue)
+        lines.push('&nbsp<span class="secondary">></span> ' + camelCaseToString(statName) + ': <span class="secondary">' + statValue + '</span>')
     }
     for (i = 5; i < 8; i++) {
         statName = Object.keys(anime)[i]
@@ -72,7 +72,7 @@ function addAnimeData(lines) {
         // console.log(statNameSingular)
         statArray = anime[statName]
         // console.log(statNameCap, statValue, anime[statName].length)
-        lines.push(`<br>### ${statNameCap}<br>`)
+        lines.push(`<br>### <span class="secondary">${statNameCap}</span><br>`)
         temp = []
         for (j = 0; j < statArray.length; j++) {
             count = statArray[j]['count']
@@ -147,16 +147,17 @@ function addAnimeData(lines) {
                 statName = '        Ecchi'
             } else if (statName == 'Mecha') {
                 statName = '        Mecha'
-            } else if (statName == 'Hentai') {
+            } else if (statName == 'Hentai') { // huh
                 statName = '       Hentai'
             }
             statName = statName.replaceAll(' ', '&nbsp')
+            statName = statName.replaceAll('>', '<span class="secondary">></span>')
             numOfBlocks = (count / graphMax)
             block = ''
             for (n = 0; n < numOfBlocks * 20; n++) {
                 block = `${block}=`
             }
-            lines.push(`${statName} ${block} (${count})`)
+            lines.push(`${statName} <span class="secondary">${block}</span> (${count})`)
         }
     }
     return lines
