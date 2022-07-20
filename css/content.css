@@ -44,7 +44,7 @@
 
 #page {
     max-width: var(--page-width);
-    height: calc(100vh - 190px);
+    height: calc(100vh - 210px); /* no idea where this number comes from */
     padding-left: 5px;
     padding-right: 5px;
     overflow-y: scroll;

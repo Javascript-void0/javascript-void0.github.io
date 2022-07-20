@@ -51,7 +51,9 @@ setInterval(function() {
 
 editPosition = 24
 charWidth = (612.71 / 71)
-charHeight = (1054.55 / 58)
+// charHeight = (1054.55 / 58)
+charHeight = getLineHeight(document.getElementById('page-body'))
+console.log(charHeight)
 
 function updateWidth(width, element, diff=0) {
     totalFit = Math.floor(width / charWidth)
@@ -96,4 +98,18 @@ function removeChar(str) {
 function addChar(str, char) {
     str = str.slice(0, editPosition) + char + str.slice(editPosition)
     return str
+}
+
+function getLineHeight(el) { // https://stackoverflow.colm/a/4515470
+    var temp = document.createElement(el.nodeName), ret;
+    temp.setAttribute("style", "margin:0; pading:0; "
+        + "font-family:" + (el.style.fontFamily || "inherit") + "; "
+        + "font-size:" + (el.style.fontSize || "inherit"));
+    temp.innerHTML = "A";
+
+    el.parentNode.append(temp);
+    ret = temp.clientHeight;
+    temp.parentNode.removeChild(temp);
+    
+    return ret;
 }
