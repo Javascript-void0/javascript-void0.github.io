@@ -16,7 +16,7 @@ function RunCommand(text) {
         return
     }
     if (texts[0].length > 0) {
-        header = document.getElementById('lines')
+        header = document.getElementById('user-commands')
         header.append(temp = document.createElement('span'))
         upperBase = texts[0].toUpperCase()
         const pages = ['ABOUT', 'ANIME', 'CREDITS', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
@@ -300,6 +300,14 @@ function RunCommand(text) {
                          '│   ├───key.js                                ',
                          '│   ├───tempalte.js                           ',
                          '│   └───toggle.js                             ',
+                         '├───pages                                     ',
+                         '│   ├───about.js                              ',
+                         '│   ├───anime.js                              ',
+                         '│   ├───credits.js                            ',
+                         '│   ├───home.js                               ',
+                         '│   ├───projects.js                           ',
+                         '│   ├───resources.js                          ',
+                         '│   └───setup.js                              ',
                          '├───.gitignore                                ',
                          '├───404.html                                  ',
                          '├───CNAME                                     ',
@@ -329,5 +337,6 @@ function RunCommand(text) {
                 NewLine()
                 break
         }
+        saveTerminalHistory()
     }
 }

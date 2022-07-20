@@ -125,7 +125,7 @@ function NewLine() {
     after.remove()
     before.innerHTML = inputFillSpace(before.textContent)
 
-    header = document.getElementById('lines')
+    header = document.getElementById('user-commands')
     header.append(temp = document.createElement('span'))
     lines = ['                                               ']
     temp.innerHTML = lines[0].replaceAll(' ', '&nbsp')
@@ -140,6 +140,7 @@ function NewLine() {
     inputAfterCursor = document.createElement('span')
     header.append(inputAfterCursor)
     inputAfterCursor.setAttribute('id', 'input-after-cursor')
+    saveTerminalHistory()
 }
 
 function inputFillSpace(line) {

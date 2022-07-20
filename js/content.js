@@ -98,7 +98,7 @@ function addChar(str, char) {
     return str
 }
 
-function getLineHeight(el) { // https://stackoverflow.colm/a/4515470
+function getLineHeight(el) { // https://stackoverflow.com/a/4515470
     var temp = document.createElement(el.nodeName), ret;
     temp.setAttribute("style", "margin:0; pading:0; "
         + "font-family:" + (el.style.fontFamily || "inherit") + "; "

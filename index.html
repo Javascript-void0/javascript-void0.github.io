@@ -17,7 +17,7 @@
     <title> Welcome | Java </title>
 </head>
 <body onload="template()">
-    <div class="main-content-container" id="main-content-container"> 
+    <div class="main-content-container" id="main-content-container"  onload="returnMenuToggle()"> 
 		<div id="main-content">
 			<div id="header"></div>
 			<div id="page-body">
@@ -33,6 +33,9 @@
     </div>
 	<div class="terminal-container small-toggle" id="terminal-container">
 		<div class="terminal">
+			<div id="user-commands">
+				C:\WINDOWS> <span id="input"></span><span id="cursor">_</span><span id="input-after-cursor"></span>
+			</div>
 			<p id="lines">
 				<span id="terminal-header" class="accent"">
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp___&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp___&nbsp&nbsp&nbsp&nbsp&nbsp<br>
@@ -53,19 +56,19 @@
 				<br>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<br>
-				C:\WINDOWS> <span id="input"></span><span id="cursor">_</span><span id="input-after-cursor"></span>
 			</p>	
+			<script>loadTerminalHistory()</script>
 		</div>
 		<div class="menu">
-			<a href="https://github.com/Javascript-void0" target="_blank" rel="noopener nonreferrer"><div id="github">a</div></a>
+			<a href="https://github.com/Javascript-void0"><div id="github">a</div></a>
 			<p> \ </p>
-			<a href="https://instagram.com/v.lucent" target="_blank" rel="noopener nonreferrer"><div id="instagram">a</div></a>
+			<a href="https://instagram.com/v.lucent"><div id="instagram">a</div></a>
 			<p> \ </p>
-			<a href="https://last.fm/user/v-lucent" target="_blank" rel="noopener nonreferrer"><div id="last-fm">a</div></a>
+			<a href="https://last.fm/user/v-lucent"><div id="last-fm">a</div></a>
 			<p> \ </p>
-			<a href="https://anilist.co/user/5641461" target="_blank" rel="noopener nonreferrer"><div id="anilist">a</div></a>
+			<a href="https://anilist.co/user/5641461"><div id="anilist">a</div></a>
 			<p> \ </p>
-			<a href="https://discordapp.com/users/594352318464524289" target="_blank" rel="noopener nonreferrer"><div id="discord">a</div></a>
+			<a href="https://discordapp.com/users/594352318464524289"><div id="discord">a</div></a>
 		</div>
 		<div id="ascii-keyboard">
 			<br>&nbsp__________________________________________________
@@ -85,189 +88,18 @@
 		</div>
 	</div>
 </body>
+
 	<script src="js/content.js"></script>
-	<script src="js/template.js"></script>
 	<script src="js/key.js"></script>
 	<script src="js/anilist.js"></script>
+	<script src="js/template.js"></script>
+
+	<script src="pages/about.js"></script>
+	<script src="pages/anime.js"></script>
+	<script src="pages/credits.js"></script>
+	<script src="pages/home.js"></script>
+	<script src="pages/projects.js"></script>
+	<script src="pages/resources.js"></script>
+	<script src="pages/setup.js"></script>
+
 </html>
-
-<template id="template-about">
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
-	<br>
-	<br># <span class="secondary">About</span>
-	<br>
-	<br>&nbsp&nbsp// boring stuff about me
-	<br>
-	<br>&nbsp&nbsp&nbsp<a onclick="template('setup')" href="javascript:void(0)">Setup</a>
-	<br>
-	<br>## <span class="secondary">Interests</span>
-	<br>
-	<br>&nbsp&nbsp&nbspPython
-	<br>&nbsp&nbsp&nbspWeb Development
-	<br>&nbsp&nbsp&nbsp<a onclick="template('anime')" href="javascript:void(0)">Anime</a>
-	<br>&nbsp&nbsp&nbspPiano
-	<br>&nbsp&nbsp&nbspArt
-	<br>
-	<br>## <span class="secondary"><span class="line-through">Socials</span></span>
-	<br>
-	<br>&nbsp&nbsp&nbspDiscord: Java#3865
-	<br>&nbsp&nbsp&nbspInstagram: <a href='https://www.instagram.com/v.lucent/' target='_blank' rel='noopener nonreferrer'>@v.lucent</a> (Art)
-	<br>&nbsp&nbsp&nbspInstagram: <a href='https://www.instagram.com/_v.cent_/' target='_blank' rel='noopener nonreferrer'>@_v.cent_</a> (Personal)
-	<br>&nbsp&nbsp&nbspYouTube: <a href='https://www.youtube.com/channel/UCTpixi1YwC2LxPuuUEkxK4g/featured' target='_blank' rel='noopener nonreferrer'>Link</a>
-	<br>&nbsp&nbsp&nbspYT Music: <a href='https://music.youtube.com/channel/UCR09QSwRp9TGLBvMBmpKbRw' target='_blank' rel='noopener nonreferrer'>Link</a>
-	<br>&nbsp&nbsp&nbspLastFM: <a href='https://www.last.fm/user/v-lucent' target='_blank' rel='noopener nonreferrer'>@v-lucent</a>
-	<br>&nbsp&nbsp&nbspGitHub: <a href='https://www.github.com/Javascript-void0' target='_blank' rel='noopener nonreferrer'>@Javascript-void0</a>
-	<br>&nbsp&nbsp&nbspAnilist: <a href='https://anilist.co/user/5641461/' target='_blank' rel='noopener nonreferrer'>@Java</a>
-	<br>
-	<br>## <span class="secondary">Games</span>
-	<br>
-	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a>
-	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/juwaii.2' target='_blank' rel='noopener nonreferrer'>juwaii</a>
-	<br>
-	<br>&nbsp> Website <a onclick="template('credits')" href="javascript:void(0);">credits</a>
-	<br>
-</template>
-
-<template id="template-credits">
-	<div class="template">
-		&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0);">About</a>&nbsp>&nbspCredits
-		<br>
-		<br># <span class="secondary">Credits</span>
-		<br>
-		<br>&nbsp&nbspIcons: <a href="https://tabler-icons.io" target="_blank" rel="noopener nonreferrer">https://tabler-icons.io</a> and <a href='https://simpleicons.org/'target='_blank' rel='noopener nonreferrer'>https://simpleicons.org/</a>
-		<br>
-		<br>&nbsp&nbspASCII Art: <a href="https://www.asciiart.eu/computers/amiga" target="_blank" rel="noopener nonreferrer">https://www.asciiart.eu/computers/amiga</a>
-		<br>
-		<br>&nbsp&nbspASCII Text: <a href="https://www.kammerl.de/ascii/AsciiSignature.php" target="_blank" rel="noopener nonreferrer">https://www.kammerl.de/ascii/AsciiSignature.php</a>
-		<br>
-		<br>&nbsp&nbspFont: Envy Code R
-	</div>
-</template>
-
-<template id="template-home">
-	&nbsp&nbspHome
-	<br>
-	<br># <span class="secondary">Welcome</span>
-	<br>
-	<br>&nbsp&nbspwelcome to my corner of the internet <span class="secondary">:3</span>
-	<br>
-	<br>&nbsp&nbsp======== <span class="secondary">*</span>
-	<br>&nbsp&nbsp** <span class="secondary">Beware</span>
-	<br>&nbsp&nbspYou might need a <a href='https://en.wikipedia.org/wiki/Pleiades_(supercomputer)' target='_blank' rel='noopener nonreferrer'>NASA supercomputer</a> to load this stupid website...
-	<br>&nbsp&nbspgood luck <span class="secondary">:I</span>
-	<br>&nbsp&nbsp======== <span class="secondary">*</span>
-	<br>
-	<br>&nbsp&nbspType <insert onclick="insert('help')">'help'</insert> for a list of commands.
-	<br>&nbsp&nbspType <insert onclick="insert('pages')">'pages'</insert> for list of pages. 
-	<br>&nbsp&nbspDo <span class="secondary pointer" onclick="toggleMenu()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
-	<br>
-	<br><img src="assets/ina.gif">
-	<br>
-	<br># <span class="secondary">Menu</span>
-	<br>
-	<br>&nbsp&nbsp> <a onclick="template('about');return false" href="javascript:void(0);">About</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('credits');return false" href="javascript:void(0);">Credits</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
-	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
-	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
-	<br>
-	<br>## <span class="secondary">Subpages</span>
-	<br>
-	<br>&nbsp&nbsp> <a href="/apps">Apps</a>
-	<br>&nbsp&nbsp> <a href="/digital-garden">Digital Garden</a>
-	<br>
-	<br>### <span class="secondary">Brought to you by my awful web development skills</span>
-	<br>
-	<br>&nbsp&nbsp&nbsp (c) 2022 Java
-</template>
-
-<template id="template-projects">
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspProjects
-	<br>
-	<br># <span class="secondary">Projects</span>
-	<br>
-	<br>## <span class="secondary">Around the Clock</span> (Jan 2021 - Dec 2021)
-	<br>
-	<br>&nbsp&nbsp&nbspDiscord study server
-	<br>
-	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/Javascript-void0/Around-the-Clock" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>] [<a href='https://discord.gg/nk69jVbJMP' target='_blank' rel='noopener nonreferrer'><span class="secondary">Discord</span></a>]
-	<br>
-	<br>## <span class="secondary">FarminFarm</span> (Sep 2020 - Jul 2021)
-	<br>
-	<br>&nbsp&nbsp&nbspMinecraft farming server hosted on <a href="https://minehut.com" target="_blank" rel="noopener nonreferrer">Minehut</a>. 
-	<br>
-	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/Javascript-void0/Minehut/tree/main/farminfarm" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>]
-	<br>
-	<br>## <span class="secondary">Umoria</span> (Oct 2021 - Present)
-	<br>
-	<br>&nbsp&nbsp&nbspMinecraft RPG server hosted on <a href="https://minehut.com" target="_blank" rel="noopener nonreferrer">Minehut</a>. Vaguely based on <a href="https://umoria.org" target="_blank" rel="noopener nonreferrer">Dungeons of Moria</a>
-	<br>
-	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/umoria" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>] [<a href='https://discord.gg/y333BGhxFP' target='_blank' rel='noopener nonreferrer'><span class="secondary">Discord</span></a>]
-</template>
-
-<template id="template-resources">
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspResources
-	<br>
-	<br># <span class="secondary">Resources</span>
-	<br>
-	<br>&nbsp&nbspStuff I find online that I find useful. 
-	<br>
-	<br>&nbsp&nbsp- <a href="http://www.3u.com/" target="_blank" rel="noopener nonreferrer">http://3u.com</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspHelpful tool for accessing files of iOS device. <br>
-	<br>&nbsp&nbsp- <a href='https://unicode-search.net'target='_blank' rel='noopener nonreferrer'>https://unicode-search.net</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspLook for variations of unicode characters<br>
-	<br>&nbsp&nbsp- <a href='https://kammerl.de/ascii/AsciiSignature.php'target='_blank' rel='noopener nonreferrer'>https://kammerl.de/ascii/AsciiSignature.php</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspGenerate ASCII text<br>
-	<br>&nbsp&nbsp- <a href='https://removal.ai/upload/'target='_blank' rel='noopener nonreferrer'>https://removal.ai/upload/</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspTransparent backgrounds<br>
-	<br>&nbsp&nbsp- <a href='https://catbox.moe'target='_blank' rel='noopener nonreferrer'>https://catbox.moe</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspFile sharing<br>
-	<br>&nbsp&nbsp- <a href='https://tablericons.com'target='_blank' rel='noopener nonreferrer'>https://tablericons.com</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspIcons for web development (svgs)<br>
-	<br>&nbsp&nbsp- <a href='https://github.com/Kiuryy/Bookmark_Sidebar'target='_blank' rel='noopener nonreferrer'>https://github.com/Kiuryy/Bookmark_Sidebar</a>
-	<br><br>&nbsp&nbsp&nbsp&nbspEasier access to my 165 bookmarked resources (as of July 16, 2022)<br>
-</template>
-
-<template id="template-anime">
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspAnime
-	<br>
-	<br># <span class="secondary">Anime</span>
-	<br>
-	<br>&nbsp> Anilist: <a href='https://anilist.co/user/5641461'target='_blank' rel='noopener nonreferrer'>@Java</a>&nbsp// main
-	<br>&nbsp> MyAnimeList: <a href='https://myanimelist.net/profile/vlucent'target='_blank' rel='noopener nonreferrer'>@vlucent</a>
-	<br>&nbsp> Kitsu: <a href='https://kitsu.io/users/java'target='_blank' rel='noopener nonreferrer'>@Java</a>
-	<br>
-	<br>
-	<img src="assets/mugi.png" style="width: 200px;">
-	<br>
-	<br>## <span class="secondary">Statistics (via <a href='https://anilist.co'target='_blank' rel='noopener nonreferrer'>Anilist</a>)</span>
-	<br>
-	<div id="anime-data"></div>
-	<script type="text/javascript">loadAnimeData()</script>
-</template>
-
-<template id="template-setup">
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
-	<br>
-	<br># <span class="secondary">Setup</span>
-	<br>
-	<br>## <span class="secondary">Software <3</span>
-	<br>
-	<br>&nbsp&nbsp&nbspNote-taking: <a href="https://obsidian.md" target="_blank" rel="noopener nonreferrer">Obsidian</a>
-	<br>&nbsp&nbsp&nbspNote-taking: <a href="https://slite.com" target="_blank" rel="noopener nonreferrer">Slite</a> (archived)
-	<br>&nbsp&nbsp&nbspAnime/Manga: <a href="https://github.com/tachiyomiorg/tachiyomi" target="_blank" rel="noopener nonreferrer">Tachiyomi</a> / <a href="https://github.com/jmir1/aniyomi" target="_blank" rel="noopener nonreferrer">Aniyomi</a>
-	<br>&nbsp&nbsp&nbspDrawing: <a href="https://firealpaca.com/" target="_blank" rel="noopener nonreferrer">FireAlpaca</a>
-	<br>&nbsp&nbsp&nbspDrawing: OpenCanvas1.1
-	<br>&nbsp&nbsp&nbspTools: <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener nonreferrer">Microsoft PowerToys</a>
-	<br>&nbsp&nbsp&nbspDev: <a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener nonreferrer">VSCode</a>
-	<br>
-	<br>## <span class="secondary">Hardware</span>
-	<br>
-	<br>&nbsp&nbsp&nbspLaptop: Microsoft Surface Pro 6
-	<br>&nbsp&nbsp&nbspPhone: Sony Xperia 5 iii
-	<br>&nbsp&nbsp&nbspAudio: Microsoft Surface Headphones 2
-	<br>&nbsp&nbsp&nbspAudio: KZ DQ6 IEM
-	<br>&nbsp&nbsp&nbspAudio: Sony WF-1000XM3 Earbuds
-	<br>
-</template>

@@ -10,9 +10,9 @@ function template(name = currentPage) {
     sessionStorage.setItem('page', name)
     currentPage = name
     
-    getTemplate = document.getElementById(`template-${name}`)
+    getTemplate = Function('return ' + name + 'Template')()
     // lines = chunkSubstr(getTemplate.innerHTML, 50)
-    lines = getTemplate.innerHTML.split('<br>')
+    lines = getTemplate.split('<br>')
     document.getElementById('insert-template').innerHTML = ''
     // document.getElementById('insert-template').innerHTML = getTemplate.innerHTML
     if (name == 'anime') {

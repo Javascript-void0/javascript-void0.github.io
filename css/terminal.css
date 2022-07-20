@@ -78,3 +78,11 @@ br {
 .terminal k {
     color: var(--accent);
 }
+
+#lines {
+    margin-bottom: 0px;
+}
+
+#user-commands {
+    margin-bottom: 16px;
+}

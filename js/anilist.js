@@ -38,7 +38,7 @@ var options = {
 };
 
 fetch(url, options).then(handleResponse)
-                   .then(handleData)
+                    .then(handleData)
 
 function handleResponse(response) {
     return response.json().then(function (json) {
@@ -50,10 +50,15 @@ var anime;
 
 function handleData(data) {
     anime = data['data']['User']['statistics']['anime']
-    // console.log(anime)
+    if (sessionStorage.getItem('anime') == null || typeof sessionStorage.getItem('anime') === 'undefined') {
+        sessionStorage.setItem('anime', JSON.stringify(anime))
+    }
 }
 
 function addAnimeData(lines) {
+    if (typeof anime === 'undefined') {
+        var anime = JSON.parse(sessionStorage.getItem('anime'))
+    }
     for (i = 0; i < 5; i++) {
         statName = Object.keys(anime)[i]
         statValue = anime[statName]

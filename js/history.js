@@ -1,11 +1,16 @@
-var commandHistory = []
-var commandCurrent = 0
-var tempCommandHistoryPosition = -1
-var tempCommandCurrent = ''
+var commandHistory = sessionStorage.getItem('command-history')
+if (commandHistory == null || commandHistory === 'undefined') {
+    commandHistory = []
+} else {
+    commandHistory = JSON.parse(commandHistory)
+}
+var commandCurrent = commandHistory.length
+var tempCommandHistoryPosition = commandCurrent - 1
 
-function addCommandHistory( history) {
+function addCommandHistory(history) {
     commandHistory.push(history)
     tempCommandHistoryPosition += 1
+    sessionStorage.setItem('command-history', JSON.stringify(commandHistory))
 }
 
 function backwardCommandHistory() {
@@ -33,4 +38,25 @@ function forwardCommandHistory() {
     }
     input.textContent = commandHistory[tempCommandHistoryPosition]
     inputAfterCursor.textContent = ''
+}
+
+// ============
+
+var terminalHistory = sessionStorage.getItem('terminal-history')
+if (terminalHistory == null) {
+    sessionStorage.setItem('terminal-history', '')
+    terminalHistory = ''
+}
+
+function loadTerminalHistory() {
+    sessionStorage.getItem('terminal-history')
+    if (terminalHistory != '') {
+        var userCommands = document.getElementById('user-commands')
+        userCommands.innerHTML = terminalHistory
+    }
+}
+
+function saveTerminalHistory() {
+    var userCommands = document.getElementById('user-commands')
+    sessionStorage.setItem('terminal-history', userCommands.innerHTML)
 }
