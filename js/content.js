@@ -43,7 +43,6 @@ setInterval(function() {
     if (window.innerWidth < 567) {
         if (!menuIsVisible()) {
             toggleMenu(true)
-            console.log('test')
         }
     }
     updateHeight(height)
@@ -53,7 +52,6 @@ editPosition = 24
 charWidth = (612.71 / 71)
 // charHeight = (1054.55 / 58)
 charHeight = getLineHeight(document.getElementById('page-body'))
-console.log(charHeight)
 
 function updateWidth(width, element, diff=0) {
     totalFit = Math.floor(width / charWidth)
