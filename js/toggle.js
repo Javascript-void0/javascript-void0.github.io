@@ -6,12 +6,12 @@ function toggleMenu(option) {
         root.style.setProperty('--terminal-display', '')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
 
-    document.cookie = 'sidebar=true'
+    sessionStorage.setItem('sidebar', 'true')
     } else if (current == true || option == false) {
         root.style.setProperty('--terminal-width', '0px')
         root.style.setProperty('--terminal-display', 'none')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
-        document.cookie = 'sidebar=false'
+        sessionStorage.setItem('sidebar', 'false')
     }
 }
 
@@ -35,7 +35,7 @@ function menuIsVisible() {
 }
 
 function returnMenuToggle() {
-    options = document.cookie
+    options = sessionStorage.getItem('key')
     if (options == '') {
         toggleMenu(true)
     } else {
