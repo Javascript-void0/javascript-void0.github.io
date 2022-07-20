@@ -36,7 +36,6 @@ function menuIsVisible() {
 
 function returnMenuToggle() {
     options = sessionStorage.getItem('sidebar')
-    console.log(options)
     if (options == null) {
         toggleMenu(true)
         location.reload()

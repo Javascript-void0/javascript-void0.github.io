@@ -29,7 +29,9 @@ function RunCommand(text) {
             case 'PAGES':
                 lines = ['ABOUT          About nobody.                   ',
                          'ANIME          Stats and stuff                 ',
+                         'APPS           Poorly made applications        ',
                          'CREDITS        Assets and stuff.               ',
+                         'GARDEN         Never-watered digital garden    ',
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
@@ -38,6 +40,15 @@ function RunCommand(text) {
                          'Pages are displayed on the notepad.            ',
                          'Enter the page name into CMD.EXE to open.      ']
                 listToHTML(lines, lines.length + 1, 0)
+                break
+            case 'APPS':
+                window.open('/apps')
+                NewLine()
+                break
+            case 'DIGITAL-GARDEN':
+            case 'GARDEN':
+                window.open('/digital-garden')
+                NewLine()
                 break
             case 'CMD':
                 window.open('index.html', '_blank')

@@ -1,5 +1,15 @@
+var currentPage = 'home'
 
-function template(name) {
+currentPage = sessionStorage.getItem('page')
+if (currentPage == null) {
+    sessionStorage.setItem('page', 'home')
+    currentPage = 'home'
+}
+
+function template(name = currentPage) {
+    sessionStorage.setItem('page', name)
+    currentPage = name
+    
     getTemplate = document.getElementById(`template-${name}`)
     // lines = chunkSubstr(getTemplate.innerHTML, 50)
     lines = getTemplate.innerHTML.split('<br>')
