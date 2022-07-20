@@ -39,10 +39,9 @@ function returnMenuToggle() {
     if (options == null) {
         toggleMenu(true)
     } else {
-        options = options.split('=')
-        if (options[1] == 'true') {
+        if (options == 'true') {
             toggleMenu(true)
-        } else if (options[1] == 'false') {
+        } else if (options == 'false') {
             toggleMenu(false)
         }
     }
