@@ -36,7 +36,7 @@ function menuIsVisible() {
 
 function returnMenuToggle() {
     options = sessionStorage.getItem('key')
-    if (options == '') {
+    if (options == null) {
         toggleMenu(true)
     } else {
         options = options.split('=')
