@@ -46,7 +46,7 @@ setInterval(function() {
         }
     }
     updateHeight(height)
-}, 10);
+}, 1); // idk help
 
 editPosition = 24
 charWidth = (612.71 / 71)
