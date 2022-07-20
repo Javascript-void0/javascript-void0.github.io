@@ -39,6 +39,7 @@ function returnMenuToggle() {
     console.log(options)
     if (options == null) {
         toggleMenu(true)
+        location.reload()
     } else {
         if (options == 'true') {
             toggleMenu(true)
