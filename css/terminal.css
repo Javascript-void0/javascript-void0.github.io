@@ -86,15 +86,3 @@ br {
 #user-commands {
     margin-bottom: 16px;
 }
-
-.mobile-input-thing {
-    background-color: transparent;
-    position: fixed;
-    width: 280px;
-    border: none;
-    color: transparent;
-}
-
-.mobile-input-thing:focus {
-    outline: none;
-}
