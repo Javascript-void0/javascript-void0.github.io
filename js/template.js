@@ -6,7 +6,14 @@ if (currentPage == null) {
     currentPage = 'home'
 }
 
-function template(name = currentPage) {
+window.addEventListener('popstate', function (event) {
+    var state = event.state;
+    if (state.previousPageTemplate !== currentPage) {
+        template(state.previousPageTemplate, pushState = false);
+    }
+});
+
+function template(name = currentPage, pushState = true) {
     sessionStorage.setItem('page', name)
     currentPage = name
     
@@ -20,6 +27,10 @@ function template(name = currentPage) {
     }
     document.title = capitalize(name + ' | Java')
     docAnimation(lines, lines.length + 1, 0)
+
+    if (pushState) {
+        history.pushState({previousPageTemplate: name}, '', '/')
+    }
 }
 
 // function chunkSubstr(str, size) {
