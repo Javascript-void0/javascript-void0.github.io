@@ -45,13 +45,12 @@ setInterval(function() {
             toggleMenu(true)
         }
     }
-    updateHeight(height)
+    updateHeight()
 }, 10);
 
 editPosition = 24
-charWidth = (612.71 / 71)
-// charHeight = (1054.55 / 58)
-charHeight = getLineHeight(document.getElementById('page-body'))
+charWidth = 8.595 // (612.71 / 71)
+charHeight = 19 // getLineHeight(document.getElementById('page-body'))
 
 function updateWidth(width, element, diff=0) {
     totalFit = Math.floor(width / charWidth)
@@ -61,10 +60,8 @@ function updateWidth(width, element, diff=0) {
     while (element.textContent.length > (totalFit - diff)) {
         element.textContent = removeChar(element.textContent)
     }
-    updatePageWidth(Math.floor(width / charWidth) * charWidth + 3.5)
+    updatePageWidth(Math.floor(width / charWidth) * charWidth + 7)
 }
-
-charWidth = (612.71 / 71)
 
 function updatePageWidth(width) {
     r = document.querySelector(':root')
@@ -74,8 +71,8 @@ function updatePageWidth(width) {
 leftBorder = document.getElementById('left-border')
 rightBorder = document.getElementById('right-border')
 
-function updateHeight(height) {
-    windowHeight = height - 100
+function updateHeight() {
+    windowHeight = window.innerHeight - 100
     totalFitWindow = Math.floor(windowHeight / charHeight)
     totalFitBody = totalFitWindow - 4
     currentCharCount = leftBorder.textContent.length
