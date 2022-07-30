@@ -22,7 +22,7 @@
 .main-content-container {
     width: var(--main-content-width);
     height: 100vh;
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     position: fixed;
     left: 50px;
 }
@@ -31,7 +31,7 @@
     width: 100%;
     height: var(--main-content-height);
     color: var(--accent);
-    background: var(--primary);
+    /* background: var(--primary); */
     position: relative;
     font-family: Envy-Code-R;
     padding-top: 50px;
@@ -60,4 +60,13 @@
 
 #page a {
     word-break: break-all;
+}
+
+.main-content-background {
+    background-color: rgba(21, 21, 21, 0.3);
+    position: absolute;
+    top: 67px;
+    left: 4px;
+    width: calc(100vw - 161px - var(--terminal-width));
+    height: calc(100vh - 150px);
 }
