@@ -13,11 +13,11 @@
 	<script src="js/help.js"></script>
 	<script src="js/commands.js"></script>
 	<script src="js/history.js"></script>
-	<script src="js/toggle.js" onload="returnMenuToggle()"></script>
+	<script src="js/toggle.js"></script>
     <title> Home | Java </title>
 </head>
 <body onload="template()">
-    <div class="main-content-container" id="main-content-container"  onload="returnMenuToggle()"> 
+    <div class="main-content-container" id="main-content-container"> 
 		<div class="main-content-background"></div>
 		<div id="main-content">
 			<div id="header"></div>
@@ -32,6 +32,7 @@
 			<div id="footer"></div>
 		</div>
     </div>
+	<script>returnMenuToggle()</script>
 	<div class="terminal-container small-toggle" id="terminal-container">
 		<div class="terminal">
 			<div id="user-commands">

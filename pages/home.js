@@ -30,6 +30,7 @@ const homeTemplate = `
 	<br>
 	<br>&nbsp&nbsp> <a href="/apps">Apps</a>
 	<br>&nbsp&nbsp> <a href="/digital-garden">Digital Garden</a>
+	<br>&nbsp&nbsp> <a href="/links">Links</a>
 	<br>
 	<br>### <span class="secondary">Brought to you by my awful web development skills</span>
 	<br>
