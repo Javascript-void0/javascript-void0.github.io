@@ -27,6 +27,7 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspAnilist: <a href='https://anilist.co/user/5641461/' target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>&nbsp&nbsp&nbspmonkeytype: <a href='https://monkeytype.com/profile/AMxYAVUmnCelsONFCqaRwo0Um9J3' target='_blank' rel='noopener nonreferrer'>@java-</a>
 	<br>&nbsp&nbsp&nbsposu!: <a href='https://osu.ppy.sh/users/21288466' target='_blank', rel='noopener nonreferrer'>@JavaDaBear</a>
+	<br>&nbsp&nbsp&nbspmusescore: <a href='https://musescore.com/user/34662762' target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>
 	<br>## <span class="secondary">Games</span>
 	<br>
