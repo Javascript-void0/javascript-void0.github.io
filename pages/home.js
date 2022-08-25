@@ -21,7 +21,6 @@ const homeTemplate = `
 	<br>
 	<br>&nbsp&nbsp> <a onclick="template('about');return false" href="javascript:void(0);">About</a>
 	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('credits');return false" href="javascript:void(0);">Credits</a>
 	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
 	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
 	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>

@@ -28,12 +28,12 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspmonkeytype: <a href='https://monkeytype.com/profile/AMxYAVUmnCelsONFCqaRwo0Um9J3' target='_blank' rel='noopener nonreferrer'>@java-</a>
 	<br>&nbsp&nbsp&nbsposu!: <a href='https://osu.ppy.sh/users/21288466' target='_blank', rel='noopener nonreferrer'>@JavaDaBear</a>
 	<br>&nbsp&nbsp&nbspmusescore: <a href='https://musescore.com/user/34662762' target='_blank' rel='noopener nonreferrer'>@Java</a>
+	<br>&nbsp&nbsp&nbspPinterest: <a href='https://www.pinterest.com/javascript_void0' target='_blank' rel='noopener nonreferrer'>@javascript_void0</a>
 	<br>
 	<br>## <span class="secondary">Games</span>
 	<br>
+	<br><img src="assets/keqing.png" width="120">
+	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a>
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/juwaii.2' target='_blank' rel='noopener nonreferrer'>juwaii</a>
-	<br>
-	<br>&nbsp> Website <a onclick="template('credits')" href="javascript:void(0);">credits</a>
-	<br>
 `
