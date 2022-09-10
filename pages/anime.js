@@ -4,7 +4,7 @@ const animeTemplate = `
 	<br># <span class="secondary">Anime</span>
 	<br>
 	<br>&nbsp> Anilist: <a href='https://anilist.co/user/5641461'target='_blank' rel='noopener nonreferrer'>@Java</a>&nbsp// main
-	<br>&nbsp> MyAnimeList: <a href='https://myanimelist.net/profile/vlucent'target='_blank' rel='noopener nonreferrer'>@vlucent</a>
+	<br>&nbsp> MyAnimeList: <a href='https://myanimelist.net/profile/notjava'target='_blank' rel='noopener nonreferrer'>@notjava</a>
 	<br>&nbsp> Kitsu: <a href='https://kitsu.io/users/java'target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>
 	<br>
