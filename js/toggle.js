@@ -2,7 +2,7 @@ function toggleMenu(option) {
     root = document.querySelector(':root')
     current = menuIsVisible()
     if (current == false || option == true) {
-        root.style.setProperty('--terminal-width', '404px')
+        root.style.setProperty('--terminal-width', '405px')
         root.style.setProperty('--terminal-display', '')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
         sessionStorage.setItem('sidebar', 'true')

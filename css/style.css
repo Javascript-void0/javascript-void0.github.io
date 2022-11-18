@@ -3,7 +3,7 @@
     --secondary: #fefefe;
     --accent: #c6c3bb;
     --selection-text-color: var(--primary);
-    --terminal-width: 404px;
+    --terminal-width: 405px;
 }
 
 @font-face {
