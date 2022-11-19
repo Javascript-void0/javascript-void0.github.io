@@ -25,7 +25,7 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspLastFM: <a href='https://www.last.fm/user/v-lucent' target='_blank' rel='noopener nonreferrer'>@v-lucent</a>
 	<br>&nbsp&nbsp&nbspGitHub: <a href='https://www.github.com/Javascript-void0' target='_blank' rel='noopener nonreferrer'>@Javascript-void0</a>
 	<br>&nbsp&nbsp&nbspAnilist: <a href='https://anilist.co/user/5641461/' target='_blank' rel='noopener nonreferrer'>@Java</a>
-	<br>&nbsp&nbsp&nbspmonkeytype: <a href='https://monkeytype.com/profile/AMxYAVUmnCelsONFCqaRwo0Um9J3' target='_blank' rel='noopener nonreferrer'>@java-</a>
+	<br>&nbsp&nbsp&nbspmonkeytype: <a href='https://monkeytype.com/profile/notjava' target='_blank' rel='noopener nonreferrer'>@java-</a>
 	<br>&nbsp&nbsp&nbspmusescore: <a href='https://musescore.com/user/34662762' target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>&nbsp&nbsp&nbspPinterest: <a href='https://www.pinterest.com/javascript_void0/bits' target='_blank' rel='noopener nonreferrer'>@javascript_void0</a>
 	<br>
