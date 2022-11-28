@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Bin2Dec | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+</head>
+<body onclick="var input = document.getElementById('input').focus();">
+    <div class='center'>
+
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+        
+        <div class='content'>
+            <h2 class='tier-header'>> Binary to Decimal</h2><hr><br>
+            <div class="app">
+                Enter Binary: 
+                <input type="text" id="input" spellcheck="false" autocomplete="off">
+                <br><br><br><span onclick="convert();">< CONVERT ></span>
+                <div id="result">
+
+                </div>
+            </div>
+        </div>
+        <div class='footer'>
+            <a href='https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md' target='_blank' rel='noopener nonreferrer'>https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md</a>
+        </div>
+    </div>
+    <style>
+        .app {
+            background-color: rgb(var(--c2), 0.03);
+            width: 300px;
+            margin: auto;
+            height: 430px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            box-shadow: 0px 10px 25px #1e1e1e;
+            text-align: center;
+            padding-top: 40px;
+            color: rgb(var(--c2));
+        }
+
+        input[type=text] {
+            background-color: transparent;
+            color: rgb(var(--c2));
+            width: 80%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 15px;
+            margin-top: 50px;
+            border: none;
+            border-bottom: 2px solid rgb(var(--c2));
+            outline: none;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        span {
+            font-family: Envy Code R;
+        }
+
+        span:hover {
+            color:rgb(var(--c2), 0.7);
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 30px !important;
+            width: 65%;
+            height: 165px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            background-color: rgb(var(--c1));
+            margin: auto;
+            padding: 25px;
+            box-shadow: inset 0px 10px 25px #1e1e1e;
+            overflow-wrap: break-word;
+        }
+    </style>
+    <script>
+        input = document.getElementById('input');
+        input.onload = input.focus();
+        document.addEventListener('keydown', (event) => {
+            var name = event.key;
+            if (name == 'Enter') {
+                convert();
+            }
+        }, false);
+
+        function convert() {
+            var binary = document.getElementById('input').value
+            var result = document.getElementById('result')
+            if (binary.match(/^[0-1]+$/) != null) {
+                var decimal = 0
+                for (var i = 0; i < binary.length; i++) {
+                    decimal += (binary[i] * (2 ** (binary.length - (i + 1))))
+                }
+                result.textContent = decimal
+            } else {
+                result.textContent = "Binary value can only contain 0's and 1's. "
+            }
+        }
+    </script>
+</body>
+</html>

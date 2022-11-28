@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+</head>
+<body onclick="var input = document.getElementById('input').focus();">
+    <div class='center'>
+
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+        
+        <div class='content'>
+            <h2 class='tier-header'>> Calculator</h2><hr><br>
+            <div class="app">
+                <div id="result">
+                    0
+                </div>
+                <div class="buttons">
+                    <div class="button" style="grid-area: a" onclick="cl('a')">AC</div>
+                    <div class="button" style="grid-area: c" onclick="cl('c')">C</div>
+                    <div class="button" style="grid-area: s" onclick="switchSign()">+/-</div>
+                    <div class="button" style="grid-area: d" onclick="input('/')">/</div>
+                    <div class="button" style="grid-area: l" onclick="input('7')">7</div>
+                    <div class="button" style="grid-area: q" onclick="input('8')">8</div>
+                    <div class="button" style="grid-area: b" onclick="input('9')">9</div>
+                    <div class="button" style="grid-area: x" onclick="input('*')">x</div>
+                    <div class="button" style="grid-area: w" onclick="input('4')">4</div>
+                    <div class="button" style="grid-area: f" onclick="input('5')">5</div>
+                    <div class="button" style="grid-area: k" onclick="input('6')">6</div>
+                    <div class="button" style="grid-area: m" onclick="input('-')">-</div>
+                    <div class="button" style="grid-area: n" onclick="input('1')">1</div>
+                    <div class="button" style="grid-area: t" onclick="input('2')">2</div>
+                    <div class="button" style="grid-area: r" onclick="input('3')">3</div>
+                    <div class="button" style="grid-area: p" onclick="input('+')">+</div>
+                    <div class="button" style="grid-area: z" onclick="input('0')">0</div>
+                    <div class="button" style="grid-area: o" onclick="input('.')">.</div>
+                    <div class="button" style="grid-area: e" onclick="enter()">=</div>
+                </div>
+            </div>  
+        </div>
+        <div class='footer'>
+            <a href='https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Calculator-App.md' target='_blank' rel='noopener nonreferrer'>https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Calculator-App.md</a>
+        </div>
+    </div>
+    <style>
+        .app {
+            background-color: rgb(var(--c2), 0.03);
+            width: 300px;
+            margin: auto;
+            height: 450px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            box-shadow: 0px 10px 25px #1e1e1e;
+            text-align: center;
+            padding-top: 20px;
+            color: rgb(var(--c2));
+        }
+
+        #result {
+            background: rgb(var(--c2));
+            color: rgb(var(--c1));
+            width: 70%;
+            height: 50px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 10px 25px #1e1e1e;
+            text-align: right;
+            font-size: 50px;
+            font-family: Envy Code R;
+            padding: 20px;
+            margin-top: 5px;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .buttons {
+            display: grid;
+            padding-top: 27px;
+            width: 250px;
+            margin: auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+            grid-template-areas: "a c s d"
+                                 "l q b x"
+                                 "w f k m"
+                                 "n t r p"
+                                 "z z o e";
+        }
+
+        .button {
+            background-color: rgb(var(--c2));
+            color: rgb(var(--c1));
+            height: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px #1e1e1e;
+            font-size: 24px;
+            padding-top: 12px;
+            user-select: none;
+            font-family: Envy Code R;
+        }
+
+        .button:hover {
+            background-color: rgb(var(--c2), 0.8);
+            transition-duration: 0.3s;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var result = document.getElementById('result')
+        var finalResult = false
+        function input(value) {
+            if (value.match(/^[0-9]+$/) != null) {
+                if (result.textContent == 0 || result.textContent == 'ERR' || finalResult == true) {
+                    result.textContent = value
+                } else {
+                    result.textContent = result.textContent + value
+                }
+            } else if (result.textContent != 0) {
+                result.textContent = result.textContent + value
+                finalResult = false
+            }
+        }
+
+        function cl(t) {
+            var result = document.getElementById('result')
+            if (t == 'a') {
+                result.textContent = 0
+            } else if (t == 'c') {
+                result.textContent = result.textContent.slice(0, -1)
+                if (result.textContent == '') {
+                    result.textContent = 0
+                }
+            }
+        }
+
+        function enter() {
+            equation = result.textContent
+            lastChar = equation.slice(-1)
+            if (lastChar.match(/^[0-9]+$/) == null) { // Last char is not number
+                equation = equation.slice(0, -1)
+            }
+            try {
+                a =  new Function('return ' + equation)()
+            } catch(e) {
+                a = 'ERR'
+            }
+            result.textContent = a
+            finalResult = true
+        }
+
+        function switchSign() {
+            equation = result.textContent
+            numbers = equation.split(/[^0-9]/); // Split everything except numbers
+            lastNum = numbers[numbers.length - 1]
+            if (numbers[numbers.length - 2] == '') {
+                result.textContent = equation.replace(/-([^_]*)$/, '$1') // Replace last instance of negative
+            } else if (numbers[numbers.length - 1] == '') {
+                result.textContent += '-'
+            } else if (numbers[numbers.length - 1].match(/^[0-9]+$/) != null) {
+                result.textContent = equation.slice(0, -lastNum.length) + '-' + equation.slice(equation.length - lastNum.length)
+            } else {
+                result.textContent = equation.slice(0, lastNum.length + 1) + '-' + lastNum
+            }
+        }
+    </script>
+</body>
+</html>

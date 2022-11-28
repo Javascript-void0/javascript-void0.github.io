@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Snake | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+</head>
+<body>
+    <div class='center'>
+
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+        
+        <div class='content'>
+            <h2 class='tier-header'>> Snake</h2><hr><br>
+            <div class="app" id="app">
+                <div class="grid" id="grid">
+                    <script>
+                        for (y = 0; y < 15; y++) {
+                            for (x = 0; x < 15; x++) {
+                                square = document.createElement('div')
+                                square.classList.add('square')
+                                square.id = x + ', ' + y
+                                grid = document.getElementById('grid')
+                                if ((x + y) % 2 == 1) {
+                                    square.style.backgroundColor = 'rgba(var(--c1), 0.06)'
+                                }
+                                grid.append(square)
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="menu">
+                    <div class="left">
+                        <div class="score">
+                            Score: 0
+                        </div>
+                        <div id="message">Press Any <br>Key to Start</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .app {
+            background-color: rgb(var(--c2), 0.03);
+            width: 300px;
+            margin: auto;
+            height: 450px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            box-shadow: 0px 10px 25px #1e1e1e;
+            /* text-align: center; */
+            padding-top: 20px;
+            color: rgb(var(--c2));
+        }
+
+        .grid {
+            background-color: rgb(var(--c2));
+            height: 260px;
+            width: 260px;
+            margin-left: 20px;
+            border-radius: 3px;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+        }
+        
+        .square {
+            width: calc(260px / 15);
+            height: calc(260px / 15);
+            color:rgb(var(--c1));
+            font-size: 22px;
+            line-height: 78%;
+        }
+
+        .apple {
+            color: rgb(221, 100, 100);
+        }
+
+        .snake {
+            color: rgb(78, 194, 130);
+        }
+
+        .score {
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        #message {
+            padding-top: 20px;
+            font-family: Envy Code R;
+            text-align: center;
+        }
+
+        .controls {
+            width: 100px;
+            margin-top: 20px;
+            height: 100px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            margin-left: 20px;
+        }
+
+        .button {
+            background-color: rgb(var(--c2));
+            border-radius: 10px;
+            color: rgb(var(--c1));
+            font-size: 28px;
+            text-align: center;
+            user-select: none;
+            cursor: pointer
+        }
+
+        * {
+            font-family: Envy Code R;
+        }
+    </style>
+    <script>
+        var snake = [
+                [4, 7],
+                [3, 7],
+                [2, 7]
+            ]
+        var apple = [10, 7]
+        var direction = [1, 0]
+        var score = 0
+        var updated = true
+        var playing = false;
+
+        document.addEventListener('keydown', function(event) {
+            if (!playing) {
+                playing = true
+                newGame()
+                update()
+            } else if ((event.keyCode == 37 || event.keyCode == 65) && !direction[0] && updated) { // Left
+                direction = [-1, 0]
+                updated = false
+            } else if ((event.keyCode == 38 || event.keyCode == 87) && !direction[1] && updated) { // Up
+                direction = [0, -1]
+                updated = false
+            } else if ((event.keyCode == 39 || event.keyCode == 68) && !direction[0] && updated) { // Right
+                direction = [1, 0]
+                updated = false
+            } else if ((event.keyCode == 40 || event.keyCode == 83) && !direction[1] && updated) { // Down
+                direction = [0, 1]
+                updated = false
+            }
+        })
+
+        function changeDirection(dir) {
+            if (!playing) {
+                playing = true
+                newGame()
+                update()
+            } else if ((dir[0] == -1 || dir[0] == 1) && !direction[0] && updated) {
+                direction = [...dir]
+                updated = false
+            } else if ((dir[1] == -1 || dir[1] == 1) && !direction[1] && updated) {
+                direction = [...dir]
+                updated = false
+            }
+        }
+
+        function draw() {
+            squares = document.getElementsByClassName('square')
+            for (square of squares) {
+                if (square.classList) {
+                    square.classList.remove(...square.classList)
+                    square.classList.add('square')
+                    square.textContent = ''
+                }
+            }
+
+            for (s of snake) {
+                x = s[0]
+                y = s[1]
+                square = document.getElementById(x + ', ' + y)
+                square.classList.add('snake')
+                square.textContent = '◼'
+            }
+
+            square = document.getElementById(apple[0] + ', ' + apple[1])
+            square.classList.add('apple')
+            square.textContent = '◼'
+        }
+
+        function update() {
+            snakeMove()
+            draw()
+
+            if (playing) {
+                setTimeout(update, 200)
+            }
+        }
+
+        function snakeMove() {
+            moveX = direction[0]
+            moveY = direction[1]
+            
+            if (!snakeCollide()) {
+                last = snake.pop()
+                last[0] = snake[0][0] + moveX
+                last[1] = snake[0][1] + moveY
+                snake.unshift(last)
+                updated = true
+            } else {
+                playing = false
+                message('GAME OVER! <br><br>Press Any Key to Try Again. ')
+            }
+        }
+
+        function snakeCollide() {
+            moveX = direction[0]
+            moveY = direction[1]
+
+            if ((snake[0][0] + moveX > 14) || 
+                (snake[0][0] + moveX < 0) ||
+                (snake[0][1] + moveY > 14) ||
+                (snake[0][1] + moveY < 0)) {
+                    return true
+            }
+
+            for (i = 0; i < snake.length; i++) {
+                if (`${snake[i]}` == `${apple}`) {
+                    a = document.getElementsByClassName('apple')[0]
+                    a.classList.remove('apple')
+                    a.classList.add('snake')
+                    snake.unshift(apple)
+                    square
+                    newApple()
+                    score++
+                    updateScore()
+                    return false
+                }
+                if (`${snake[i]}` == `${snake[0]}` && i != 0) {
+                    return true
+                }
+
+            }
+            return false
+        }
+
+        function newGame() {
+            snake = [
+                [4, 7],
+                [3, 7],
+                [2, 7]
+            ]
+            apple = [10, 7]
+            direction = [1, 0]
+            score = 0
+            updated = true
+            updateScore()
+            message('')
+        }
+
+        function newApple() { // Bugs?
+            available = false
+            while (!available) {
+                x = Math.floor(Math.random() * 15)
+                y = Math.floor(Math.random() * 15)
+                for (i = 0; i < snake.length; i++) {
+                    if (snake[i][0] != x && snake[i][1] != y) {
+                        available = true
+                    }
+                }
+            }
+            apple = [x, y]
+            square = document.getElementById(x + ', ' + y)
+            square.classList.add('apple')
+            square.textContent = '◼'
+        }
+
+        function updateScore() {
+            div = document.getElementsByClassName('score')[0]
+            div.textContent = 'Score: ' + score
+        }
+
+        function message(message) {
+            div = document.getElementById('message')
+            div.innerHTML = message
+        }
+        
+        update()
+    </script>
+    <script>
+        document.getElementById('app').addEventListener('touchstart', handleTouchStart, false);
+        document.getElementById('app').addEventListener('touchmove', handleTouchMove, false);
+
+        // https://stackoverflow.com/a/56663695
+
+        var xDown = null;
+        var yDown = null;
+
+        function getTouches(evt) {
+            return evt.touches
+        }
+
+        function handleTouchStart(evt) {
+            var button = document.getElementsByClassName('new-game').item(0)
+            if (evt.target == button) {
+                return
+            }
+            evt.preventDefault()
+            const firstTouch = getTouches(evt)[0];
+            xDown = firstTouch.clientX;
+            yDown = firstTouch.clientY;
+        };
+
+        function handleTouchMove(evt) {
+            if ( ! xDown || ! yDown ) {
+                return;
+            }
+
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (!playing) {
+                playing = true
+                newGame()
+                update()
+            }
+
+            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+                if ( xDiff > 0 ) {
+                    changeDirection([-1, 0])
+                } else {
+                    changeDirection([1, 0])
+                }
+            } else {
+                if ( yDiff > 0 ) {
+                    changeDirection([0, -1])
+                } else { 
+                    changeDirection([0, 1])
+                }
+            }
+
+            xDown = null;
+            yDown = null;
+        };
+    </script>
+</body>
+</html> 

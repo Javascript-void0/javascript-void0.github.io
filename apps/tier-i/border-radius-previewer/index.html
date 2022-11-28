@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Border Radius Previewer | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+</head>
+<body onclick="var input = document.getElementById('input').focus();">
+    <div class='center'>
+
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+        
+        <div class='content'>
+            <h2 class='tier-header'>> Border Radius Previewer</h2><hr><br>
+            <div class="app">
+                Preview: 
+                <div id="preview"></div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="50" value="0" class="slider" id="top-left">
+                    <input type="range" min="0" max="50" value="0" class="slider" id="top-right">
+                    <input type="range" min="0" max="50" value="0" class="slider" id="bottom-left">
+                    <input type="range" min="0" max="50" value="0" class="slider" id="bottom-right">
+                </div>
+                <div class="copy-button" onclick="copy();">a</div>
+            </div>
+        </div>
+        <div class='footer'>
+            <a href='https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Border-Radius-Previewer.md' target='_blank' rel='noopener nonreferrer'>https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Border-Radius-Previewer.md</a>
+        </div>
+    </div>
+    <style>
+        .app {
+            background-color: rgb(var(--c2), 0.03);
+            width: 300px;
+            margin: auto;
+            height: 450px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            box-shadow: 0px 10px 25px #1e1e1e;
+            text-align: center;
+            padding-top: 20px;
+            color: rgb(var(--c2));
+        }
+
+        #preview {
+            background-color: rgb(var(--c2));
+            width: 200px;
+            height: 160px;
+            box-shadow: 0px 10px 25px #1e1e1e;
+            margin: auto;
+            margin-top: 15px;
+            color: rgb(var(--c1), 0.3);
+            font-size: 100px;
+            padding-top: 40px;
+        }
+
+        .slider-container {
+            margin-top: 30px;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 200px;
+            height: 7px;
+            background: rgb(var(--c2), 0.15);
+            outline: none;
+            margin-top: 20px;
+            border-radius: 3px;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgb(var(--c2));
+            cursor: pointer;
+            box-shadow: 0px 10px 25px #1e1e1e;
+        }
+
+        .copy-button {
+            padding-top: 10px;
+            -webkit-mask: url(/apps/images/copy.svg) no-repeat center;
+            mask: url(/apps/images/copy.svg) no-repeat center;
+            background-color: rgb(var(--c2), 1);
+            height: 50px;
+        }
+
+        .copy-button:hover {
+            background-color: rgb(var(--c2), 0.8);
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+    </style>
+    <script>
+        var topLeft = document.getElementById('top-left');
+        var topRight = document.getElementById('top-right');
+        var bottomRight = document.getElementById('bottom-right');
+        var bottomLeft = document.getElementById('bottom-left');
+        var preview = document.getElementById('preview');
+
+        topLeft.oninput = function() {
+            preview.style.borderRadius = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`
+            preview.textContent = this.value
+        }
+        topRight.oninput = function() {
+            preview.style.borderRadius = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`
+            preview.textContent = this.value
+        }
+        bottomLeft.oninput = function() {
+            preview.style.borderRadius = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`
+            preview.textContent = this.value
+        }
+        bottomRight.oninput = function() {
+            preview.style.borderRadius = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`
+            preview.textContent = this.value
+        }
+
+        function copy() {
+            text = preview.style.borderRadius = `border-radius: ${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%;`
+            navigator.clipboard.writeText(text);
+            preview.textContent = ':]'
+        }
+    </script>
+</body>
+</html>

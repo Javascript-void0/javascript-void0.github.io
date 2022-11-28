@@ -1,0 +1,145 @@
+:root {
+    --primary: #2D2B2A;
+    --secondary: #c6c3bb;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--primary);
+    height: 100vh;
+    width: 100%;
+    color: var(--secondary);
+}
+
+@font-face {
+    font-family: Envy Code R;
+    src: url('/digital-garden/images/Envy Code R.ttf');
+}
+
+::-moz-selection {
+    color: #fefefe;
+    background: #9cc2f4;
+}
+  
+::selection {
+    color: #fefefe;
+    background: #9cc2f4;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(45, 43, 42); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(198, 195, 187, 0.4); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(198, 195, 187, 0.6); 
+}
+
+.sidebar {
+    max-width: 250px;
+    width: 35%;
+    height: calc(100% - 48px);
+    border-right: 1px solid var(--secondary);
+    text-align: right;
+    padding: 24px;
+    font-family: Envy Code R;
+    font-size: 14px;
+    position: fixed;
+}
+
+a {
+    color: #9cc2f4;
+}
+
+a:visited {
+    color: #c4aaed;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed var(--secondary)
+}
+
+.content {
+    width: auto;
+    padding: 24px;
+    position: absolute;
+    max-width: 600px;
+    left: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+}
+
+.content h1 {
+    font-size: 28px;
+}
+
+.content h2 {
+    font-size: 20px;
+}
+
+.content br {
+    user-select: none;
+}
+
+.quote {
+    filter: brightness(75%);
+    border-left: 3px solid var(--secondary);
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+.menu-button {
+    visibility: hidden;
+    float: right;
+    cursor: pointer
+}
+
+@media only screen and (max-width: 666px) {
+    .sidebar {
+        position: relative;
+        width: auto;
+        max-width: none;
+        text-align: left;
+        border-bottom: 1px solid var(--secondary);
+        height: auto;
+    }
+
+    .content {
+        position: relative;
+        left: 0px !important;
+        max-width: none;
+        height: auto;
+        width: auto;
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
+    .menu-button {
+        visibility: visible;
+        -webkit-mask: url('../digital-garden/images/down.svg') no-repeat center;
+        mask: url('../digital-garden/images/down.svg') no-repeat center;
+        background-color: var(--secondary);
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 35px;
+        top: 20px;
+    }
+}

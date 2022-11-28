@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>2048 | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+    <script type="text/javascript" src="/apps/games/2048/script.js"></script>
+</head>
+<body>
+    <div class='center'>
+
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+        
+        <div class='content'>
+            <h2 class='tier-header'>> 2048</h2><hr><br>
+            <div class="app" id="app">
+
+                <script type="text/javascript" src="/apps/games/2048/swipe.js"></script>
+                
+                <div class="grid" id="grid">
+                    <script>
+                        for (y = 0; y < 4; y++) {
+                            for (x = 0; x < 4; x++) {
+                                ele = document.createElement('div')
+                                ele.classList.add('square')
+                                // ele.textContent = `${x}|${y} ` // show coords
+                                ele.id = `${x}, ${y}`
+                                ele.setAttribute('n', '')
+                                document.getElementById('grid').append(ele)
+                            }
+                        }
+                        loadNew()
+                    </script>
+                </div>
+                <div class="menu">
+                    <div class="score" id="score">
+                        <script>
+                            ele = document.getElementById('score')
+                            score.innerHTML = ele.innerHTML = `Score: ${score}<br><br>Best: ${best}`
+                        </script>
+                    </div>
+                    <div class="new-game" onclick="loadNew()">
+                        New Game
+                    </div>
+                </div>
+                <div class="credits">Palette: <a href='https://lospec.com/palette-list/lost-century' target='_blank' rel='noopener nonreferrer'>Lost Century</a></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .app {
+            background-color: rgb(var(--c2), 0.03);
+            width: 300px;
+            margin: auto;
+            height: 450px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 10px;
+            border: 1px solid rgb(var(--c2), 0.25);
+            box-shadow: 0px 10px 25px #1e1e1e;
+            padding-top: 20px;
+            color: rgb(var(--c2));
+            position: relative;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            width: 260px;
+            height: 260px;
+            margin-left: 20px;
+            gap: 6px;
+            outline: 6px solid rgb(var(--c2), 0.8);
+            background-color: rgb(var(--c2), 0.8);
+            box-shadow: 0 0 1px 0px rgb(var(--c2), 0.8) inset, 0 0 1px 0px rgb(var(--c2), 0.8);
+            border-radius: 0.1px;
+        }
+
+        .square {
+            background-color: rgb(var(--c2));
+            border-radius: 4px;
+            font-family: Envy Code R;
+            text-align: center;
+            line-height: 60px;
+            font-size: larger;
+            color: rgb(var(--c2));
+        }
+
+        .square.merge {
+            transition-duration: 0.3s;
+        }
+
+        .square.new {
+            transition-duration: 0.5s;
+        }
+
+        .menu {
+            display: grid;
+            margin: 20px;
+            margin-top: 30px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .new-game {
+            background: rgb(var(--c2), 0.3);
+            font-family: Envy Code R;
+            width: 100px;
+            text-align: center;
+            margin-left: 30px;
+            height: 30px;
+            padding-top: 10px;
+            border-radius: 10px;
+            transition-duration: 0.3s;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .new-game:hover {
+            background-color: rgb(var(--c2), 0.5);
+        }
+
+        .score {
+            font-family: Envy Code R;
+        }
+
+        .credits {
+            font-family: Envy Code R;
+            position: absolute;
+            margin-left: 20px;
+            bottom: 20px;
+        }
+
+        .credits a {
+            color: rgb(var(--c2));
+            font-family: Envy Code R;
+        }
+
+        [n="2"]::after { /* https://lospec.com/palette-list/lost-century */
+            content: "2";
+        } [n="2"] {
+            background-color: #ab9b8e;
+        }
+        [n="4"]:after {
+            content: "4";
+        } [n="4"] {
+            background-color: #847875;
+        }
+        [n="8"]:after {
+            content: "8";
+        } [n="8"] {
+            background-color: #574852;
+        }
+        [n="16"]:after {
+            content: "16";
+        } [n="16"] {
+            background-color: #4b3d44;
+        }
+        [n="32"]:after {
+            content: "32";
+        } [n="32"] {
+            background-color: #4b726e;
+        }
+        [n="64"]:after {
+            content: "64";
+        } [n="64"] {
+            background-color: #8caba1;
+        }
+        [n="128"]:after {
+            content: "128";
+        } [n="128"] {
+            background-color: #ba9158;
+        }
+        [n="256"]:after {
+            content: "256";
+        } [n="256"] {
+            background-color: #927441;
+        }
+        [n="512"]:after {
+            content: "512";
+        } [n="512"] {
+            background-color: #c77b58;
+        }
+        [n="1024"]:after {
+            content: "1024";
+        } [n="1024"] {
+            background-color: #ae5d40;
+        }
+        [n="2048"]:after {
+            content: "2048";
+        }  [n="2048"] {
+            background-color: #79444a;
+        }
+    </style>
+</body>
+</html> 

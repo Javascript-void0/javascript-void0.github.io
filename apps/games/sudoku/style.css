@@ -1,0 +1,62 @@
+:root {
+    --c1: 45, 43, 42;
+    --c2: 229, 223, 206;
+    --square-width: calc((512px - 50px) / 9)
+}
+
+body {
+    margin: 0px;
+    padding: 0x;
+    background-color: rgb(var(--c1));
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Envy Code R;
+    src: url('/apps/images/Envy Code R.ttf')
+}
+
+#center {
+    margin: auto;
+    width: 768px;
+    margin-top: calc((100vh - 512px) / 2);
+}
+
+#container {
+    width: 768px;
+    height: 512px;
+    background-color: rgb(var(--c2));
+    border-radius: 5px;
+    box-shadow: 0px 15px 25px rgb(24, 24, 24);
+}
+
+#board {
+    display: grid;
+    padding: 25px;
+    grid-template-columns: repeat(9, var(--square-width));
+    grid-template-rows: repeat(9, var(--square-width));
+    border-radius: 5px;
+}
+
+.square {
+    border-top: 1px solid rgb(var(--c1));
+    border-left: 1px solid rgb(var(--c1));
+    font-family: Envy Code R, 'Courier New', Courier, monospace;
+    padding: 3px;
+    display: grid;
+    grid-template-areas: "1fr 1fr 1fr" "1fr 1fr 1fr" "1fr 1fr 1fr";
+    font-size: 23px;
+    padding-top: 10px;
+    padding-left: 17px;
+    user-select: none;
+    background-color: rgba(var(--c2))
+}
+
+.square:hover {
+    /* background-color: rgba(var(--c1), 0.2); */
+    filter: brightness(80%);
+}
+
+.square.selected {
+    background-color: red;
+}

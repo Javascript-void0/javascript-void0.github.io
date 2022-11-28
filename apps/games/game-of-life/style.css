@@ -1,0 +1,125 @@
+:root {
+    --c1: #2d2b2a;
+    --c2: #e5dfce;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Envy Code R;
+    background-color: var(--c1);
+    color: var(--c2);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    user-select: none;
+}
+
+::selection {
+    color: var(--c1);
+    background-color: var(--c2);
+}
+
+::moz-selection {
+    color: var(--c1);
+    background-color: var(--c2);
+}
+
+@font-face {
+    font-family: Envy Code R;
+    src: url('/apps/images/Envy Code R.ttf');
+}
+
+.center {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    top: calc(60vh / 2);
+    position: relative;
+    height: 100vh;
+}
+
+.game {
+    height: 100vh;
+}
+
+.grid {
+    background-color: var(--c2);
+    display: grid;
+}
+
+.square {
+    border-top: 1px solid var(--c1);
+    border-left: 1px solid var(--c1);
+    text-align: center;
+    font-size: 6px;
+}
+
+.square[state="dead"] {
+    background-color: var(--c2);
+    color: var(--c1);
+}
+
+.square[state="live"] {
+    background-color: var(--c1);
+    color: var(--c2);
+}
+
+.controls {
+    background-color: var(--c1);
+    width: 70px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 165px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 40px);
+    grid-gap: 15px;
+    padding-top: 15px;
+    box-shadow: 1px 1px 10px #000;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: var(--c2);
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.icon {
+    background-color: var(--c2);
+}
+
+.reset {
+    -webkit-mask: url(/apps/games/game-of-life/images/rotate.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/rotate.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}
+
+.clear {
+    -webkit-mask: url(/apps/games/game-of-life/images/square-x.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/square-x.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}
+
+.play {
+    -webkit-mask: url(/apps/games/game-of-life/images/player-play.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/player-play.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}
+
+.pause {
+    -webkit-mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}

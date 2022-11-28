@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps | Java</title>
+    <link rel="stylesheet" href="/apps/css/style.css">
+    <link rel="stylesheet" href="/apps/css/icons.css">
+</head>
+<body>
+    <div class="center">
+        <script src="/apps/js/template.js" onload="insertHeader()"></script>
+
+        <div class="content">
+
+            <script> // Categories
+                var cats = []
+            </script>
+
+            <h2 class="tier-header">> GAMES</h2><hr><br>
+            <div class="tier" id="0">
+                <script>
+                    apps = [
+                        ['snake', 'apple-arcade'],
+                        ['game-of-life', 'grid'],
+                        ['2048', 'square-2'],
+                        ['sudoku', 'grid-dots'],
+                        ['takuzu', 'square-dot']
+                    ]
+                    loadBlocks(apps, 0, 'games')
+                </script>
+            </div>
+            
+            <h2 class="tier-header">> OTHER</h2><hr><br>
+            <div class="tier" id="-1">
+                <script>
+                    apps = [
+                        ['keyboard-layout', 'keyboard']
+                    ]
+                    loadBlocks(apps, -1, 'other')
+                </script>
+            </div>
+
+            <h2 class="tier-header">> TIER-1: BEGINNER PROJECTS</h2><hr><br>
+            <div class="tier" id="1">
+                <script>
+                    apps = [
+                        ['bin2dec', 'hash'],
+                        ['border-radius-previewer', 'square'],
+                        ['calculator', 'calculator'],
+                        ['christmas-lights', 'christmas-tree']
+                    ]
+                    loadBlocks(apps, 1, 'tier-i')
+                </script>
+            </div>
+            
+            <!-- <h2 class="tier-header">> TIER-2: INTERMEDIATE PROJECTS</h2><hr><br>
+            <div class="tier">
+                <a href="/apps">
+                    <div class="page">
+                    </div>
+                </a>
+            </div>
+            
+            <h2 class="tier-header">> TIER-3: ADVANCED PROJECTS</h2><hr><br>
+            <div class="tier">
+                <a href="/apps#tier-3">
+                    <div class="page">
+
+                    </div>
+                </a>
+            </div> -->
+
+            <div class="footer">
+                Icons: <a href='https://tablericons.com/' target='_blank' rel='noopener nonreferrer'>Tabler Icons</a>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

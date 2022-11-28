@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Keyboard Layout Tester | Java</title>
+    <link rel='stylesheet' href='/apps/css/style.css'>
+    <link rel='stylesheet' href='/apps/other/keyboard-layout/style.css'>
+</head>
+<body>
+
+    <div class='center'>
+        <div id="layout-selector">
+            <div id="layout-qwerty"></div>
+            <div id="layout-dvorak"></div>
+            <div id="layout-colemak"></div>
+            <div id="layout-custom"></div>
+        </div>
+
+        <div id="tester">
+            <div id="textbox">
+                <!-- <div id="layout-title"> -->
+                    <!-- Querty -->
+                <!-- </div> -->
+                <span id="text"></span>
+                <span id="cursor">_</span>
+            </div>
+            <div id="keyboard" style="visibility: none;">
+                <div class="keyboard-row" id="keyboard-row-1">
+
+                </div>
+                <div class="keyboard-row" id="keyboard-row-2">
+
+                </div>
+                <div class="keyboard-row" id="keyboard-row-3">
+
+                </div>
+                <div class="keyboard-row" id="keyboard-row-4">
+
+                </div>
+                <div class="keyboard-row" id="keyboard-row-5">
+
+                </div>
+            </div>
+
+            <div id="menu">
+                <div class="menu-button" onclick="clearTextbox()">clear textbox</div>
+                <div class="menu-button">switch layout</div>
+                <div class="menu-button" onclick="toggleKeyboard()">toggle keyboard</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+    <script type="text/javascript" src="/apps/other/keyboard-layout/script.js"></script>
+</html> 

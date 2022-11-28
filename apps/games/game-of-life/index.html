@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life | Java</title>
+    <link rel="stylesheet" href="/apps/games/game-of-life/style.css">
+    <script type="text/javascript" src="/apps/games/game-of-life/script.js"></script>
+</head>
+<body>
+    <div id="start" class="start" onclick="start()">
+        <div class="controls-def" style="position:fixed;left:120px">
+            <br>
+            <br>
+            < PLAY / PAUSE
+            <br>
+            <br>
+            <br>< RESET
+            <br>
+            <br>
+            <br>< CLEAR
+        </div>
+        <div class="center">
+            Conway's Game of Life
+            <br>
+            <br>Rules:
+            <br>
+            <br>1. Any live cell with fewer than two live neighbors dies, as if by underpopulation. 
+            <br>
+            <br>2. Any live cell with two or three live neighbors lives on to the next generation. 
+            <br>
+            <br>3. Any live cell with more than three live neighbors dies, as if by overpopulation. 
+            <br>
+            <br>4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction. 
+            <br>
+            <br>Click anywhere to start
+        </div>
+    </div>
+    <div class="game">
+        <div class="controls">
+            <div class="button" onclick="playPause()">
+                <div class="icon play" id="playing"></div>
+            </div>
+            <div class="button" onclick="resetGrid()">
+                <div class="icon reset"></div>
+            </div>
+            <div class="button" onclick="clearGrid()">
+                <div class="icon clear"></div>
+            </div>
+        </div>
+        <div class="grid">
+            <script>drawGrid();resetGrid()</script>
+        </div>
+    </div>
+</body>
+</html>
