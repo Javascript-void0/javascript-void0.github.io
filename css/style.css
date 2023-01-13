@@ -33,7 +33,7 @@ a {
 
 a:hover {
     color: var(--secondary) !important;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 [lang=jp] {

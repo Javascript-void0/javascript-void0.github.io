@@ -28,7 +28,7 @@
 
 .menu a div:hover {
     background-color: var(--secondary);
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 
 #ascii-keyboard {
