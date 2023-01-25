@@ -13,5 +13,4 @@ const animeTemplate = `
 	<br>## <span class="secondary">Statistics (via <a href='https://anilist.co'target='_blank' rel='noopener nonreferrer'>Anilist</a>)</span>
 	<br>
 	<div id="anime-data"></div>
-	<script type="text/javascript">loadAnimeData()</script>
 `

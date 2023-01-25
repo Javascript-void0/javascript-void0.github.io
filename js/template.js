@@ -6,6 +6,7 @@ if (currentPage == null) {
     currentPage = 'home'
 }
 
+// back button with bugs :D
 window.addEventListener('popstate', function (event) {
     var state = event.state;
     if (state.previousPageTemplate !== currentPage) {
@@ -13,18 +14,22 @@ window.addEventListener('popstate', function (event) {
     }
 });
 
+// load template
 function template(name = currentPage, pushState = true) {
     sessionStorage.setItem('page', name)
     currentPage = name
     
+    // get function using name of template
     getTemplate = Function('return ' + name + 'Template')()
-    // lines = chunkSubstr(getTemplate.innerHTML, 50)
+    // split string by newlines
     lines = getTemplate.split('<br>')
+    // clear existing content
     document.getElementById('insert-template').innerHTML = ''
-    // document.getElementById('insert-template').innerHTML = getTemplate.innerHTML
+
     if (name == 'anime') {
         lines = addAnimeData(lines)
     }
+
     document.title = capitalize(name + ' | Java')
     docAnimation(lines, lines.length + 1, 0)
 
@@ -33,15 +38,7 @@ function template(name = currentPage, pushState = true) {
     }
 }
 
-// function chunkSubstr(str, size) {
-//     const numChunks = Math.ceil(str.length / size)
-//     const chunks = new Array(numChunks)
-//     for (let i = 0, o = 0; i < numChunks; ++i, o += size) {
-//         chunks[i] = str.substr(o, size)
-//     }
-//     return chunks
-// }
-
+// recursive... :O
 function docAnimation(text, total, i) {
     var insertTemplate = document.getElementById('insert-template')
     setTimeout(function() {

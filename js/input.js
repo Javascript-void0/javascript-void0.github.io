@@ -1,15 +1,20 @@
 document.onkeydown = KeyPress;
 
 function KeyPress(e) {
-    if (menuIsVisible() == true && e.ctrlKey && e.keyCode == 83) {
+
+    // sidebar is visibile, key ctrl + s
+    if (menuIsVisible() && e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
-        toggleMenu()
+        toggleMenu() // hide sidebar
         return
-    } else if (menuIsVisible() == false && e.ctrlKey && e.keyCode == 83) {
+    // sidebar is not visibile, key ctrl + s
+    } else if (!menuIsVisible() && e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
-        toggleMenu()
+        toggleMenu() // show sidebar
         return
     } 
+
+    // console is visible, handle key input
     if (menuIsVisible() == true) {
         // console.log(e.keyCode)
         tempInput = document.getElementById('input').textContent
@@ -17,21 +22,30 @@ function KeyPress(e) {
 
         before = document.getElementById('input').textContent;
         beforeAfterCursor = document.getElementById('input-after-cursor').textContent
+
         if (e.ctrlKey) {
+
+            // backspace
             if (e.keyCode == 8) {
                 if (before.charAt(before.length - 1) == ' ') {
                     before = before.slice(0, -1)
                 }
+                // removeSpacesBack(before)
                 split = before.split(' ')
                 split.splice(-1)
                 document.getElementById('input').textContent = split.join(' ') + ' '
+
+            // delete
             } else if (e.keyCode == 46) {
                 if (beforeAfterCursor.charAt(1) == ' ') {
                     beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
                 }
+                // removeSpacesFront(beforeAfterCursor) // TODO: idk
                 split = beforeAfterCursor.split(' ')
                 split.splice(0, 1)
                 document.getElementById('input-after-cursor').textContent = split.join(' ')
+
+            // left, right
             } else if (e.keyCode == 37 || e.keyCode == 39) {
                 if (e.keyCode == 37) {
                     anotherSpace = false
@@ -53,20 +67,25 @@ function KeyPress(e) {
                     nextEmpty++
                 }
                 MoveCursor(e.keyCode, nextEmpty)
-            } else if (e.keyCode == 83) { // ctrl + s
+
+            // ctrl + s
+            } else if (e.keyCode == 83) {
                 e.preventDefault()
                 toggleMenu()
                 return
             }
+
             Key(e)
             return
-        } else if (e.altKey) {
+
+        } else if (e.altKey) { // alt key does nothing...
             e.preventDefault()
             Key(e)
             return
-        } else {
+        } else { // default...
             e.preventDefault()
         }
+
     } else {
         return
     }

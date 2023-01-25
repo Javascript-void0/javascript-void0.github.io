@@ -23,7 +23,6 @@ function Key(e) {
             letters = document.getElementsByClassName('17')
         }
     } else if (e.keyCode == 18) {
-        console.log(e.code)
         if (e.code == 'AltLeft') {
             letters = document.getElementsByClassName('18a')
         } else {

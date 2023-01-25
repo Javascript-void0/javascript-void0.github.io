@@ -1,10 +1,10 @@
+// help messages + help command
+
 function HelpCommand(text) {
     let texts = text.split(' ')
-    if (typeof texts[1] === 'undefined') {
+    if (typeof texts[1] === 'undefined') { // no parameter of command
         lines = ['CMD            Starts a new instance of the Win',
                  '               dows command interpreter.       ',
-                //  'COLOR          Sets the default console foregro',
-                //  '               und and background colors.      ',
                  'DATE           Displays the date.              ',
                  'ECHO           Displays messages, or turns comm',
                  '               and echoing on or off.          ',
@@ -118,7 +118,7 @@ function HelpCommand(text) {
                 lines = ['Displays the disk volume label and serial numbe',
                          'r, if they exist.                              ']
                 break
-            default:
+            default: // invalid command
                 lines = ['This command is not supported by the help utili',
                          'ty.                                            ']
                 break
@@ -127,17 +127,21 @@ function HelpCommand(text) {
     listToHTML(lines, lines.length + 1, 0)
 }
 
+// converts list of strings to html
 function listToHTML(text, total, i) {
     setTimeout(function() {
         total--;
-        if(total == 0) {
+        if(total == 0) { // base case to break recursion
             NewLine()
             return true;
         }
+
+        // create element with line, add to terminal lines
         temp = document.createElement('div')
         header.append(temp)
         temp.innerHTML = text[i].replaceAll(' ', '&nbsp')
         i++
-        listToHTML(text, total, i);        
+
+        listToHTML(text, total, i); // recursive to add delay :O
     }, 4);
 }

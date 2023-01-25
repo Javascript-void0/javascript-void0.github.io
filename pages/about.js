@@ -36,4 +36,5 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a>
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/juwaii.2' target='_blank' rel='noopener nonreferrer'>juwaii</a>
 	<br>&nbsp&nbsp&nbsposu!: <a href='https://osu.ppy.sh/users/21288466' target='_blank', rel='noopener nonreferrer'>@JavaDaBear</a>
+	<br>&nbsp&nbsp&nbspArcaea: 288 414 570
 `

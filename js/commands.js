@@ -1,30 +1,51 @@
-function RunCommand(text) {
+function removeSpacesFront(text) {
     while (text.charAt(0) === ' ') {
         text = text.substring(1)
     }
+}
+
+function removeSpacesBack(text) {
     while (text.charAt(-1) === ' ') {
         text = text.substring(0, string.length - 1)
     }
+}
+
+// turn text command into action
+function RunCommand(text) {
+
+    removeSpacesFront(text)
+    removeSpacesBack(text)
+
+    // split commands/parameters
     let texts = text.split(' ')
+
     for (i = 0; i < texts.length; i++) {
+        // empty string
         if (texts[i] == '') {
             texts.splice(i, 1)
         }
     }
+
+    // empty command
     if (texts.length == 0) {
         NewLine()
         return
     }
+
     if (texts[0].length > 0) {
         header = document.getElementById('user-commands')
         header.append(temp = document.createElement('span'))
-        upperBase = texts[0].toUpperCase()
+        upperBase = texts[0].toUpperCase() // case insensitive
+
+        // command is page, open page in content
         const pages = ['ABOUT', 'ANIME', 'CREDITS', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
         if (pages.includes(upperBase)) {
-            template(texts[0])
+            template(texts[0]) // open page
             NewLine()
             return
         }
+
+        // base command
         switch (upperBase) {
             case 'PAGES':
                 lines = ['ABOUT          About nobody.                   ',
@@ -60,6 +81,7 @@ function RunCommand(text) {
             case 'DATE':
                 today = new Date().toLocaleDateString()
                 day = new Date().getDay()
+                // day of week to integer idk
                 switch(day) {
                     case 0:
                         day = 'Sun'
@@ -82,7 +104,7 @@ function RunCommand(text) {
                 NewLine()
                 break
             case 'ECHO':
-                line = text.slice(5)
+                line = text.slice(5) // remove initial 'help '
                 if (line.length != 0) {
                     header.append(temp = document.createElement('div'))
                     temp.innerHTML = fillSpace(line)
@@ -280,6 +302,7 @@ function RunCommand(text) {
                          '│   ├───brand-lastfm.svg                      ',
                          '│   ├───Envy-Code-R.ttf                       ',
                          '│   ├───ina.gif                               ',
+                         '│   ├───keqing.png                            ',
                          '│   ├───mugi.png                              ',
                          '│   ├───NotoSansJP-Regular.otf                ',
                          '│   ├───NotoSansSC-Regular.otf                ',

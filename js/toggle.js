@@ -1,3 +1,4 @@
+// update css variables to show/hide sidebar menu
 function toggleMenu(option) {
     root = document.querySelector(':root')
     current = menuIsVisible()
@@ -7,6 +8,7 @@ function toggleMenu(option) {
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
         sessionStorage.setItem('sidebar', 'true')
 
+        // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 161px - var(--terminal-width))'
 
     } else if (current == true || option == false) {
@@ -15,6 +17,7 @@ function toggleMenu(option) {
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
         sessionStorage.setItem('sidebar', 'false')
 
+        // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 101px - var(--terminal-width))'
     }
 }
