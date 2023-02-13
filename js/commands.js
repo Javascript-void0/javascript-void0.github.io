@@ -40,7 +40,7 @@ function RunCommand(text) {
         // command is page, open page in content
         const pages = ['ABOUT', 'ANIME', 'CREDITS', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
         if (pages.includes(upperBase)) {
-            template(texts[0]) // open page
+            template(texts[0].toLowerCase()) // open page
             NewLine()
             return
         }
@@ -54,6 +54,7 @@ function RunCommand(text) {
                          'CREDITS        Assets and stuff.               ',
                          'GARDEN         Never-watered digital garden    ',
                          'HOME           Home Page.                      ',
+                         'LINKS          <a></a>                         ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
                          'SETUP          My EDC (Every-day carry).       ',
@@ -63,12 +64,16 @@ function RunCommand(text) {
                 listToHTML(lines, lines.length + 1, 0)
                 break
             case 'APPS':
-                window.open('/apps')
+                window.open('/apps', '_self')
                 NewLine()
                 break
             case 'DIGITAL-GARDEN':
             case 'GARDEN':
-                window.open('/digital-garden')
+                window.open('/digital-garden', '_self')
+                NewLine()
+                break
+            case 'LINKS':
+                window.open('/links', '_self')
                 NewLine()
                 break
             case 'CMD':
@@ -306,7 +311,8 @@ function RunCommand(text) {
                          '│   ├───mugi.png                              ',
                          '│   ├───NotoSansJP-Regular.otf                ',
                          '│   ├───NotoSansSC-Regular.otf                ',
-                         '│   └───SimpleIconsAnilist.svg                ',
+                         '│   ├───SimpleIconsAnilist.svg                ',
+                         '│   └───ss.jpg                                ',
                          '├───css                                       ',
                          '│   ├───content.css                           ',
                          '│   ├───menu.css                              ',
