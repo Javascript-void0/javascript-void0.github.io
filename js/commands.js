@@ -117,7 +117,7 @@ function RunCommand(text) {
                 NewLine()
                 break
             case 'EXIT':
-                close()
+                window.open('','_self').close()
                 break
             case 'HELP':
                 HelpCommand(text)
