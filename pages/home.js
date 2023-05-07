@@ -33,5 +33,5 @@ const homeTemplate = `
 	<br>
 	<br>### <span class="secondary">Brought to you by my awful web development skills</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp (c) 2022 Java
+	<br>&nbsp&nbsp&nbsp (c) 2023 Java
 `
