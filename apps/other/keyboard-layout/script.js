@@ -1,31 +1,340 @@
-const row1Keys = 14;
-const row1Codes = [192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, 8]
-const row1Chars = [' ', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', ' ']
-const row2Keys = 14;
-const row2Codes = [9, 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 220]
-const row2Chars = [' ', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', ' ']
-const row3Keys = 13;
-const row3Codes = [20, 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, 13]
-const row3Chars = [' ', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", ' ']
-const row4Keys = 12;
-const row4Codes = [16, 90, 88, 67, 86, 66, 78, 77, 188, 190, 191, '16a']
-const row4Chars = [' ', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', ' ']
-const row5Keys = 8;
-const row5Codes = [17, 91, 18, 32, '18a', 92, 93, '17a']
-const row5Chars = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 const textbox = document.getElementById('text')
 textbox.textContent = ''
 
+const keyboardLayout = {
+    "row1": [
+        {
+            "keyCode": "192",
+            "lowercase": ' ',
+            "uppercase": ' '
+        },
+        {
+            "keyCode": "49",
+            "lowercase": '1',
+            'uppercase': '!'
+        },
+        {
+            "keyCode": "50",
+            "lowercase": '2',
+            'uppercase': '@'
+        },
+        {
+            "keyCode": "51",
+            "lowercase": '3',
+            'uppercase': '#'
+        },
+        {
+            "keyCode": "52",
+            "lowercase": '4',
+            'uppercase': '$'
+        },
+        {
+            "keyCode": "53",
+            "lowercase": '5',
+            'uppercase': '%'
+        },
+        {
+            "keyCode": "54",
+            "lowercase": '6',
+            'uppercase': '^'
+        },
+        {
+            "keyCode": "55",
+            "lowercase": '7',
+            'uppercase': '&'
+        },
+        {
+            "keyCode": "56",
+            "lowercase": '8',
+            'uppercase': '*'
+        },
+        {
+            "keyCode": "57",
+            "lowercase": '9',
+            'uppercase': '('
+        },
+        {
+            "keyCode": "48",
+            "lowercase": '0',
+            'uppercase': ')'
+        },
+        {
+            "keyCode": "189",
+            "lowercase": '-',
+            'uppercase': '_'
+        },
+        {
+            "keyCode": "187",
+            "lowercase": '=',
+            'uppercase': '+'
+        },
+        {
+            "keyCode": "8",
+            "lowercase": ' ',
+            'uppercase': ' '
+        }
+    ],
+    "row2": [
+        {
+            "keyCode": "9",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "81",
+            "lowercase": 'q',
+            'uppercase': 'Q'
+        },
+        {
+            "keyCode": "87",
+            "lowercase": 'w',
+            'uppercase': 'W'
+        },
+        {
+            "keyCode": "69",
+            "lowercase": 'e',
+            'uppercase': 'E'
+        },
+        {
+            "keyCode": "82",
+            "lowercase": 'r',
+            'uppercase': 'R'
+        },
+        {
+            "keyCode": "84",
+            "lowercase": 't',
+            'uppercase': 'T'
+        },
+        {
+            "keyCode": "89",
+            "lowercase": 'y',
+            'uppercase': 'Y'
+        },
+        {
+            "keyCode": "85",
+            "lowercase": 'u',
+            'uppercase': 'U'
+        },
+        {
+            "keyCode": "73",
+            "lowercase": 'i',
+            'uppercase': 'I'
+        },
+        {
+            "keyCode": "79",
+            "lowercase": 'o',
+            'uppercase': 'O'
+        },
+        {
+            "keyCode": "80",
+            "lowercase": 'p',
+            'uppercase': 'P'
+        },
+        {
+            "keyCode": "219",
+            "lowercase": '[',
+            'uppercase': '{'
+        },
+        {
+            "keyCode": "221",
+            "lowercase": ']',
+            'uppercase': '}'
+        },
+        {
+            "keyCode": "220",
+            "lowercase": ' ',
+            'uppercase': ' '
+        }
+    ],
+    "row3": [
+        {
+            "keyCode": "20",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "65",
+            "lowercase": 'a',
+            'uppercase': 'A'
+        },
+        {
+            "keyCode": "83",
+            "lowercase": 's',
+            'uppercase': 'S'
+        },
+        {
+            "keyCode": "68",
+            "lowercase": 'd',
+            'uppercase': 'D'
+        },
+        {
+            "keyCode": "70",
+            "lowercase": 'f',
+            'uppercase': 'F'
+        },
+        {
+            "keyCode": "71",
+            "lowercase": 'g',
+            'uppercase': 'G'
+        },
+        {
+            "keyCode": "72",
+            "lowercase": 'h',
+            'uppercase': 'H'
+        },
+        {
+            "keyCode": "74",
+            "lowercase": 'j',
+            'uppercase': 'J'
+        },
+        {
+            "keyCode": "75",
+            "lowercase": 'k',
+            'uppercase': 'K'
+        },
+        {
+            "keyCode": "76",
+            "lowercase": 'l',
+            'uppercase': 'L'
+        },
+        {
+            "keyCode": "59",
+            "lowercase": ';',
+            'uppercase': ':'
+        },
+        {
+            "keyCode": "222",
+            "lowercase": "'",
+            'uppercase': '"'
+        },
+        {
+            "keyCode": "13",
+            "lowercase": ' ',
+            'uppercase': ' '
+        }
+    ],
+    "row4": [
+        {
+            "keyCode": "16",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "90",
+            "lowercase": 'z',
+            'uppercase': 'Z'
+        },
+        {
+            "keyCode": "88",
+            "lowercase": 'x',
+            'uppercase': 'X'
+        },
+        {
+            "keyCode": "67",
+            "lowercase": 'c',
+            'uppercase': 'C'
+        },
+        {
+            "keyCode": "86",
+            "lowercase": 'v',
+            'uppercase': 'V'
+        },
+        {
+            "keyCode": "66",
+            "lowercase": 'b',
+            'uppercase': 'B'
+        },
+        {
+            "keyCode": "78",
+            "lowercase": 'n',
+            'uppercase': 'N'
+        },
+        {
+            "keyCode": "77",
+            "lowercase": 'm',
+            'uppercase': 'M'
+        },
+        {
+            "keyCode": "188",
+            "lowercase": ',',
+            'uppercase': '<'
+        },
+        {
+            "keyCode": "190",
+            "lowercase": '.',
+            'uppercase': '>'
+        },
+        {
+            "keyCode": "191",
+            "lowercase": '/',
+            'uppercase': '?'
+        },
+        {
+            "keyCode": "16a",
+            "lowercase": ' ',
+            'uppercase': ' '
+        }
+    ],
+    "row5": [
+        {
+            "keyCode": "17",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "91",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "18",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "32",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "18a",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "92",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "93",
+            "lowercase": ' ',
+            'uppercase': ' '
+        },
+        {
+            "keyCode": "17a",
+            "lowercase": ' ',
+            'uppercase': ' '
+        }
+    ]
+}
+
+keyElements = []
+
+// initialize keyboard elements
 for (i = 1; i < 6; i++) {
     var row = document.getElementById('keyboard-row-' + i)
-    var rowKeyCount = eval('row' + i + 'Keys')
+    var rowKeyCount = Object.keys(keyboardLayout['row' + i]).length
     row.setAttribute('keys', rowKeyCount)
     for (j = 0; j < rowKeyCount; j++) {
         var key = document.createElement('div')
-        key.id = eval(`row${i}Codes[${j}]`)
+        key.id = keyboardLayout[`row${i}`][j]['keyCode']
         key.classList.add('key')
-        key.textContent = eval(`row${i}Chars[${j}]`)
+        key.textContent = keyboardLayout[`row${i}`][j]['lowercase']
+        key.setAttribute('lowercase', keyboardLayout[`row${i}`][j]['lowercase'])
+        key.setAttribute('uppercase', keyboardLayout[`row${i}`][j]['uppercase'])
         row.append(key)
+        keyElements.push(key)
     }
 }
 
@@ -59,7 +368,12 @@ document.addEventListener('keydown', function() {
         event.preventDefault()
     } else if (event.keyCode == 32) { // space
         textbox.innerHTML += ' '
+    } else if (event.keyCode == 16) { // shift
+        uppercase()
+    } else if (event.keyCode == 20) { // capslock
+        uppercase()
     }
+    
     var key = document.getElementById(event.keyCode)
     if (key) {
         key.setAttribute('press', 'True')
@@ -70,14 +384,28 @@ document.addEventListener('keydown', function() {
     }
 })
 
-document.addEventListener('keyup', function() {
+function lowercase() {
+    for (key of keyElements) {
+        key.textContent = key.getAttribute('lowercase')
+    }
+}
+function uppercase() {
+    for (key of keyElements) {
+        key.textContent = key.getAttribute('uppercase')
+    }
+}
 
+document.addEventListener('keyup', function() {
 
     if (event.keyCode == 20) { // caps lock
         console.log(event.getModifierState('CapsLock'))
         if (event.getModifierState('CapsLock')) {
-            return
+            uppercase()
+        } else {
+            lowercase()
         }
+    } else if (event.keyCode == 16) {
+        lowercase()
     }
 
     var key = document.getElementById(event.keyCode)

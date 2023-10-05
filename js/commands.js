@@ -38,7 +38,7 @@ function RunCommand(text) {
         upperBase = texts[0].toUpperCase() // case insensitive
 
         // command is page, open page in content
-        const pages = ['ABOUT', 'ANIME', 'CREDITS', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
+        const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
         if (pages.includes(upperBase)) {
             template(texts[0].toLowerCase()) // open page
             NewLine()
@@ -51,7 +51,6 @@ function RunCommand(text) {
                 lines = ['ABOUT          About nobody.                   ',
                          'ANIME          Stats and stuff                 ',
                          'APPS           Poorly made applications        ',
-                         'CREDITS        Assets and stuff.               ',
                          'GARDEN         Never-watered digital garden    ',
                          'HOME           Home Page.                      ',
                          'LINKS          <a></a>                         ',
@@ -332,7 +331,6 @@ function RunCommand(text) {
                          '├───pages                                     ',
                          '│   ├───about.js                              ',
                          '│   ├───anime.js                              ',
-                         '│   ├───credits.js                            ',
                          '│   ├───home.js                               ',
                          '│   ├───projects.js                           ',
                          '│   ├───resources.js                          ',
