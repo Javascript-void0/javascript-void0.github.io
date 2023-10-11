@@ -9,8 +9,8 @@
     <script type="text/javascript" src="/apps/games/game-of-life/script.js"></script>
 </head>
 <body>
-    <div id="start" class="start" onclick="start()">
-        <div class="controls-def" style="position:fixed;left:120px">
+    <div id="start" class="start">
+        <div class="controls-def" style="position:fixed;left:120px;line-height: 18.5px;">
             <br>
             <br>
             < PLAY / PAUSE
@@ -20,6 +20,12 @@
             <br>
             <br>
             <br>< CLEAR
+            <br>
+            <br>
+            <br>< RANDOMIZE
+            <br>
+            <br>
+            <br>< PROGRESS (1)
         </div>
         <div class="center">
             Conway's Game of Life
@@ -47,6 +53,12 @@
             </div>
             <div class="button" onclick="clearGrid()">
                 <div class="icon clear"></div>
+            </div>
+            <div class="button" onclick="shuffleGrid()">
+                <div class="icon shuffle"></div>
+            </div>
+            <div class="button" onclick="if (!playing){progress()}">
+                <div class="icon progress"></div>
             </div>
         </div>
         <div class="grid">

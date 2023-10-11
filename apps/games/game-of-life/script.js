@@ -1,17 +1,5 @@
-var gridSize = 10;
+var gridSize = 30;
 var started = false
-
-var startEle = document.getElementById('start')
-if (startEle == null) {
-    started = true
-    if (playing) { playPause() }
-}
-
-function start() {
-    var start = document.getElementById('start')
-    start.remove()
-    started = true
-}
 
 function drawGrid() {
     var grid = document.getElementsByClassName('grid')[0]
@@ -35,24 +23,60 @@ function drawGrid() {
     grid.style.gridTemplateRows = `repeat(${gridY}, ${gridSize}px)`
 }
 
-function mousePos(e) {
-    if (!started) { return }
+function getMouseSquare(e) {
     mouseX = e.clientX
     mouseY = e.clientY
     gridX = (mouseX - (mouseX % gridSize)) / gridSize
     gridY = (mouseY - (mouseY % gridSize)) / gridSize
+    return document.getElementById(`${gridX}, ${gridY}`)
+}
 
-    element = document.getElementById(`${gridX}, ${gridY}`)
-    if (playing) { return }
+var holding = false
+var holdingLastSquare = null
+var holdingLastSquare = null
+function mouseDown(e) {
+
+    if (!started) { 
+        started = true
+        var start = document.getElementById('start')
+        start.remove()
+        return
+    }
+
+    if (playing) {
+        return
+    }
+
+    element = getMouseSquare(e)
+    if (element == holdingLastSquare) { return }
     if (element.attributes['state'].value == 'dead') {
         element.setAttribute('state', 'live')
         push3x3(element, needUpdate)
     } else {
         element.setAttribute('state', 'dead')
     }
+    holdingLastSquare = element
+    holding = true
+}
+function mouseUp(e) {
+    holding = false
 }
 
-document.addEventListener('click', mousePos)
+function mouseMove(e) {
+    if (!started || !holding || playing) {
+        return
+    }
+
+    element = getMouseSquare(e)
+    if (element == holdingLastSquare) { return }
+    element.setAttribute('state', 'live')
+    push3x3(element, needUpdate)
+    holdingLastSquare = element
+}
+
+document.addEventListener('mousemove', mouseMove)
+document.addEventListener('mousedown', mouseDown)
+document.addEventListener('mouseup', mouseUp)
 
 var playing = false;
 
@@ -124,57 +148,76 @@ function clearGrid() {
     needUpdate = []
 }
 
+function shuffleGrid() {
+    if (playing) { playPause() }
+    squares = document.getElementsByClassName('square')
+    needUpdate = []
+    for (square of squares) {
+        if (Math.random() < 0.5) {
+            square.setAttribute('state', 'dead')
+        } else {
+            square.setAttribute('state', 'live')
+        }
+        needUpdate.push(square)
+    }
+    saveGrid()
+}
+
 var needUpdate = []
 
-var play = window.setInterval(function() {
+function progress() {
     // var squares = document.getElementsByClassName('square')
+    for (square of needUpdate) {
+        var state = square.attributes['state'].value
+
+        var neighbors = getNeighbors(square)
+        var liveNeighbors = 0;
+        for (neighbor of neighbors) { // get neighbor states
+            if (neighbor !== null) { // wall / offscreen
+                if (neighbor.attributes['state'].value == 'live') {
+                    liveNeighbors++
+                }
+            }
+        }
+
+        // square.textContent = liveNeighbors
+        // console.log(liveNeighbors)
+
+        if (state == 'dead') {
+            if (liveNeighbors == 3) {
+                square.setAttribute('next-generation', 'live')
+            } else {
+                square.setAttribute('next-generation', 'dead')
+            }
+        }
+
+        if (state == 'live') {
+            if (liveNeighbors < 2 || liveNeighbors > 3) {
+                square.setAttribute('next-generation', 'dead')
+            } else {
+                square.setAttribute('next-generation', 'live')
+            }
+        }
+    }
+
+    var nextGenerationNeedUpdate = []
+
+    for (square of needUpdate) { // next generation
+        if (square.hasAttribute('next-generation')) {
+            square.setAttribute('state', square.attributes['next-generation'].value)
+
+            if (square.attributes['state'].value == 'live') {
+                nextGenerationNeedUpdate = push3x3(square, nextGenerationNeedUpdate)
+            }
+        }
+    }
+
+    needUpdate = [...nextGenerationNeedUpdate]
+}
+
+var play = window.setInterval(function() {
     if (playing) {
-        for (square of needUpdate) {
-            var state = square.attributes['state'].value
-
-            var neighbors = getNeighbors(square)
-            var liveNeighbors = 0;
-            for (neighbor of neighbors) { // get neighbor states
-                if (neighbor !== null) { // wall / offscreen
-                    if (neighbor.attributes['state'].value == 'live') {
-                        liveNeighbors++
-                    }
-                }
-            }
-
-            // square.textContent = liveNeighbors
-            // console.log(liveNeighbors)
-
-            if (state == 'dead') {
-                if (liveNeighbors == 3) {
-                    square.setAttribute('next-generation', 'live')
-                } else {
-                    square.setAttribute('next-generation', 'dead')
-                }
-            }
-
-            if (state == 'live') {
-                if (liveNeighbors < 2 || liveNeighbors > 3) {
-                    square.setAttribute('next-generation', 'dead')
-                } else {
-                    square.setAttribute('next-generation', 'live')
-                }
-            }
-        }
-
-        var nextGenerationNeedUpdate = []
-
-        for (square of needUpdate) { // next generation
-            if (square.hasAttribute('next-generation')) {
-                square.setAttribute('state', square.attributes['next-generation'].value)
-
-                if (square.attributes['state'].value == 'live') {
-                    nextGenerationNeedUpdate = push3x3(square, nextGenerationNeedUpdate)
-                }
-            }
-        }
-
-        needUpdate = [...nextGenerationNeedUpdate]
+        progress()
     }
 }, 10);
 

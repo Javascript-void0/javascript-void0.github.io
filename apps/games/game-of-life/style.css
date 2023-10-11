@@ -65,15 +65,16 @@ body {
 }
 
 .controls {
+    --num-buttons: 5;
     background-color: var(--c1);
     width: 70px;
     position: fixed;
     top: 15px;
     left: 15px;
-    height: 165px;
+    height: calc((40px + 15px) * var(--num-buttons));
     border-radius: 20px;
     display: grid;
-    grid-template-rows: repeat(3, 40px);
+    grid-template-rows: repeat(var(--num-buttons), 40px);
     grid-gap: 15px;
     padding-top: 15px;
     box-shadow: 1px 1px 10px #000;
@@ -120,6 +121,20 @@ body {
 .pause {
     -webkit-mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
     mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}
+
+.shuffle {
+    -webkit-mask: url(/apps/games/game-of-life/images/shuffle.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/shuffle.svg) no-repeat center;
+    background-color: var(--c1);
+    height: 40px;
+}
+
+.progress {
+    -webkit-mask: url(/apps/games/game-of-life/images/next.svg) no-repeat center;
+    mask: url(/apps/games/game-of-life/images/next.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
