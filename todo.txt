@@ -1,0 +1,6 @@
+- organize folders (/assets)
+- apps page to main page
+    - clean up useless apps
+    - apps to individual pages (or embed in main page)
+
+- all pages in main page???

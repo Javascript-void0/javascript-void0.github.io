@@ -3,22 +3,15 @@ const projectsTemplate = `
 	<br>
 	<br># <span class="secondary">Projects</span>
 	<br>
-	<br>## <span class="secondary">ef-utils</span> (Sep 2020 - Jul 2021)
+	<br>## <span class="secondary">al-utils</span>
 	<br>
 	<br>&nbsp&nbsp&nbspSmall utilities for <a href="https://anilist.co" target="_blank" rel="noopener nonreferrer">Anilist</a>. 
-	<br>
-	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/ef-utils" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>] [<a href="https://ef-utils.github.io" target="_blank" rel="noopener nonreferrer"><span class="secondary">Website</span></a>]
-	<br>
-	<br>## <span class="secondary">al-utils</span> (Sep 2020 - Jul 2021)
-	<br>
-	<br>&nbsp&nbsp&nbspSmall utilities for Endless Frontier. 
 	<br>
 	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/al-utils" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>] [<a href="https://al-utils.github.io" target="_blank" rel="noopener nonreferrer"><span class="secondary">Website</span></a>]
 	<br>
 	<br>## <span class="secondary">Umoria</span> (Oct 2021 - Present)
 	<br>
 	<br>&nbsp&nbsp&nbspMinecraft RPG server hosted on <a href="https://minehut.com" target="_blank" rel="noopener nonreferrer">Minehut</a>. 
-	<br>&nbsp&nbsp&nbspVaguely based on <a href="https://umoria.org" target="_blank" rel="noopener nonreferrer">Dungeons of Moria</a> (not really)
 	<br>
 	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/umoria" target="_blank" rel="noopener nonreferrer"><span class="secondary">GitHub</span></a>] [<a href='https://discord.gg/y333BGhxFP' target='_blank' rel='noopener nonreferrer'><span class="secondary">Discord</span></a>]
 	<br>
