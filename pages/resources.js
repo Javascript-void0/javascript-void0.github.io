@@ -17,12 +17,7 @@ const resourcesTemplate = `
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp↳ File sharing<br>
 	<br>&nbsp&nbsp- <a href='https://tablericons.com'target='_blank' rel='noopener nonreferrer'>https://tablericons.com</a>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp↳ Icons for web development<br>
-	<br>&nbsp&nbsp- <a href='https://github.com/Kiuryy/Bookmark_Sidebar'target='_blank' rel='noopener nonreferrer'>https://github.com/Kiuryy/Bookmark_Sidebar</a>
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp↳ Bookmarks in a list
-	<br>
 	<br># <span class="secondary">Site Resources</span>
-    <br>
-    <br>&nbsp&nbsp- Icons: <a href="https://tabler-icons.io" target="_blank" rel="noopener nonreferrer">https://tabler-icons.io</a> and <a href='https://simpleicons.org/'target='_blank' rel='noopener nonreferrer'>https://simpleicons.org/</a>
     <br>
 	<br>&nbsp&nbsp- ASCII Art: <a href="https://www.asciiart.eu/computers/amiga" target="_blank" rel="noopener nonreferrer">https://www.asciiart.eu/computers/amiga</a>
     <br>

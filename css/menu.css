@@ -42,27 +42,30 @@
 }
 
 #github {
-    -webkit-mask: url(../assets/brand-github.svg) no-repeat center;
-    mask: url(../assets/brand-github.svg) no-repeat center;
+    -webkit-mask: url(../assets/icons/github.svg) no-repeat center;
+    mask: url(../assets/icons/github.svg) no-repeat center;
+    transform: scale(0.8);
 }
 
 #instagram {
-    -webkit-mask: url(../assets/brand-instagram.svg) no-repeat center;
-    mask: url(../assets/brand-instagram.svg) no-repeat center;
+    -webkit-mask: url(../assets/icons/instagram.svg) no-repeat center;
+    mask: url(../assets/icons/instagram.svg) no-repeat center;
+    transform: scale(0.8);
 }
 
 #last-fm {
-    -webkit-mask: url(../assets/brand-lastfm.svg) no-repeat center;
-    mask: url(../assets/brand-lastfm.svg) no-repeat center;
+    -webkit-mask: url(../assets/icons/lastfm.svg) no-repeat center;
+    mask: url(../assets/icons/lastfm.svg) no-repeat center;
 }
 
 #anilist {
-    -webkit-mask: url(../assets/SimpleIconsAnilist.svg) no-repeat center;
-    mask: url(../assets/SimpleIconsAnilist.svg) no-repeat center;
+    -webkit-mask: url(../assets/icons/anilist.svg) no-repeat center;
+    mask: url(../assets/icons/anilist.svg) no-repeat center;
     transform: scale(0.7);
 }
 
 #discord {
-    -webkit-mask: url(../assets/brand-discord.svg) no-repeat center;
-    mask: url(../assets/brand-discord.svg) no-repeat center;
+    -webkit-mask: url(../assets/icons/discord.svg) no-repeat center;
+    mask: url(../assets/icons/discord.svg) no-repeat center;
+    transform: scale(0.8);
 }

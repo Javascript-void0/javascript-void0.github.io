@@ -3,7 +3,7 @@ const setupTemplate = `
 	<br>
 	<br># <span class="secondary">Setup</span>
 	<br>
-	<br><img src="/assets/setup.gif" style="width: 200px; margin-left: 30px">
+	<br><img src="/assets/images/setup.gif" style="width: 200px; margin-left: 30px">
 	<br>
 	<br>## <span class="secondary">Software <3</span>
 	<br>

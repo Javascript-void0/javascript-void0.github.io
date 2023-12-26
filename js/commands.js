@@ -38,7 +38,7 @@ function RunCommand(text) {
         upperBase = texts[0].toUpperCase() // case insensitive
 
         // command is page, open page in content
-        const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP']
+        const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS']
         if (pages.includes(upperBase)) {
             template(texts[0].toLowerCase()) // open page
             NewLine()
@@ -53,7 +53,6 @@ function RunCommand(text) {
                          'APPS           Poorly made applications        ',
                          'GARDEN         Never-watered digital garden    ',
                          'HOME           Home Page.                      ',
-                         'LINKS          <a></a>                         ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
                          'SETUP          My EDC (Every-day carry).       ',
@@ -62,17 +61,9 @@ function RunCommand(text) {
                          'Enter the page name into CMD.EXE to open.      ']
                 listToHTML(lines, lines.length + 1, 0)
                 break
-            case 'APPS':
-                window.open('/apps', '_self')
-                NewLine()
-                break
             case 'DIGITAL-GARDEN':
             case 'GARDEN':
                 window.open('/digital-garden', '_self')
-                NewLine()
-                break
-            case 'LINKS':
-                window.open('/links', '_self')
                 NewLine()
                 break
             case 'CMD':

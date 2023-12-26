@@ -8,7 +8,7 @@ const animeTemplate = `
 	<br>&nbsp> Kitsu: <a href='https://kitsu.io/users/java'target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>
 	<br>
-	<img src="assets/mugi.png" style="width: 200px;">
+	<img src="assets/images/mugi.png" style="width: 200px;">
 	<br>
 	<br>## <span class="secondary">Statistics (via <a href='https://anilist.co'target='_blank' rel='noopener nonreferrer'>Anilist</a>)</span>
 	<br>

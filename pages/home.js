@@ -18,7 +18,7 @@ const homeTemplate = `
 	<br>&nbsp&nbspType <insert onclick="insert('pages')">'pages'</insert> for list of pages. 
 	<br>&nbsp&nbspDo <span class="secondary pointer" onclick="toggleMenu()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
 	<br>
-	<br><img src="assets/ina.gif">
+	<br><img src="assets/images/ina.gif">
 	<br>
 	<br># <span class="secondary">Menu</span>
 	<br>
@@ -27,12 +27,11 @@ const homeTemplate = `
 	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
 	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
 	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
+	<br>&nbsp&nbsp> <a onclick="template('apps');return false" href="javascript:void(0);">Apps</a>
 	<br>
 	<br>## <span class="secondary">Subpages</span>
 	<br>
-	<br>&nbsp&nbsp> <a href="/apps">Apps</a>
 	<br>&nbsp&nbsp> <a href="/digital-garden">Digital Garden</a>
-	<br>&nbsp&nbsp> <a href="/links">Links</a>
 	<br>
 	<br>
 	<br>
