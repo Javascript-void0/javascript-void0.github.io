@@ -74,3 +74,9 @@ insert:hover {
 .no-sel {
     user-select: none;
 }
+
+.center {
+    width: 100%; 
+    text-align: center; 
+    white-space: pre;
+}

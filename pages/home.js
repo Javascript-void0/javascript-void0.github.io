@@ -4,17 +4,20 @@ const homeTemplate = `
 	<br>
 	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
 	<br>
-	<br>&nbsp&nbspwelcome to my corner of the internet <span class="secondary">:3</span>
+	<br><div class="center" style="max-width: 600px">welcome to my corner of the internet <span class="secondary">:3</span></div>
 	<br>
 	<br>
 	<br>
-	<br>&nbsp&nbsp======== <span class="secondary">***</span> ========
-	<br>&nbsp&nbsp** <span class="secondary">Beware</span>
-	<br>&nbsp&nbspYou might need a <a href='https://en.wikipedia.org/wiki/Pleiades_(supercomputer)' target='_blank' rel='noopener nonreferrer'>NASA supercomputer</a> to load this stupid website...
-	<br>&nbsp&nbspgood luck <span class="secondary">:I</span>
-	<br>&nbsp&nbsp======== <span class="secondary">***</span> ========
-	<br>
-	<br>
+	<div class="center" style="max-width: 600px">
+======== <span class="secondary">***</span> ========
+** <span class="secondary">Beware</span> **
+
+You might need a <a href='https://en.wikipedia.org/wiki/Pleiades_(supercomputer)' target='_blank' rel='noopener nonreferrer'>NASA supercomputer</a> to 
+load this stupid website...
+
+good luck <span class="secondary">:I</span>
+======== <span class="secondary">***</span> ========
+	</div>
 	<br> ## <span class="secondary">Navigation</span>
     <br>
 	<br>&nbsp&nbspType <insert onclick="insert('help')">'help'</insert> for a list of commands.
