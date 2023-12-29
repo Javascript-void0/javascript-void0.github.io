@@ -59,7 +59,7 @@ insert:hover {
     left: 35px;
 }
 
-.line-through {
+.strikethrough {
     text-decoration: line-through;
 }
 
@@ -69,4 +69,8 @@ insert:hover {
 
 .accent {
     color: var(--accent);
+}
+
+.no-sel {
+    user-select: none;
 }

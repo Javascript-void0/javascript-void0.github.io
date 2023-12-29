@@ -1,3 +1,4 @@
+const animeAnimation = true
 const animeTemplate = `
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspAnime
 	<br>

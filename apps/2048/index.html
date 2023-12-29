@@ -5,75 +5,75 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>2048 | Java</title>
-    <link rel='stylesheet' href='/apps/css/style.css'>
-    <script type="text/javascript" src="/apps/games/2048/script.js"></script>
+    <!-- <link rel='stylesheet' href='/apps/css/style.css'> -->
+    <script type="text/javascript" src="/apps/2048/script.js"></script>
 </head>
 <body>
-    <div class='center'>
+    <div class="app" id="app">
 
-        <script src="/apps/js/template.js" onload="insertHeader()"></script>
-        
-        <div class='content'>
-            <h2 class='tier-header'>> 2048</h2><hr><br>
-            <div class="app" id="app">
-
-                <script type="text/javascript" src="/apps/games/2048/swipe.js"></script>
+        <script type="text/javascript" src="/apps/2048/swipe.js"></script>
                 
-                <div class="grid" id="grid">
-                    <script>
-                        for (y = 0; y < 4; y++) {
-                            for (x = 0; x < 4; x++) {
-                                ele = document.createElement('div')
-                                ele.classList.add('square')
-                                // ele.textContent = `${x}|${y} ` // show coords
-                                ele.id = `${x}, ${y}`
-                                ele.setAttribute('n', '')
-                                document.getElementById('grid').append(ele)
-                            }
-                        }
-                        loadNew()
-                    </script>
-                </div>
-                <div class="menu">
-                    <div class="score" id="score">
-                        <script>
-                            ele = document.getElementById('score')
-                            score.innerHTML = ele.innerHTML = `Score: ${score}<br><br>Best: ${best}`
-                        </script>
-                    </div>
-                    <div class="new-game" onclick="loadNew()">
-                        New Game
-                    </div>
-                </div>
-                <div class="credits">Palette: <a href='https://lospec.com/palette-list/lost-century' target='_blank' rel='noopener nonreferrer'>Lost Century</a></div>
+        <div class="grid" id="grid">
+            <script>
+                for (y = 0; y < 4; y++) {
+                    for (x = 0; x < 4; x++) {
+                        ele = document.createElement('div')
+                        ele.classList.add('square')
+                        // ele.textContent = `${x}|${y} ` // show coords
+                        ele.id = `${x}, ${y}`
+                        ele.setAttribute('n', '')
+                        document.getElementById('grid').append(ele)
+                    }
+                }
+                loadNew()
+            </script>
+        </div>
+        <div class="menu">
+            <div class="score" id="score">
+                <script>
+                    ele = document.getElementById('score')
+                    score.innerHTML = ele.innerHTML = `Score: ${score}<br><br>Best: ${best}`
+                </script>
+            </div>
+            <div class="new-game" onclick="loadNew()">
+                New Game
             </div>
         </div>
     </div>
     <style>
+        :root {
+            --c1: 45, 43, 42;
+            --c2: 229, 223, 206;
+        }
+
+        body {
+            background-color: rgb(var(--c1));
+        }
+
         .app {
-            background-color: rgb(var(--c2), 0.03);
-            width: 300px;
+            /* background-color: rgb(var(--c2), 0.03); */
+            width: 80vw;
             margin: auto;
-            height: 450px;
+            height: 85vh;
             margin-top: 60px;
-            margin-bottom: 80px;
-            border-radius: 10px;
+            /* border-radius: 10px;
             border: 1px solid rgb(var(--c2), 0.25);
-            box-shadow: 0px 10px 25px #1e1e1e;
+            box-shadow: 0px 10px 25px #1e1e1e; */
             padding-top: 20px;
             color: rgb(var(--c2));
-            position: relative;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            width: 260px;
-            height: 260px;
+            width: calc(80vw - 40px - 3vw);
+            height: calc(80vw - 40px - 3vw);
             margin-left: 20px;
-            gap: 6px;
-            outline: 6px solid rgb(var(--c2), 0.8);
+            gap: 1.5vw;
+            padding: 1.5vw;
+            border-radius: 1vw !important;
+            /* outline: 1.5vw solid rgb(var(--c2), 0.8); */
             background-color: rgb(var(--c2), 0.8);
             box-shadow: 0 0 1px 0px rgb(var(--c2), 0.8) inset, 0 0 1px 0px rgb(var(--c2), 0.8);
             border-radius: 0.1px;
@@ -84,8 +84,8 @@
             border-radius: 4px;
             font-family: Envy Code R;
             text-align: center;
-            line-height: 60px;
-            font-size: larger;
+            padding-top: 2.5vw;
+            font-size: 10vw;
             color: rgb(var(--c2));
         }
 
@@ -102,20 +102,22 @@
             margin: 20px;
             margin-top: 30px;
             grid-template-columns: 1fr 1fr;
+            font-size: 5vw;
         }
 
         .new-game {
             background: rgb(var(--c2), 0.3);
             font-family: Envy Code R;
-            width: 100px;
+            width: 30vw;
             text-align: center;
-            margin-left: 30px;
-            height: 30px;
+            margin-left: auto;
+            height: 8vw;
             padding-top: 10px;
             border-radius: 10px;
             transition-duration: 0.3s;
             user-select: none;
             cursor: pointer;
+            font-size: 5vw;
         }
 
         .new-game:hover {
@@ -124,18 +126,7 @@
 
         .score {
             font-family: Envy Code R;
-        }
-
-        .credits {
-            font-family: Envy Code R;
-            position: absolute;
-            margin-left: 20px;
-            bottom: 20px;
-        }
-
-        .credits a {
-            color: rgb(var(--c2));
-            font-family: Envy Code R;
+            line-height: 4vw;
         }
 
         [n="2"]::after { /* https://lospec.com/palette-list/lost-century */

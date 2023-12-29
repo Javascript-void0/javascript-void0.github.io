@@ -1,3 +1,4 @@
+const setupAnimation = true
 const setupTemplate = `
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
 	<br>
@@ -9,7 +10,7 @@ const setupTemplate = `
 	<br>
 	<br>&nbsp&nbsp&nbsp<span class="secondary">-- Laptop (Windows): </span>
 	<br>&nbsp&nbsp&nbspNote-taking: <a href="https://obsidian.md" target="_blank" rel="noopener nonreferrer">Obsidian</a>
-	<br>&nbsp&nbsp<span style="text-decoration: line-through">&nbspNote-taking: <a href="https://slite.com" target="_blank" rel="noopener nonreferrer">Slite</a>&nbsp</span>
+	<br>&nbsp&nbsp<span class="strikethrough">&nbspNote-taking: <a href="https://slite.com" target="_blank" rel="noopener nonreferrer">Slite</a>&nbsp</span>
 	<br>&nbsp&nbsp&nbspDrawing: <a href="https://firealpaca.com/" target="_blank" rel="noopener nonreferrer">FireAlpaca</a>
 	<br>&nbsp&nbsp&nbspDrawing: OpenCanvas1.1
 	<br>&nbsp&nbsp&nbspTools: <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener nonreferrer">Microsoft PowerToys</a>

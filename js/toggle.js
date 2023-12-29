@@ -53,3 +53,34 @@ function returnMenuToggle() {
         }
     }
 }
+
+const onlyContentThreshold = 870
+const onlySidebarThreshold = 567
+
+function manageSidebar() {
+    if (window.innerWidth > onlyContentThreshold || 
+        window.innerWidth < onlySidebarThreshold) {
+        toggleMenu() // show sidebar
+    } else {
+        // TODO: show notif
+    }
+}
+
+function manageLayoutByWidth() {
+    // <870, only show content
+    if (window.innerWidth < onlyContentThreshold) {
+        if (menuIsVisible()) {
+            toggleMenu(false)
+            toggleContent(true)
+        }
+    } else {
+        toggleContent(true)
+    }
+
+    // <567, only show terminal
+    if (window.innerWidth < onlySidebarThreshold) {
+        if (!menuIsVisible()) {
+            toggleMenu(true)
+        }
+    }
+}

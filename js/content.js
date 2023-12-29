@@ -42,22 +42,7 @@ setInterval(function() {
     }
     updateHeight()
 
-    // <870, only show content
-    if (window.innerWidth < 870) {
-        if (menuIsVisible()) {
-            toggleMenu(false)
-            toggleContent(true)
-        }
-    } else {
-        toggleContent(true)
-    }
-
-    // <567, only show terminal
-    if (window.innerWidth < 567) {
-        if (!menuIsVisible()) {
-            toggleMenu(true)
-        }
-    }
+    manageLayoutByWidth()
 
 }, 10);
 

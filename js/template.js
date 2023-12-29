@@ -1,4 +1,5 @@
 var currentPage = 'home'
+const insertTemplate = document.getElementById('insert-template')
 
 currentPage = sessionStorage.getItem('page')
 if (currentPage == null) {
@@ -21,6 +22,7 @@ function template(name = currentPage, pushState = true) {
     
     // get function using name of template
     getTemplate = Function('return ' + name + 'Template')()
+    doAnimation = Function('return ' + name + 'Animation')()
     // split string by newlines
     lines = getTemplate.split('<br>')
     // clear existing content
@@ -31,7 +33,18 @@ function template(name = currentPage, pushState = true) {
     }
 
     document.title = capitalize(name + ' | Java')
-    docAnimation(lines, lines.length + 1, 0)
+    if (doAnimation) {
+        docAnimation(lines, lines.length + 1, 0)
+    } else {
+        for (line of lines) {
+            insertTemplate.append(temp = document.createElement('div'))
+            temp.innerHTML = temp.innerHTML + line + '<br>'
+        }
+    }
+
+    if (name == 'apps') {
+        loadAppPage()
+    }
 
     if (pushState) {
         history.pushState({previousPageTemplate: name}, '', '/')
@@ -40,7 +53,6 @@ function template(name = currentPage, pushState = true) {
 
 // recursive... :O
 function docAnimation(text, total, i) {
-    var insertTemplate = document.getElementById('insert-template')
     setTimeout(function() {
         total--;
         if (total == 0) {

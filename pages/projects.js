@@ -1,3 +1,4 @@
+const projectsAnimation = true
 const projectsTemplate = `
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspProjects
 	<br>

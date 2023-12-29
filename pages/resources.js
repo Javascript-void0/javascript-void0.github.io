@@ -1,3 +1,4 @@
+const resourcesAnimation = true
 const resourcesTemplate = `
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspResources
 	<br>

@@ -1,9 +1,12 @@
+const homeAnimation = true
 const homeTemplate = `
 	&nbsp&nbspHome
 	<br>
-	<br># <span class="secondary">Welcome</span>
+	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
 	<br>
 	<br>&nbsp&nbspwelcome to my corner of the internet <span class="secondary">:3</span>
+	<br>
+	<br>
 	<br>
 	<br>&nbsp&nbsp======== <span class="secondary">***</span> ========
 	<br>&nbsp&nbsp** <span class="secondary">Beware</span>
@@ -16,7 +19,9 @@ const homeTemplate = `
     <br>
 	<br>&nbsp&nbspType <insert onclick="insert('help')">'help'</insert> for a list of commands.
 	<br>&nbsp&nbspType <insert onclick="insert('pages')">'pages'</insert> for list of pages. 
-	<br>&nbsp&nbspDo <span class="secondary pointer" onclick="toggleMenu()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
+	<br>&nbsp&nbspDo <span class="secondary pointer no-sel" onclick="manageSidebar()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
+	<br>
+	<br>&nbsp&nbsp<span class="secondary">*</span> Side panel is unavailable if window too narrow. 
 	<br>
 	<br><img src="assets/images/ina.gif">
 	<br>

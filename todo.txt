@@ -1,7 +1,12 @@
 - [x] organize folders (/assets)
-- [ ] apps page to main page
-    - [ ] clean up useless apps
+- [x] apps page to main page
+    - [x] clean up useless apps
     - [ ] apps to individual pages (or embed in main page)
 - [x] change svg icons
 - [ ] all pages in main page???
     - [ ] load custom css of subpage before content
+
+TODOs
+
+- [ ] js/toggle.js - notification system?
+- [ ] fix border overflowing

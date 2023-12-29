@@ -5,63 +5,62 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Snake | Java</title>
-    <link rel='stylesheet' href='/apps/css/style.css'>
+    <!-- <link rel='stylesheet' href='/apps/css/style.css'> -->
 </head>
 <body>
-    <div class='center'>
-
-        <script src="/apps/js/template.js" onload="insertHeader()"></script>
-        
-        <div class='content'>
-            <h2 class='tier-header'>> Snake</h2><hr><br>
-            <div class="app" id="app">
-                <div class="grid" id="grid">
-                    <script>
-                        for (y = 0; y < 15; y++) {
-                            for (x = 0; x < 15; x++) {
-                                square = document.createElement('div')
-                                square.classList.add('square')
-                                square.id = x + ', ' + y
-                                grid = document.getElementById('grid')
-                                if ((x + y) % 2 == 1) {
-                                    square.style.backgroundColor = 'rgba(var(--c1), 0.06)'
-                                }
-                                grid.append(square)
-                            }
+    <div class="app" id="app">
+        <div class="grid" id="grid">
+            <script>
+                for (y = 0; y < 15; y++) {
+                    for (x = 0; x < 15; x++) {
+                        square = document.createElement('div')
+                        square.classList.add('square')
+                        square.id = x + ', ' + y
+                        grid = document.getElementById('grid')
+                        if ((x + y) % 2 == 1) {
+                            square.style.backgroundColor = 'rgba(var(--c1), 0.06)'
                         }
-                    </script>
+                        grid.append(square)
+                    }
+                }
+            </script>
+        </div>
+        <div class="menu">
+            <div class="left">
+                <div class="score">
+                    Score: 0
                 </div>
-                <div class="menu">
-                    <div class="left">
-                        <div class="score">
-                            Score: 0
-                        </div>
-                        <div id="message">Press Any <br>Key to Start</div>
-                    </div>
-                </div>
+                <div id="message">Press Any <br>Key to Start<br><br>[warning] very buggy</div>
             </div>
         </div>
     </div>
     <style>
+        :root {
+            --c1: 45, 43, 42;
+            --c2: 229, 223, 206;
+        }
+
+        body {
+            background-color: rgb(var(--c1));
+        }
+        
         .app {
-            background-color: rgb(var(--c2), 0.03);
-            width: 300px;
+            /* background-color: rgb(var(--c2), 0.03); */
+            width: 80vw;
             margin: auto;
-            height: 450px;
+            height: 85vh;
             margin-top: 60px;
-            margin-bottom: 80px;
-            border-radius: 10px;
+            /* border-radius: 10px;
             border: 1px solid rgb(var(--c2), 0.25);
-            box-shadow: 0px 10px 25px #1e1e1e;
-            /* text-align: center; */
+            box-shadow: 0px 10px 25px #1e1e1e; */
             padding-top: 20px;
             color: rgb(var(--c2));
         }
 
         .grid {
             background-color: rgb(var(--c2));
-            height: 260px;
-            width: 260px;
+            width: calc(80vw - 40px);
+            height: calc(80vw - 40px);
             margin-left: 20px;
             border-radius: 3px;
             display: grid;
@@ -70,19 +69,21 @@
         }
         
         .square {
-            width: calc(260px / 15);
-            height: calc(260px / 15);
             color:rgb(var(--c1));
             font-size: 22px;
             line-height: 78%;
         }
 
         .apple {
-            color: rgb(221, 100, 100);
+            background-color: rgb(221, 100, 100) !important;
         }
 
         .snake {
-            color: rgb(78, 194, 130);
+            background-color: rgb(78, 194, 130) !important;
+        }
+
+        .menu {
+            font-size: 5vw;
         }
 
         .score {
@@ -181,12 +182,10 @@
                 y = s[1]
                 square = document.getElementById(x + ', ' + y)
                 square.classList.add('snake')
-                square.textContent = '◼'
             }
 
             square = document.getElementById(apple[0] + ', ' + apple[1])
             square.classList.add('apple')
-            square.textContent = '◼'
         }
 
         function update() {

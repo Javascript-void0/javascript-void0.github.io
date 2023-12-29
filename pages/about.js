@@ -1,3 +1,4 @@
+const aboutAnimation = true
 const aboutTemplate = `
 	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
 	<br>
@@ -5,7 +6,7 @@ const aboutTemplate = `
 	<br>
 	<br>&nbsp&nbspHey, I'm **insert boring stuff about me**
 	<br>
-	<br><img src="assets/takina.gif" style="width: 300px; padding-left: 30px; filter: grayscale(0.4)">
+	<br><img src="assets/images/takina.gif" style="width: 300px; padding-left: 30px; filter: grayscale(0.4)">
 	<br>
 	<br>## <span class="secondary">Interests</span>
 	<br>
@@ -16,7 +17,7 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspPiano
 	<br>&nbsp&nbsp&nbspArt
 	<br>
-	<br>## <span class="secondary"><span class="line-through">Socials</span></span>
+	<br>## <span class="secondary"><span class="strikethrough">Socials</span></span>
 	<br>
 	<br>&nbsp&nbsp&nbspDiscord: javascript_void0
 	<br>&nbsp&nbsp&nbspInstagram: <a href='https://www.instagram.com/v.lucent/' target='_blank' rel='noopener nonreferrer'>@v.lucent</a>
@@ -36,5 +37,5 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (quit)
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x pt)
-	<br>&nbsp&nbsp&nbspEndless Frontier: KL 940~
+	<br>&nbsp&nbsp&nbspEndless Frontier: KL 940-ish
 `

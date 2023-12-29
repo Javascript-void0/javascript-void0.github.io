@@ -1,6 +1,15 @@
+:root {
+    --c1: #2d2b2a;
+    --c2: #e5dfce;
+}
+
+body {
+    background-color: var(--c1)
+}
+
 @font-face {
     font-family: Envy Code R;
-    src: url('/apps/images/Envy Code R.ttf');
+    src: url('/assets/fonts/Envy-Code-R.ttf');
 }
 
 * {
@@ -9,7 +18,10 @@
 
 
 .center {
+    max-width: 1000px;
+    width: auto;
     margin: auto;
+    height: 100vh;
 }
 
 #layout-selector {

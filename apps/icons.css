@@ -1,0 +1,19 @@
+#apple-arcade {
+    -webkit-mask: url(/apps/images/apple-arcade.svg) no-repeat center;
+    mask: url(/apps/images/apple-arcade.svg) no-repeat center;
+}
+
+#grid {
+    -webkit-mask: url(/apps/images/grid.svg) no-repeat center;
+    mask: url(/apps/images/grid.svg) no-repeat center;
+}
+
+#square-2 {
+    -webkit-mask: url(/apps/images/square-2.svg) no-repeat center;
+    mask: url(/apps/images/square-2.svg) no-repeat center;
+}
+
+#keyboard {
+    -webkit-mask: url(/apps/images/keyboard.svg) no-repeat center;
+    mask: url(/apps/images/keyboard.svg) no-repeat center;
+}

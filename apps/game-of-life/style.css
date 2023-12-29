@@ -26,7 +26,7 @@ body {
 
 @font-face {
     font-family: Envy Code R;
-    src: url('/apps/images/Envy Code R.ttf');
+    src: url('/assets/fonts/Envy-Code-R.ttf');
 }
 
 .center {
@@ -98,43 +98,43 @@ body {
 }
 
 .reset {
-    -webkit-mask: url(/apps/games/game-of-life/images/rotate.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/rotate.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/rotate.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/rotate.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
 
 .clear {
-    -webkit-mask: url(/apps/games/game-of-life/images/square-x.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/square-x.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/square-x.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/square-x.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
 
 .play {
-    -webkit-mask: url(/apps/games/game-of-life/images/player-play.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/player-play.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/player-play.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/player-play.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
 
 .pause {
-    -webkit-mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/player-pause.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/player-pause.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/player-pause.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
 
 .shuffle {
-    -webkit-mask: url(/apps/games/game-of-life/images/shuffle.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/shuffle.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/shuffle.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/shuffle.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }
 
 .progress {
-    -webkit-mask: url(/apps/games/game-of-life/images/next.svg) no-repeat center;
-    mask: url(/apps/games/game-of-life/images/next.svg) no-repeat center;
+    -webkit-mask: url(/apps/game-of-life/images/next.svg) no-repeat center;
+    mask: url(/apps/game-of-life/images/next.svg) no-repeat center;
     background-color: var(--c1);
     height: 40px;
 }

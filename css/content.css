@@ -50,7 +50,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    /* -ms-overflow-style: none;  Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
 
@@ -69,4 +69,12 @@
     left: 4px;
     width: calc(100vw - 161px - var(--terminal-width));
     height: calc(100vh - 150px);
+}
+
+#footer {
+    white-space: nowrap;
+}
+
+#header {
+    white-space: nowrap;
 }
