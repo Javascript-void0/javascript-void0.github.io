@@ -58,15 +58,6 @@ const initialContentThreshold = 1050
 const onlyContentThreshold = 870
 const onlySidebarThreshold = 567
 
-function manageSidebar() {
-    if (window.innerWidth > onlyContentThreshold || 
-        window.innerWidth < onlySidebarThreshold) {
-        toggleMenu() // show sidebar
-    } else {
-        // TODO: show notif
-    }
-}
-
 function manageLayoutByWidth() {
     // <870, only show content
     if (window.innerWidth < onlyContentThreshold) {

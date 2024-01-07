@@ -9,7 +9,6 @@ function loadAppPage() {
     insert = document.getElementById('insert-template')
     div = document.createElement('div')
     div.id = 'app-container'
-    div.classList.add('width')
     insert.append(div)
     loadApps();
 }

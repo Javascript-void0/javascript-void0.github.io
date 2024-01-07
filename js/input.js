@@ -10,7 +10,7 @@ function KeyPress(e) {
     // sidebar is not visibile, key ctrl + s
     } else if (!menuIsVisible() && e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
-        manageSidebar()
+        ableToggle()
         return
     } 
 

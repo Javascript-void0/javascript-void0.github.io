@@ -46,6 +46,7 @@ a:hover {
 
 insert {
     color: var(--secondary);
+    user-select: none;
 }
 
 insert:hover {

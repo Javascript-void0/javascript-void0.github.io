@@ -20,9 +20,9 @@ good luck <span class="secondary">:I</span>
 	</div>
 	<br> ## <span class="secondary">Navigation</span>
     <br>
-	<br>&nbsp&nbspType <insert onclick="insert('help')">'help'</insert> for a list of commands.
-	<br>&nbsp&nbspType <insert onclick="insert('pages')">'pages'</insert> for list of pages. 
-	<br>&nbsp&nbspDo <span class="secondary pointer no-sel" onclick="manageSidebar()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
+	<br>&nbsp&nbspType <insert onclick="ableType('help')">'help'</insert> for a list of commands.
+	<br>&nbsp&nbspType <insert onclick="ableType('pages')">'pages'</insert> for list of pages. 
+	<br>&nbsp&nbspDo <span class="secondary pointer no-sel" onclick="ableToggle()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
 	<br>
 	<br>&nbsp&nbsp<span class="secondary">*</span> Side panel is unavailable if window too narrow. 
 	<br>
