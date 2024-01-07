@@ -54,6 +54,7 @@ function returnMenuToggle() {
     }
 }
 
+const initialContentThreshold = 1050
 const onlyContentThreshold = 870
 const onlySidebarThreshold = 567
 
@@ -82,5 +83,11 @@ function manageLayoutByWidth() {
         if (!menuIsVisible()) {
             toggleMenu(true)
         }
+    }
+}
+
+function manageInitialLayout() {
+    if (window.innerWidth < initialContentThreshold) {
+        toggleMenu(false)
     }
 }

@@ -17,7 +17,7 @@ footer.append(temp = document.createElement('div'))
 temp.innerHTML = windowFooter[0].replaceAll(' ', '&nbsp')
 temp.setAttribute('id', 'footer')
 
-
+manageInitialLayout()
 
 // loop to resize ascii window, main()
 setInterval(function() {
