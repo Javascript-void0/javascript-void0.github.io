@@ -25,10 +25,11 @@
             <br>< RANDOMIZE
             <br>
             <br>
-            <br>< PROGRESS (1)
+            <br>< PROGRESS ONE GENERATION
         </div>
         <div class="center">
             Conway's Game of Life
+            <br>
             <br>
             <br>Rules:
             <br>
@@ -40,7 +41,11 @@
             <br>
             <br>4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction. 
             <br>
+            <br>
+            <br>
             <br>Click anywhere to start
+            <br>
+            <br>Zoom out to increase grid size
         </div>
     </div>
     <div class="game">
@@ -61,7 +66,7 @@
                 <div class="icon progress"></div>
             </div>
         </div>
-        <div class="grid">
+        <div class="grid" id="grid">
             <script>drawGrid();resetGrid()</script>
         </div>
     </div>

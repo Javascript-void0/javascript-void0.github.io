@@ -7,20 +7,33 @@ function drawGrid() {
     height = window.innerHeight
     gridX = Math.ceil(width / gridSize)
     gridY = Math.ceil(height / gridSize)
-    for (y = 0; y < gridY; y++) {
-        for (x = 0; x < gridX; x++) {
-            var square = document.createElement('div')
-            square.id = `${x}, ${y}`
-            square.classList.add('square')
-            square.setAttribute('state', 'dead')
-            square.setAttribute('x', x)
-            square.setAttribute('y', y)
-            grid.append(square)
-        }
-    }
+    console.log(gridX, gridY)
 
     grid.style.gridTemplateColumns = `repeat(${gridX}, ${gridSize}px)`
     grid.style.gridTemplateRows = `repeat(${gridY}, ${gridSize}px)`
+
+    squares = document.getElementsByClassName('square')
+    for (square of squares) {
+        square.style.display = 'none'
+    }
+
+    for (y = 0; y < gridY; y++) {
+        for (x = 0; x < gridX; x++) {
+            id = `${x}, ${y}`
+            square = document.getElementById(id)
+            if (square !== null) {
+                square.style.display = ''
+            } else {
+                var square = document.createElement('div')
+                square.id = id
+                square.classList.add('square')
+                square.setAttribute('state', 'dead')
+                square.setAttribute('x', x)
+                square.setAttribute('y', y)
+                grid.insertBefore(square, grid.childNodes[y*gridX+x])
+            }
+        }
+    }
 }
 
 function getMouseSquare(e) {
@@ -117,9 +130,9 @@ if (saveNeedUpdate == null) {
 function resetGrid() {
     if (playing) { playPause() }
     if (typeof save !== 'undefined' && save !== null) {
-        grid = document.getElementsByClassName('grid')[0]
         grid.innerHTML = save
     }
+    drawGrid()
     needUpdate = []
     squares = document.getElementsByClassName('square')
     for (square of squares) {
@@ -131,8 +144,8 @@ function resetGrid() {
 }
 
 function saveGrid() {
-    grid = document.getElementsByClassName('grid')[0]
     save = grid.innerHTML
+    // TODO: only save alive?
     sessionStorage.setItem('save', save)
 }
 
@@ -153,12 +166,14 @@ function shuffleGrid() {
     squares = document.getElementsByClassName('square')
     needUpdate = []
     for (square of squares) {
-        if (Math.random() < 0.5) {
-            square.setAttribute('state', 'dead')
-        } else {
-            square.setAttribute('state', 'live')
+        if (square.style.display != 'none') {
+            if (Math.random() < 0.5) {
+                square.setAttribute('state', 'dead')
+            } else {
+                square.setAttribute('state', 'live')
+            }
+            needUpdate.push(square)
         }
-        needUpdate.push(square)
     }
     saveGrid()
 }
@@ -250,4 +265,8 @@ function push3x3(element, list) {
         }
     }
     return list
+}
+
+window.onresize = function(event) {
+    drawGrid();
 }
