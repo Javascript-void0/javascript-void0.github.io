@@ -148,7 +148,6 @@ function merge(dir) {
                 }
             }
         }
-        gameOver()
     }
 }
 
@@ -228,13 +227,4 @@ function addScore(add) {
     }
     sessionStorage.setItem('best', best)
     ele.innerHTML = `Score: ${score}<br><br>Best: ${best}`
-}
-
-function gameOver() {
-    if (score > best) {
-        best = score
-    }
-    sessionStorage.setItem('best', best)
-    ele = document.getElementById('score')
-    ele.innerHTML = `Score: ${score}<br><br>Best: ${best}<br><br>GAME OVER!`
 }

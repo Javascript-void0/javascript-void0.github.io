@@ -5,7 +5,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>2048 | Java</title>
-    <!-- <link rel='stylesheet' href='/apps/css/style.css'> -->
     <script type="text/javascript" src="/apps/2048/script.js"></script>
 </head>
 <body>
@@ -47,18 +46,19 @@
         }
 
         @font-face {
-            font-family: Envy-Code-R;
-            src: url(../assets/fonts/Envy-Code-R.ttf)
+            font-family: Envy Code R;
+            src: url(../../assets/fonts/Envy-Code-R.ttf)
         }
 
         body {
             background-color: rgb(var(--c1));
-            font-family: Envy-Code-R;
+            font-family: Envy Code R;
         }
 
         .app {
             /* background-color: rgb(var(--c2), 0.03); */
-            width: 80vw;
+            width: 80%;
+            max-width: 500px;
             margin: auto;
             height: 85vh;
             margin-top: 60px;
@@ -73,13 +73,12 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            width: calc(80vw - 40px - 3vw);
-            height: calc(80vw - 40px - 3vw);
+            width: calc(100% - 40px - 3%);
+            aspect-ratio: 1 / 1;
             margin-left: 20px;
-            gap: 1.5vw;
-            padding: 1.5vw;
-            border-radius: 1vw !important;
-            /* outline: 1.5vw solid rgb(var(--c2), 0.8); */
+            gap: 1.5%;
+            padding: 1.5%;
+            border-radius: 2% !important;
             background-color: rgb(var(--c2), 0.8);
             box-shadow: 0 0 1px 0px rgb(var(--c2), 0.8) inset, 0 0 1px 0px rgb(var(--c2), 0.8);
             border-radius: 0.1px;
@@ -90,8 +89,9 @@
             border-radius: 4px;
             font-family: Envy Code R;
             text-align: center;
-            padding-top: 2.5vw;
-            font-size: 10vw;
+            padding-top: 20%;
+            font-size: min(8vw, 300%);
+            overflow-y: hidden;
             color: rgb(var(--c2));
         }
 
@@ -108,22 +108,20 @@
             margin: 20px;
             margin-top: 30px;
             grid-template-columns: 1fr 1fr;
-            font-size: 5vw;
         }
 
         .new-game {
             background: rgb(var(--c2), 0.3);
             font-family: Envy Code R;
-            width: 30vw;
+            width: 85%;
             text-align: center;
             margin-left: auto;
-            height: 8vw;
+            aspect-ratio: 7 / 2;
             padding-top: 10px;
             border-radius: 10px;
-            transition-duration: 0.3s;
             user-select: none;
             cursor: pointer;
-            font-size: 5vw;
+            font-size: min(5vw, 200%);
         }
 
         .new-game:hover {
@@ -132,7 +130,8 @@
 
         .score {
             font-family: Envy Code R;
-            line-height: 4vw;
+            line-height: 75%;
+            font-size: min(5vw, 200%);
         }
 
         [n="2"]::after { /* https://lospec.com/palette-list/lost-century */

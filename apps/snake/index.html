@@ -41,8 +41,8 @@
         }
 
         @font-face {
-            font-family: Envy-Code-R;
-            src: url(../assets/fonts/Envy-Code-R.ttf)
+            font-family: Envy Code R;
+            src: url(../../assets/fonts/Envy-Code-R.ttf)
         }
 
         body {
@@ -52,7 +52,8 @@
         
         .app {
             /* background-color: rgb(var(--c2), 0.03); */
-            width: 80vw;
+            width: 80%;
+            max-width: 500px;
             margin: auto;
             height: 85vh;
             margin-top: 60px;
@@ -65,8 +66,8 @@
 
         .grid {
             background-color: rgb(var(--c2));
-            width: calc(80vw - 40px);
-            height: calc(80vw - 40px);
+            width: calc(100% - 40px);
+            aspect-ratio: 1 / 1;
             margin-left: 20px;
             border-radius: 3px;
             display: grid;
@@ -89,7 +90,7 @@
         }
 
         .menu {
-            font-size: 5vw;
+            font-size: min(5vw, 175%);
         }
 
         .score {
