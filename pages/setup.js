@@ -26,6 +26,8 @@ const setupTemplate = `
 	<br>
 	<br>## <span class="secondary">Hardware</span>
 	<br>
+	<br><img src="/assets/images/setup.jpg" style="width: 500px; margin-left: 20px">
+	<br>
 	<br>&nbsp&nbsp&nbspLaptop: Framework Laptop 13 (2023-Present)
 	<br>&nbsp&nbsp&nbspLaptop: Microsoft Surface Pro 6 (2019-2023)
 	<br>&nbsp&nbsp&nbspPhone: Sony Xperia 5 iii

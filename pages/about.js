@@ -10,12 +10,14 @@ const aboutTemplate = `
 	<br>
 	<br>## <span class="secondary">Interests</span>
 	<br>
-	<br>&nbsp&nbsp&nbspCoding
+	<br>&nbsp&nbsp&nbspCoding <span class="strikethrough">very inefficient programs</span>
 	<br>&nbsp&nbsp&nbspWeb Development
 	<br>&nbsp&nbsp&nbsp<a onclick="template('setup')" href="javascript:void(0)">Tech</a>
 	<br>&nbsp&nbsp&nbsp<a onclick="template('anime')" href="javascript:void(0)">Anime</a>
 	<br>&nbsp&nbsp&nbspPiano
+	<br>&nbsp&nbsp&nbspRhythm Games
 	<br>&nbsp&nbsp&nbspArt
+	<br>&nbsp&nbsp&nbspBadminton
 	<br>
 	<br>## <span class="secondary"><span class="strikethrough">Socials</span></span>
 	<br>
@@ -36,6 +38,6 @@ const aboutTemplate = `
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (quit)
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
-	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x pt)
-	<br>&nbsp&nbsp&nbspEndless Frontier: KL 940-ish
+	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x ptt)
+	<br>&nbsp&nbsp&nbspEndless Frontier: KL 970-ish
 `
