@@ -3,6 +3,7 @@
     --main-content-height: calc(100vh - 100px);
     --page-width: 1000px;
     --page-padding: 5px;
+    --main-content-background: #252423;
 }
 
 @media only screen and (max-width: 567px) {
@@ -63,7 +64,7 @@
 }
 
 .main-content-background {
-    background-color: rgba(21, 21, 21, 0.3);
+    background-color: var(--main-content-background);
     position: absolute;
     top: 67px;
     left: 4px;
@@ -77,4 +78,17 @@
 
 #header {
     white-space: nowrap;
+}
+
+.toast {
+    --width: 396px;
+    --background-color: var(--main-content-background);
+    --background-start: 15%;
+    float: right;
+    background: linear-gradient(to bottom, transparent var(--background-start), var(--background-color) var(--background-start));
+    width: calc(var(--width));
+    position: absolute;
+    top: 106px;
+    left: calc(var(--page-width) - var(--width) + 1px);
+    overflow-y: hidden;
 }

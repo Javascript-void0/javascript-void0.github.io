@@ -64,6 +64,12 @@ function addAnimeData(lines) {
         var anime = JSON.parse(sessionStorage.getItem('anime'))
     }
 
+    if (anime === null) {
+        errorLoadAnilist()
+        lines.push('&nbsp&nbsp&nbspUnavailable D:<br><br>&nbsp&nbsp&nbspSomething broke...')
+        return lines
+    }
+
     // general stats (count, mean score, standard dev, minutes, and episodes)
     for (i = 0; i < 5; i++) {
         statName = Object.keys(anime)[i]
