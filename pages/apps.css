@@ -9,6 +9,7 @@
     max-width: var(--button-width);
     width: 80%;
     margin-left: calc((100% - min(80%, var(--button-width))) / 2);
+    background-color: var(--primary);
 }
 
 .app-button:hover {

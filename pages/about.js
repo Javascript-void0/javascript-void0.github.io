@@ -36,7 +36,7 @@ const aboutTemplate = `
 	<img src="assets/images/mc.png" width="80" style="margin-left: 30px; border-radius: 15px; ">
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
 	<br>
-	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (quit)
+	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (<span class="strikethrough">quit</span>) (un-quit)
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x ptt)
 	<br>&nbsp&nbsp&nbspEndless Frontier: KL 970-ish

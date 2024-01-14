@@ -64,12 +64,19 @@
 }
 
 .main-content-background {
-    background-color: var(--main-content-background);
+    /* background-color: var(--main-content-background); */
     position: absolute;
     top: 67px;
     left: 4px;
     width: calc(100vw - 161px - var(--terminal-width));
     height: calc(100vh - 120px);
+
+    /* dotted background grid */
+    --spacing: 5px;
+    --size: 1px;
+    background-color: #000;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) var(--size), var(--main-content-background) var(--size));
+    background-size: var(--spacing) var(--spacing);
 }
 
 #footer {
