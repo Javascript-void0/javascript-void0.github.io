@@ -41,6 +41,16 @@
     margin: auto;
 }
 
+@media only screen and (max-height: 870px) {
+    #ascii-keyboard {
+        display: none;
+    }
+
+    .terminal {
+        height: calc(100vh - 200px) !important;
+    }
+}
+
 #github {
     -webkit-mask: url(../assets/icons/github.svg) no-repeat center;
     mask: url(../assets/icons/github.svg) no-repeat center;

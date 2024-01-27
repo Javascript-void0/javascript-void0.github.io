@@ -2,11 +2,12 @@ var cursor = true;
 
 // text cursor blinking
 setInterval(() => {
+    var c = document.getElementById('cursor')
     if(cursor) {
-        document.getElementById('cursor').style.opacity = 0;
+        c.innerHTML = '';
         cursor = false;
     } else {
-        document.getElementById('cursor').style.opacity = 1;
+        c.innerHTML = '&nbsp';
         cursor = true;
     }
 }, 500);

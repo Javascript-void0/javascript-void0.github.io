@@ -155,7 +155,7 @@ function NewLine() {
     cursor = document.createElement('span')
     header.append(cursor)
     cursor.setAttribute('id', 'cursor')
-    cursor.textContent = '_'
+    cursor.innerHTML = '&nbsp'
     inputAfterCursor = document.createElement('span')
     header.append(inputAfterCursor)
     inputAfterCursor.setAttribute('id', 'input-after-cursor')

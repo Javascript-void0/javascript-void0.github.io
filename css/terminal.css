@@ -1,5 +1,12 @@
 #cursor {
     font-weight: 900;
+    background: var(--accent);
+}
+#cursor::selection {
+    background: var(--secondary);
+}
+::-moz-selection {
+    background: var(--secondary);
 }
 
 @media only screen and (max-width: 870px) {
@@ -8,6 +15,11 @@
         margin-left: auto;
         position: relative;
         right: 0px !important;
+    }
+
+    /* narrow only terminal view */
+    .terminal {
+        height: calc(100vh - 500px) !important;
     }
 }
 
@@ -29,13 +41,13 @@
 
 .terminal {
     width: var(--terminal-width);
-    height: calc(16 * 40px);
+    height: calc(100vh - 420px);
     color: var(--secondary);
     background: var(--primary);
     position: relative;
     font-family: Envy-Code-R;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 70px;
 
     overflow: auto;
     overflow-wrap: anywhere;
