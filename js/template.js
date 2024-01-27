@@ -1,5 +1,8 @@
-var currentPage = 'home'
-const insertTemplate = document.getElementById('insert-template')
+let currentPage = 'awefawef'
+let insertTemplate = document.getElementById('insert-template')
+const firstLine = document.getElementById('first-line')
+let currentContent = null
+let animationInProgress = false
 
 currentPage = sessionStorage.getItem('page')
 if (currentPage == null) {
@@ -16,7 +19,15 @@ window.addEventListener('popstate', function (event) {
 });
 
 // load template
-function template(name = currentPage, pushState = true) {
+function template(name, pushState = true) {
+    if (animationInProgress) {
+        errorPageAlreadyLoading()
+        return
+    }
+
+    if (currentPage == name) { return } // page is already open, ignore
+    if (name === undefined) { name = currentPage }
+
     sessionStorage.setItem('page', name)
     currentPage = name
     
@@ -25,8 +36,15 @@ function template(name = currentPage, pushState = true) {
     doAnimation = Function('return ' + name + 'Animation')()
     // split string by newlines
     lines = getTemplate.split('<br>')
-    // clear existing content
-    document.getElementById('insert-template').innerHTML = ''
+
+    // replace old content with new (overlapping old with new)
+    currentContent = document.getElementById('insert-template')
+    firstLine.scrollIntoView(true)
+    let newContent = document.createElement('div')
+    newContent.classList.add('insert-template')
+    newContent.id = 'insert-template'
+    insertTemplateContainer.insertBefore(newContent, currentContent.nextSibling)
+    insertTemplate = newContent
 
     if (name == 'anime') {
         lines = addAnimeData(lines)
@@ -34,12 +52,16 @@ function template(name = currentPage, pushState = true) {
 
     document.title = capitalize(name + ' | Java')
     if (doAnimation) {
+        animationInProgress = true;
         docAnimation(lines, lines.length + 1, 0)
     } else {
         for (line of lines) {
             insertTemplate.append(temp = document.createElement('div'))
             temp.innerHTML = temp.innerHTML + line + '<br>'
         }
+        currentContent.innerHTML = ''
+        insertTemplateContainer.removeChild(currentContent)
+        animationInProgress = false;
     }
 
     if (name == 'apps') {
@@ -53,12 +75,16 @@ function template(name = currentPage, pushState = true) {
 
 // recursive... :O
 function docAnimation(text, total, i) {
-    setTimeout(function() {
+    return setTimeout(function() {
         total--;
         if (total == 0) {
-            return true;
+            currentContent.innerHTML = ''
+            insertTemplateContainer.removeChild(currentContent)
+            animationInProgress = false;
+            return;
         }
         insertTemplate.append(temp = document.createElement('div'))
+        temp.style.background = '#252423'
         temp.innerHTML = temp.innerHTML + text[i] + '<br>'
         i++
         docAnimation(text, total, i);        

@@ -107,6 +107,7 @@ body {
     background: linear-gradient(to bottom, transparent var(--background-start), var(--background-color) var(--background-start));
     width: calc(var(--width));
     overflow-y: hidden;
+    z-index: 20;
 }
 
 #insert-toast {
@@ -115,4 +116,17 @@ body {
     position: absolute;
     top: 108px;
     right: 48px;
+}
+
+#insertTemplateContainer {
+    display: grid;
+    grid-template-areas: "a";
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+.insert-template {
+    height: auto;
+    grid-area: a;
+    z-index: 10;
 }

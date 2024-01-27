@@ -65,3 +65,7 @@ function ableToggle() {
 function errorLoadAnilist() {
     alert(['unable to retrieve data from', 'anilist'])
 }
+
+function errorPageAlreadyLoading() {
+    alert(['slow down!', '', 'another page is still being loaded'])
+}
