@@ -1,23 +1,22 @@
 toastWidthChars = Math.floor(396 / charWidth);
 toastInsert = document.getElementById('insert-toast')
 toastBorder = '_'.repeat(toastWidthChars-2)
-currentToast = null
 
 // holy moly
 function alert(text) {
-    deleteToast()
-    console.log(`ALERT: ${text}`)
-    toast = document.createElement('div')
+    let toast = document.createElement('div')
     toast.classList.add('toast')
+    toastId = Math.floor(100000 + Math.random() * 900000);
+    toast.id = 'toast' + toastId
     buildBody = ''
     for (i = 0; i < text.length; i++) {
         if (i == 0) {
             maxChars = 32
-            buildBody += '</br>|&nbsp&nbsp[@]&nbsp' + text[i] + '&nbsp'.repeat(maxChars - text[i].length) + '<span style="float: right;"><span style="cursor: pointer" onclick="deleteToast()">[*]</span>&nbsp&nbsp|</span>\n'
+            buildBody += '</br>|&nbsp&nbsp[@]&nbsp' + text[i] + '&nbsp'.repeat(maxChars - text[i].length + 1) + '<span style="float: right;"><span style="cursor: pointer" onclick="deleteToast(' + toastId + ')">[*]</span>&nbsp&nbsp|</span>\n'
         } else {
             maxChars = 37
             slice = Math.min(text.length, maxChars)
-            buildBody += '</br>|' + '&nbsp'.repeat(6) + text[i] + '&nbsp'.repeat(maxChars - text[i].length) + '<span style="float: right;">|</span>\n'
+            buildBody += '</br>|' + '&nbsp'.repeat(6) + text[i] + '&nbsp'.repeat(maxChars - text[i].length + 1) + '<span style="float: right;">|</span>\n'
         }
     }
     toast.innerHTML = `&nbsp${toastBorder}
@@ -27,14 +26,21 @@ ${buildBody}
     toastInsert.appendChild(toast)
 
     // set timer auto delete
-    currentToast = setTimeout(function() {
-        deleteToast()
+    setTimeout(function() {
+        try {
+            toastInsert.removeChild(toast)
+        } catch (DOMException) {
+            // toast already deleted (by user)
+            return
+        }
     }, 3500);
 }
 
-function deleteToast() {
-    toastInsert.innerHTML = ''
-    clearTimeout(currentToast)
+function deleteToast(id) {
+    toast = document.getElementById('toast' + id)
+    if (toast) {
+        toastInsert.removeChild(toast)
+    }
 }
 
 // able to if terminal/sidebar is visible

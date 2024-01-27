@@ -100,14 +100,19 @@ body {
 }
 
 .toast {
-    --width: 396px;
+    --width: 395.6px; /* wtf */
     --background-color: var(--main-content-background);
     --background-start: 15%;
     float: right;
     background: linear-gradient(to bottom, transparent var(--background-start), var(--background-color) var(--background-start));
     width: calc(var(--width));
-    position: absolute;
-    top: 106px;
-    left: calc(var(--page-width) - var(--width) + 1px);
     overflow-y: hidden;
+}
+
+#insert-toast {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 108px;
+    right: 48px;
 }
