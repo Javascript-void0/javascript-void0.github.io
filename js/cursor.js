@@ -4,10 +4,10 @@ var cursor = true;
 setInterval(() => {
     var c = document.getElementById('cursor')
     if(cursor) {
-        c.innerHTML = '';
+        c.style.background = 'transparent'
         cursor = false;
     } else {
-        c.innerHTML = '&nbsp';
+        c.style.background = 'var(--accent)'
         cursor = true;
     }
 }, 500);
