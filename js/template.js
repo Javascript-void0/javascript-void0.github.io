@@ -2,6 +2,7 @@ let currentPage = 'awefawef'
 let insertTemplate = document.getElementById('insert-template')
 const firstLine = document.getElementById('first-line')
 let currentContent = null
+let newContent = null
 let animationInProgress = false
 
 currentPage = sessionStorage.getItem('page')
@@ -39,8 +40,7 @@ function template(name, pushState = true) {
 
     // replace old content with new (overlapping old with new)
     currentContent = document.getElementById('insert-template')
-    firstLine.scrollIntoView(true)
-    let newContent = document.createElement('div')
+    newContent = document.createElement('div')
     newContent.classList.add('insert-template')
     newContent.id = 'insert-template'
     insertTemplateContainer.insertBefore(newContent, currentContent.nextSibling)
@@ -75,19 +75,49 @@ function template(name, pushState = true) {
 
 // recursive... :O
 function docAnimation(text, total, i) {
-    return setTimeout(function() {
+    setTimeout(function() {
         total--;
         if (total == 0) {
-            currentContent.innerHTML = ''
-            insertTemplateContainer.removeChild(currentContent)
-            animationInProgress = false;
+            let newContentHeight = insertTemplate.clientHeight
+            let currentContentHeight = currentContent.clientHeight
+
+            let continueAnimation = document.createElement('div')
+            insertTemplate.appendChild(continueAnimation)
+
+            // continue covering up old content
+            let filler = setInterval(function() {
+                if (newContentHeight > currentContentHeight) {
+                    currentContent.innerHTML = ''
+                    insertTemplateContainer.removeChild(currentContent)
+                    animationInProgress = false;
+
+                    // scroll up
+                    let unfiller = setInterval(function() {
+                        continueAnimation.removeChild(continueAnimation.lastChild)
+                        if (!continueAnimation.hasChildNodes()) {
+                            clearInterval(unfiller)
+                            insertTemplate.removeChild(continueAnimation)
+                        }
+                    }, 15);
+
+                    clearInterval(filler)
+                }
+                newContentHeight = insertTemplate.clientHeight
+                currentContentHeight = currentContent.clientHeight
+
+                continueAnimation.append(temp = document.createElement('div'))
+                temp.style.background = '#252423'
+                temp.innerHTML = '<br>'
+
+            }, 15);
+            // firstLine.scrollIntoView()
             return;
         }
         insertTemplate.append(temp = document.createElement('div'))
         temp.style.background = '#252423'
         temp.innerHTML = temp.innerHTML + text[i] + '<br>'
-        i++
-        docAnimation(text, total, i);        
+
+        docAnimation(text, total, i + 1);        
     }, 15);
 }
 
