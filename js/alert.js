@@ -47,6 +47,8 @@ function deleteToast(id) {
 function ableType(text) {
     if (menuIsVisible()) {
         document.getElementById('input').textContent = text
+        // send/enter command automatically
+        RunCommand(text)
     } else {
         alert(['sidebar not visible: ', '', "do 'ctrl-s' to open sidebar"])
     }

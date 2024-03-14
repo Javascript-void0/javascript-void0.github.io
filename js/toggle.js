@@ -2,7 +2,7 @@
 function toggleMenu(option) {
     root = document.querySelector(':root')
     current = menuIsVisible()
-    if (current == false || option == true) {
+    if (option == true || current == false) {
         root.style.setProperty('--terminal-width', '405px')
         root.style.setProperty('--terminal-display', '')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
@@ -11,7 +11,7 @@ function toggleMenu(option) {
         // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 161px - var(--terminal-width))'
 
-    } else if (current == true || option == false) {
+    } else if (option == false || current == true) {
         root.style.setProperty('--terminal-width', '0px')
         root.style.setProperty('--terminal-display', 'none')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')

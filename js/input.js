@@ -2,17 +2,16 @@ document.onkeydown = KeyPress;
 
 function KeyPress(e) {
 
-    // sidebar is visibile, key ctrl + s
-    if (menuIsVisible() && e.ctrlKey && e.keyCode == 83) {
+    // ctrl + s
+    if (e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
-        toggleMenu() // hide sidebar
-        return
-    // sidebar is not visibile, key ctrl + s
-    } else if (!menuIsVisible() && e.ctrlKey && e.keyCode == 83) {
-        e.preventDefault()
-        ableToggle()
-        return
-    } 
+        Key(e)
+        if (menuIsVisible()) {
+            toggleMenu()
+        } else {
+            ableToggle()
+        }
+    }
 
     // console is visible, handle key input
     if (menuIsVisible() == true) {
@@ -67,19 +66,13 @@ function KeyPress(e) {
                     nextEmpty++
                 }
                 MoveCursor(e.keyCode, nextEmpty)
-
-            // ctrl + s
-            } else if (e.keyCode == 83) {
-                e.preventDefault()
-                toggleMenu()
-                return
             }
 
             Key(e)
             return
 
-        } else if (e.altKey) { // alt key does nothing...
-            e.preventDefault()
+        } else if (e.altKey) { // alt key
+            // e.preventDefault()
             Key(e)
             return
         } else { // default...
@@ -101,6 +94,7 @@ function KeyPress(e) {
         backwardCommandHistory()
     } else if (e.keyCode == 40) {
         forwardCommandHistory()
+    // enter
     } else if (e.keyCode == 13) {
         RunCommand(before + beforeAfterCursor)
         // NewLine()
