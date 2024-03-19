@@ -8,5 +8,6 @@
 
 TODOs
 
-- [ ] js/toggle.js - notification system?
+- [x] js/toggle.js - notification system?
 - [ ] fix border overflowing
+- [x] breadcrumbs/navigation stick to top

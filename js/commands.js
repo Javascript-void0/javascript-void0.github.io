@@ -1,20 +1,28 @@
-function removeSpacesFront(text) {
-    while (text.charAt(0) === ' ') {
-        text = text.substring(1)
-    }
-}
-
-function removeSpacesBack(text) {
-    while (text.charAt(-1) === ' ') {
-        text = text.substring(0, string.length - 1)
-    }
-}
+const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
+const commands = [
+    'PAGES',
+    'DIGITAL-GARDEN',
+    'GARDEN',
+    'CMD',
+    'CLS',
+    'DATE',
+    'ECHO',
+    'EXIT',
+    'HELP',
+    'REPO',
+    'SYSTEMINFO',
+    'TASKLIST',
+    'TIME',
+    'TITLE',
+    'TREE',
+    'VER',
+    'VOL',
+].concat(pages)
 
 // turn text command into action
 function RunCommand(text) {
 
-    removeSpacesFront(text)
-    removeSpacesBack(text)
+    text = text.trim()
 
     // split commands/parameters
     let texts = text.split(' ')
@@ -38,7 +46,6 @@ function RunCommand(text) {
         upperBase = texts[0].toUpperCase() // case insensitive
 
         // command is page, open page in content
-        const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS']
         if (pages.includes(upperBase)) {
             template(texts[0].toLowerCase()) // open page
             NewLine()
@@ -72,6 +79,10 @@ function RunCommand(text) {
                 header.append(temp = document.createElement('br'))
                 temp.innerHTML = fillSpace(line)
                 NewLine()
+                break
+            case 'CLS':
+                clearTerminalHistory()
+                // NewLine()
                 break
             case 'DATE':
                 today = new Date().toLocaleDateString()

@@ -1,7 +1,8 @@
 const setupAnimation = true
 const setupTemplate = `
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
-	<br>
+	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
+  <a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
+<br></div>
 	<br># <span class="secondary">Setup</span>
 	<br>
 	<br><img src="/assets/images/setup.gif" style="width: 200px; margin-left: 30px">

@@ -29,7 +29,6 @@ function KeyPress(e) {
                 if (before.charAt(before.length - 1) == ' ') {
                     before = before.slice(0, -1)
                 }
-                // removeSpacesBack(before)
                 split = before.split(' ')
                 split.splice(-1)
                 document.getElementById('input').textContent = split.join(' ') + ' '
@@ -39,7 +38,6 @@ function KeyPress(e) {
                 if (beforeAfterCursor.charAt(1) == ' ') {
                     beforeAfterCursor = beforeAfterCursor.slice(-1, 0)
                 }
-                // removeSpacesFront(beforeAfterCursor) // TODO: idk
                 split = beforeAfterCursor.split(' ')
                 split.splice(0, 1)
                 document.getElementById('input-after-cursor').textContent = split.join(' ')
@@ -82,8 +80,11 @@ function KeyPress(e) {
     } else {
         return
     }
+    // alphanumeric keys
     if ((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 186) || (e.keyCode == 32)) {
         document.getElementById('input').textContent = before + e.key
+        before = document.getElementById('input').textContent;
+        checkValidCommand(before + beforeAfterCursor)
     } else if (e.keyCode == 8) {
         document.getElementById('input').textContent = before.slice(0, -1)
     } else if (e.keyCode == 46) {
@@ -107,6 +108,18 @@ function KeyPress(e) {
         tempCommandHistoryPosition = commandHistory.length - 1
     }
     Key(e)
+}
+
+
+function checkValidCommand(text) {
+    input = document.getElementById('input')
+    text = text.trim()
+    baseCommand = text.split(' ')[0]
+    if (commands.indexOf(baseCommand.toUpperCase()) != -1) {
+        input.style.color = 'var(--color)'
+    } else {
+        input.style.color = 'var(--secondary)'
+    }
 }
 
 function MoveCursor(direction, count=1) {

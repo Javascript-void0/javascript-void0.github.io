@@ -1,12 +1,13 @@
 const aboutAnimation = true
 const aboutTemplate = `
-	&nbsp&nbsp<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
-	<br>
+	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
+  <a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
+<br></div>
 	<br># <span class="secondary">About</span>
 	<br>
 	<br>&nbsp&nbspHey, I'm **insert boring stuff about me**
 	<br>
-	<br><img src="assets/images/takina.gif" style="width: 300px; padding-left: 30px; filter: grayscale(0.4)">
+	<br><img src="assets/images/takina.gif" style="width: 300px; padding-left: 30px;">
 	<br>
 	<br>## <span class="secondary">Interests</span>
 	<br>
@@ -38,6 +39,6 @@ const aboutTemplate = `
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (<span class="strikethrough">quit</span>) (un-quit)
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
-	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.6x ptt)
-	<br>&nbsp&nbsp&nbspEndless Frontier: KL 1000-ish
+	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x ptt)
+	<br>&nbsp&nbsp&nbspEndless Frontier: KL 1080-ish
 `

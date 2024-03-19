@@ -1,6 +1,10 @@
 const homeAnimation = true
 const homeTemplate = `
-	&nbsp&nbspHome
+	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
+  Home
+<br></div>
+	<style>a { text-decoration: none }</style>
+	<br>
 	<br>
 	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
 	<br>
@@ -48,7 +52,7 @@ good luck <span class="secondary">:I</span>
 	<br>
 	<br>&nbsp❤ <span class="secondary">Brought to you by my awful web development skills</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp (c) 2023 Java
+	<br>&nbsp&nbsp&nbsp (c) 2022-2024 Java
 	<br>
 	<br>
 `

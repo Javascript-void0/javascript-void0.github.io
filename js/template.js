@@ -53,6 +53,7 @@ function template(name, pushState = true) {
     document.title = capitalize(name + ' | Java')
     if (doAnimation) {
         animationInProgress = true;
+        firstLine.scrollIntoView()
         docAnimation(lines, lines.length + 1, 0)
     } else {
         for (line of lines) {

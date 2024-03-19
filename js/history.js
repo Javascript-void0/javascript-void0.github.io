@@ -78,3 +78,8 @@ function saveTerminalHistory() {
     var userCommands = document.getElementById('user-commands')
     sessionStorage.setItem('terminal-history', userCommands.innerHTML)
 }
+
+function clearTerminalHistory() {
+    var userCommands = document.getElementById('user-commands')
+    userCommands.innerHTML = 'C:\\WINDOWS&gt; <span id="input" style="color: var(--color);"></span><span id="cursor" style="background: transparent;">&nbsp;</span><span id="input-after-cursor"></span><span></span>'
+}
