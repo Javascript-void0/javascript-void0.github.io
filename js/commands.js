@@ -1,8 +1,6 @@
 const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
 const commands = [
     'PAGES',
-    'DIGITAL-GARDEN',
-    'GARDEN',
     'CMD',
     'CLS',
     'DATE',
@@ -58,7 +56,6 @@ function RunCommand(text) {
                 lines = ['ABOUT          About nobody.                   ',
                          'ANIME          Stats and stuff                 ',
                          'APPS           Poorly made applications        ',
-                         'GARDEN         Never-watered digital garden    ',
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',
@@ -67,11 +64,6 @@ function RunCommand(text) {
                          'Pages are displayed on the notepad.            ',
                          'Enter the page name into CMD.EXE to open.      ']
                 listToHTML(lines, lines.length + 1, 0)
-                break
-            case 'DIGITAL-GARDEN':
-            case 'GARDEN':
-                window.open('/digital-garden', '_self')
-                NewLine()
                 break
             case 'CMD':
                 window.open('index.html', '_blank')

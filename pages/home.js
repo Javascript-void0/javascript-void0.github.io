@@ -43,7 +43,7 @@ good luck <span class="secondary">:I</span>
 	<br>
 	<br>## <span class="secondary">Subpages</span>
 	<br>
-	<br>&nbsp&nbsp> <a href="/digital-garden">Digital Garden</a>
+	<br>&nbsp&nbsp> None
 	<br>
 	<br>
 	<br>

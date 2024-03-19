@@ -136,3 +136,7 @@ body {
     background: var(--main-content-background);
     white-space: pre-wrap;
 }
+
+.navigation a {
+    text-decoration: none;
+}
