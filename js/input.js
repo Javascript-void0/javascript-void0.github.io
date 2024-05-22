@@ -32,6 +32,8 @@ function KeyPress(e) {
                 split = before.split(' ')
                 split.splice(-1)
                 document.getElementById('input').textContent = split.join(' ') + ' '
+                
+                checkValidCommand()
 
             // delete
             } else if (e.keyCode == 46) {
@@ -41,6 +43,8 @@ function KeyPress(e) {
                 split = beforeAfterCursor.split(' ')
                 split.splice(0, 1)
                 document.getElementById('input-after-cursor').textContent = split.join(' ')
+
+                checkValidCommand()
 
             // left, right
             } else if (e.keyCode == 37 || e.keyCode == 39) {
@@ -84,17 +88,23 @@ function KeyPress(e) {
     if ((e.keyCode >= 48 && e.keyCode <= 90) || (e.keyCode >= 186) || (e.keyCode == 32)) {
         document.getElementById('input').textContent = before + e.key
         before = document.getElementById('input').textContent;
-        checkValidCommand(before + beforeAfterCursor)
+        checkValidCommand()
+    // backspace
     } else if (e.keyCode == 8) {
         document.getElementById('input').textContent = before.slice(0, -1)
+        checkValidCommand()
+    // delete
     } else if (e.keyCode == 46) {
         document.getElementById('input-after-cursor').textContent = beforeAfterCursor.slice(1)
+        checkValidCommand()
     } else if (e.keyCode == 37 || e.keyCode == 39) {
         MoveCursor(e.keyCode)
     } else if (e.keyCode == 38) {
         backwardCommandHistory()
+        checkValidCommand()
     } else if (e.keyCode == 40) {
         forwardCommandHistory()
+        checkValidCommand()
     // enter
     } else if (e.keyCode == 13) {
         RunCommand(before + beforeAfterCursor)
@@ -111,14 +121,19 @@ function KeyPress(e) {
 }
 
 
-function checkValidCommand(text) {
+function checkValidCommand() {
     input = document.getElementById('input')
+    inputAfterCursor = document.getElementById('input-after-cursor')
+    text = input.textContent + inputAfterCursor.textContent
+
     text = text.trim()
     baseCommand = text.split(' ')[0]
     if (commands.indexOf(baseCommand.toUpperCase()) != -1) {
         input.style.color = 'var(--color)'
+        inputAfterCursor.style.color = 'var(--color)'
     } else {
         input.style.color = 'var(--secondary)'
+        inputAfterCursor.style.color = 'var(--secondary)'
     }
 }
 

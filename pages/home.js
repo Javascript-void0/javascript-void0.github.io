@@ -40,6 +40,7 @@ good luck <span class="secondary">:I</span>
 	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
 	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
 	<br>&nbsp&nbsp> <a onclick="template('apps');return false" href="javascript:void(0);">Apps</a>
+	<br>&nbsp&nbsp> <a onclick="template('blog');return false" href="javascript:void(0);">Blog</a>
 	<br>
 	<br>## <span class="secondary">Subpages</span>
 	<br>

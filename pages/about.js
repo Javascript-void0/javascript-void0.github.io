@@ -3,7 +3,7 @@ const aboutTemplate = `
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
   <a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspAbout
 <br></div>
-	<br># <span class="secondary">About</span>
+	<br>
 	<br>
 	<br>&nbsp&nbspHey, I'm **insert boring stuff about me**
 	<br>
@@ -20,7 +20,7 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspArt
 	<br>&nbsp&nbsp&nbspBadminton
 	<br>
-	<br>## <span class="secondary"><span class="strikethrough">Socials</span></span>
+	<br>## <span class="secondary">Socials</span>
 	<br>
 	<br>&nbsp&nbsp&nbspDiscord: javascript_void0
 	<br>&nbsp&nbsp&nbspInstagram: <a href='https://www.instagram.com/v.lucent/' target='_blank' rel='noopener nonreferrer'>@v.lucent</a>
@@ -28,8 +28,7 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspYouTube: <a href='https://www.youtube.com/@vlucent/' target='_blank' rel='noopener nonreferrer'>@vlucent</a> (Music)
 	<br>&nbsp&nbsp&nbspLastFM: <a href='https://www.last.fm/user/v-lucent' target='_blank' rel='noopener nonreferrer'>@v-lucent</a>
 	<br>&nbsp&nbsp&nbspGitHub: <a href='https://www.github.com/Javascript-void0' target='_blank' rel='noopener nonreferrer'>@Javascript-void0</a>
-	<br>&nbsp&nbsp&nbspAnilist: <a href='https://anilist.co/user/5641461/' target='_blank' rel='noopener nonreferrer'>@Java</a>
-	<br>&nbsp&nbsp&nbspPinterest: <a href='https://www.pinterest.com/javascript_void0/bits' target='_blank' rel='noopener nonreferrer'>@javascript_void0</a>
+	<br>&nbsp&nbsp&nbspAniList: <a href='https://anilist.co/user/5641461/' target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>
 	<br>## <span class="secondary">Games</span>
 	<br>
@@ -37,8 +36,8 @@ const aboutTemplate = `
 	<img src="assets/images/mc.png" width="80" style="margin-left: 30px; border-radius: 15px; ">
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
 	<br>
-	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>HoYoLAB Profile</a> (<span class="strikethrough">quit</span>) (un-quit)
+	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a> (<span class="strikethrough">quit</span>) (<span class="strikethrough">un-quit</span>) (re-quit)
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
-	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.5x ptt)
-	<br>&nbsp&nbsp&nbspEndless Frontier: KL 1080-ish
+	<br>&nbsp&nbsp&nbspArcaea: 288 414 570 (11.6x ptt)
+	<br>&nbsp&nbsp&nbspEndless Frontier: KL 1090-ish
 `

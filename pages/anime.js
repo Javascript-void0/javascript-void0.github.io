@@ -3,9 +3,9 @@ const animeTemplate = `
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
   <a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspAnime
 <br></div>
-	<br># <span class="secondary">Anime</span>
 	<br>
-	<br>&nbsp> Anilist: <a href='https://anilist.co/user/5641461'target='_blank' rel='noopener nonreferrer'>@Java</a>&nbsp// main
+	<br>
+	<br>&nbsp> AniList: <a href='https://anilist.co/user/5641461'target='_blank' rel='noopener nonreferrer'>@Java</a>&nbsp// main
 	<br>&nbsp> MyAnimeList: <a href='https://myanimelist.net/profile/notjava'target='_blank' rel='noopener nonreferrer'>@notjava</a>
 	<br>&nbsp> Kitsu: <a href='https://kitsu.io/users/java'target='_blank' rel='noopener nonreferrer'>@Java</a>
 	<br>

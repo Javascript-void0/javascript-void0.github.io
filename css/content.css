@@ -76,7 +76,7 @@
 body {
 
     /* dotted background grid */
-    --spacing: 5px;
+    --spacing: 7px;
     --size: 1px;
     background-color: #000;
     background-image: radial-gradient(rgba(255, 255, 255, 0.2) var(--size), var(--primary) var(--size));

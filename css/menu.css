@@ -27,7 +27,7 @@
 }
 
 .menu a div:hover {
-    background-color: var(--secondary);
+    background-color: var(--color);
     /* transition: 0.5s; */
 }
 

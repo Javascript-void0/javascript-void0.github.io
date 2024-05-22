@@ -40,6 +40,7 @@ function backwardCommandHistory() {
 
 // go forward/down a history
 function forwardCommandHistory() {
+    console.log('test')
     input = document.getElementById('input')
     inputAfterCursor = document.getElementById('input-after-cursor')
 
