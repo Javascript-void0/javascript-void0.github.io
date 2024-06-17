@@ -10,17 +10,21 @@ const homeTemplate = `
 	<br>
 	<br><div class="center" style="max-width: 600px">welcome to my corner of the internet <span class="secondary">:3</span></div>
 	<br>
-	<br>
-	<br>
 	<div class="center" style="max-width: 600px">
-======== <span class="secondary">***</span> ========
-** <span class="secondary">Beware</span> **
+=================== <span class="secondary">***</span> ===================
+** <span class="secondary">WARNING</span> **
 
 You might need a <a href='https://en.wikipedia.org/wiki/Pleiades_(supercomputer)' target='_blank' rel='noopener nonreferrer'>NASA supercomputer</a> to 
 load this stupid website...
 
-good luck <span class="secondary">:I</span>
-======== <span class="secondary">***</span> ========
+I appologize in advance if your computer
+<div style="text-align: left; display: inline-block; margin-left: -40px;">
+a). blows up
+b). starts doing backflips
+c). yeets itself out the window
+
+</div>
+=================== <span class="secondary">=.=</span> ===================
 	</div>
 	<br> ## <span class="secondary">Navigation</span>
     <br>
