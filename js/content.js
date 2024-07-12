@@ -81,21 +81,30 @@ const leftBorder = document.getElementById('left-border')
 const rightBorder = document.getElementById('right-border')
 
 function updateHeight() { // height of content, not including header and footer
+    let blogBorder = document.getElementById('blog-border')
     windowHeight = window.innerHeight - 100 // without padding
 
     totalFitWindow = Math.floor(windowHeight / charHeight)
     totalFitBody = totalFitWindow - 4 // not including header and footer
     currentCharCount = leftBorder.textContent.length
-    
+
     // too many characters, remove
     if (totalFitBody < currentCharCount) {
         leftBorder.innerHTML = leftBorder.innerHTML.replace('|<br>', '')
         rightBorder.innerHTML = rightBorder.innerHTML.replace('| |<br>', '')
 
+        if (typeof(blogBorder) != 'undefined' && blogBorder != null) {
+            blogBorder.innerHTML = leftBorder.innerHTML.slice(0, -1)
+        }
+
     // more characters can fit, add
     } else if (totalFitBody > currentCharCount) {
         leftBorder.innerHTML = leftBorder.innerHTML += '<br>|'
         rightBorder.innerHTML = rightBorder.innerHTML += '<br>| |'
+
+        if (typeof(blogBorder) != 'undefined' && blogBorder != null) {
+            blogBorder.innerHTML = leftBorder.innerHTML.slice(0, -1)
+        }
     }
 }
 

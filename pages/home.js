@@ -3,7 +3,6 @@ const homeTemplate = `
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
   Home
 <br></div>
-	<style>a { text-decoration: none }</style>
 	<br>
 	<br>
 	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
@@ -42,6 +41,7 @@ c). yeets itself out the window
 	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
 	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
 	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
+	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('gallery');return false" href="javascript:void(0);">Gallery</a>
 	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
 	<br>&nbsp&nbsp> <a onclick="template('apps');return false" href="javascript:void(0);">Apps</a>
 	<br>&nbsp&nbsp> <a onclick="template('blog');return false" href="javascript:void(0);">Blog</a>

@@ -1,5 +1,14 @@
 const setupAnimation = true
 const setupTemplate = `
+	<style>
+	hr {
+		padding: 0;
+		margin: 8px 0px 8px -10px;
+		max-width: 350px;
+		opacity: 60%;
+	}
+	</style>
+
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
   <a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
 <br></div>
@@ -9,36 +18,55 @@ const setupTemplate = `
 	<br>
 	<br>## <span class="secondary">Software <3</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp<span class="secondary">-- Laptop (Windows): </span>
-	<br>&nbsp&nbsp&nbspNote-taking: <a href="https://obsidian.md" target="_blank" rel="noopener nonreferrer">Obsidian</a>
-	<br>&nbsp&nbsp<span class="strikethrough">&nbspNote-taking: <a href="https://slite.com" target="_blank" rel="noopener nonreferrer">Slite</a>&nbsp</span>
-	<br>&nbsp&nbsp&nbspDrawing: <a href="https://firealpaca.com/" target="_blank" rel="noopener nonreferrer">FireAlpaca</a>
-	<br>&nbsp&nbsp&nbspDrawing: OpenCanvas1.1
-	<br>&nbsp&nbsp&nbspTools: <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener nonreferrer">Microsoft PowerToys</a>
-	<br>&nbsp&nbsp&nbspTools: <a href="https://github.com/xournalpp/xournalpp" target="_blank" rel="noopener nonreferrer">Xournal++</a>
-	<br>&nbsp&nbsp&nbspDev: <a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener nonreferrer">VSCode</a>
-	<br>&nbsp&nbsp&nbspDev: <a href="https://neovim.io/" target="_blank" rel="noopener nonreferrer">Neovim</a> (<a href="https://github.com/Javascript-void0/dotfiles" target="_blank" rel="noopener nonreferrer">dotfiles</a>)
-	<br>
-	<br>&nbsp&nbsp&nbsp<span class="secondary">-- Mobile (Android): </span>
-	<br>&nbsp&nbsp&nbspAnime/Manga: <a href="https://github.com/jmir1/aniyomi" target="_blank" rel="noopener nonreferrer">Aniyomi</a>
-	<br>&nbsp&nbsp&nbspAniList Client: <a href="https://play.google.com/store/apps/details?id=com.otraku.app&hl=en_US&gl=US" target="_blank" rel="noopener nonreferrer">Otraku</a>
-	<br>&nbsp&nbsp&nbspTFA: <a href="https://github.com/beemdevelopment/Aegis" target="_blank" rel="noopener nonreferrer">Aegis</a>
-	<br>&nbsp&nbsp&nbspYouTube Vanced 💪
+
+<div style="white-space: pre; margin-left: 40px">
+<span class="secondary">Windows: </span>
+
+Note-taking: 
+  <a href="https://obsidian.md" target="_blank" rel="noopener nonreferrer">Obsidian</a>
+<hr>Drawing: 
+  <a href="https://firealpaca.com/" target="_blank" rel="noopener nonreferrer">FireAlpaca</a>
+  OpenCanvas1.1
+<hr>Tools: 
+  <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener nonreferrer">Microsoft PowerToys</a>
+  <a href="https://github.com/xournalpp/xournalpp" target="_blank" rel="noopener nonreferrer">Xournal++</a> for handwritten notes
+  <a href="https://github.com/glzr-io/glazewm" target="_blank" rel="noopener nonreferrer">GlazeWM</a> tiling window manager
+<hr>Dev: 
+  <a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener nonreferrer">VSCode</a>
+  <a href="https://neovim.io/" target="_blank" rel="noopener nonreferrer">Neovim</a> (<a href="https://github.com/Javascript-void0/dotfiles" target="_blank" rel="noopener nonreferrer">dotfiles</a>)
+
+
+
+<span class="secondary">Android: </span>
+
+Anime/Manga: <a href="https://github.com/jmir1/aniyomi" target="_blank" rel="noopener nonreferrer">Aniyomi</a>
+AniList Client: <a href="https://play.google.com/store/apps/details?id=com.otraku.app&hl=en_US&gl=US" target="_blank" rel="noopener nonreferrer">Otraku</a>
+TFA: <a href="https://github.com/beemdevelopment/Aegis" target="_blank" rel="noopener nonreferrer">Aegis</a>
+YouTube ReVanced
+</div>
+
 	<br>
 	<br>## <span class="secondary">Hardware</span>
 	<br>
 	<br><img src="/assets/images/setup.jpg" style="width: 500px; margin-left: 20px">
 	<br>
-	<br>&nbsp&nbsp&nbspLaptop: Framework Laptop 13 (2023-Present)
-	<br>&nbsp&nbsp&nbspLaptop: Microsoft Surface Pro 6 (2019-2023)
-	<br>&nbsp&nbsp&nbspPhone: Sony Xperia 5 iii
-	<br>&nbsp&nbsp&nbspAudio: Microsoft Surface Headphones 2
-	<br>&nbsp&nbsp&nbspAudio: Moondrop SSP
-	<br>&nbsp&nbsp&nbspAudio: Moondrop CHU II
-	<br>&nbsp&nbsp&nbspAudio: Sony WF-1000XM3 Earbuds
-	<br>&nbsp&nbsp&nbspAudio: Sony MDR-7506
-	<br>&nbsp&nbsp&nbspMonitor: LG Dualup
-	<br>&nbsp&nbsp&nbspKeyboard: Moondrop Dash
-	<br>&nbsp&nbsp&nbspKeyboard: Libra Mini 40%
-	<br>
+
+<div style="white-space: pre; margin-left: 40px">
+Laptop: 
+  <span class="color">Framework Laptop 13</span>
+  Microsoft Surface Pro 6
+<hr>Phone: 
+  <span class="color">Sony Xperia 5 iii</span>
+<hr>Audio: 
+  Microsoft Surface Headphones 2
+  <span class="color">Moondrop SSP</span>
+  Moondrop CHU II
+  Sony WF-1000XM3
+  <span class="color">Sony MDR-7506</span>
+<hr>Monitor: 
+  <span class="color">LG Dualup</span>
+<hr>Keyboard: 
+  <span class="color">Moondrop Dash75</span>
+  Libra Mini 40%
+</div>
 `

@@ -1,4 +1,4 @@
-const pages = ['ABOUT', 'ANIME', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
+const pages = ['ABOUT', 'ANIME', 'BLOG', 'GALLERY', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
 const commands = [
     'PAGES',
     'CMD',
@@ -56,6 +56,8 @@ function RunCommand(text) {
                 lines = ['ABOUT          About nobody.                   ',
                          'ANIME          Stats and stuff                 ',
                          'APPS           Poorly made applications        ',
+                         'BLOG           I failed English                ',
+                         'GALLERY        project pics',
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',

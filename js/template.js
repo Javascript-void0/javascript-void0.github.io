@@ -43,6 +43,7 @@ function template(name, pushState = true) {
     newContent = document.createElement('div')
     newContent.classList.add('insert-template')
     newContent.id = 'insert-template'
+    newContent.style.zIndex = 1000
     insertTemplateContainer.insertBefore(newContent, currentContent.nextSibling)
     insertTemplate = newContent
 
@@ -63,10 +64,13 @@ function template(name, pushState = true) {
         currentContent.innerHTML = ''
         insertTemplateContainer.removeChild(currentContent)
         animationInProgress = false;
+        newContent.style.zIndex = ''
     }
 
     if (name == 'apps') {
         loadAppPage()
+    } else if (name == 'blog') {
+        loadBlogPage()
     }
 
     if (pushState) {

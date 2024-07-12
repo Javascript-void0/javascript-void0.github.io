@@ -45,7 +45,8 @@
 
 #page {
     max-width: var(--page-width);
-    height: calc(100vh - 210px); /* no idea where this number comes from */
+    /* no idea where this number comes from */
+    /* height: calc(100vh - 210px); */
     padding-left: 5px;
     padding-right: 5px;
     overflow-y: scroll;
@@ -107,7 +108,7 @@ body {
     background: linear-gradient(to bottom, transparent var(--background-start), var(--background-color) var(--background-start));
     width: calc(var(--width));
     overflow-y: hidden;
-    z-index: 20;
+    z-index: 2000;
 }
 
 #insert-toast {

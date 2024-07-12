@@ -6,19 +6,25 @@ function toggleMenu(option) {
         root.style.setProperty('--terminal-width', '405px')
         root.style.setProperty('--terminal-display', '')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
-        sessionStorage.setItem('sidebar', 'true')
 
         // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 161px - var(--terminal-width))'
+        current = true
 
     } else if (option == false || current == true) {
         root.style.setProperty('--terminal-width', '0px')
         root.style.setProperty('--terminal-display', 'none')
         root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
-        sessionStorage.setItem('sidebar', 'false')
 
         // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 101px - var(--terminal-width))'
+        current = false
+    }
+
+    if (current == true) {
+        sessionStorage.setItem('sidebar', 'true')
+    } else {
+        sessionStorage.setItem('sidebar', 'false')
     }
 }
 
@@ -45,6 +51,7 @@ function returnMenuToggle() {
     options = sessionStorage.getItem('sidebar')
     if (options == null) {
         toggleMenu(true)
+        sessionStorage.setItem('sidebar', 'true')
     } else {
         if (options == 'true') {
             toggleMenu(true)
@@ -78,7 +85,7 @@ function manageLayoutByWidth() {
 }
 
 function manageInitialLayout() {
-    if (window.innerWidth < initialContentThreshold) {
-        toggleMenu(false)
-    }
+    // if (window.innerWidth < initialContentThreshold) {
+    //     toggleMenu(false)
+    // }
 }

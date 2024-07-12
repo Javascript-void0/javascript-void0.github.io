@@ -30,6 +30,7 @@ body {
 
 a {
     color: var(--color) !important;
+    text-decoration: none;
 }
 
 a:hover {
@@ -71,6 +72,10 @@ insert:hover {
 
 .accent {
     color: var(--accent);
+}
+
+.color {
+    color: var(--color);
 }
 
 .no-sel {
