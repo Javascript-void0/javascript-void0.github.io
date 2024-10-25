@@ -1,8 +1,12 @@
+:root {
+    --accent2: #9b9993;
+    --accent3: #676661;
+}
+
 #blog-container {
     display: grid;
     max-width: 100%;
     grid-template-columns: 15rem 0.5rem 1fr;
-    height: calc(var(--main-content-height) - 102px); /* idk */
 }
 
 #blog-border {
@@ -15,6 +19,7 @@
     white-space: pre;
     margin-right: 1rem;
     overflow-y: scroll;
+    height: calc(var(--main-content-height) - 11%); /* idk */
 
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -29,11 +34,16 @@
     margin-left: 1rem;
     margin-right: 1rem;
     white-space: pre-wrap;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
+    height: calc(var(--main-content-height) - 11%); /* idk */
     max-width: 50rem;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+#blog-right {
+    font-size: 1.07rem;
 }
 
 #blog-right::-webkit-scrollbar {
@@ -62,4 +72,46 @@ hr {
     height: 0.2rem;
     line-height: 0.2rem;
     margin: 0;
+}
+
+.post-content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+blockquote {
+    color: var(--accent2);
+    padding-left: 0.7rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    border-left: var(--accent2) 0.15rem solid;
+}
+
+.b-center {
+    width: 200px;
+    margin: auto !important;
+    display: block;
+}
+
+.b-right {
+    float: right;
+    line-height: 0;
+}
+
+#blog-right img {
+    border: 1px solid var(--accent3);
+    margin-left: 0.5rem;
+}
+
+#blog-right ul {
+    line-height: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#blog-right h4 {
+    /* line-height: 0px; */
+    margin-top: 0;
+    margin-bottom: 0;
 }

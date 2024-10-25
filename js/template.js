@@ -31,6 +31,10 @@ function template(name, pushState = true) {
 
     sessionStorage.setItem('page', name)
     currentPage = name
+
+    if (name != 'blog') { // reset blog page when exit
+        sessionStorage.setItem('blog-page', 'welcome')
+    }
     
     // get function using name of template
     getTemplate = Function('return ' + name + 'Template')()

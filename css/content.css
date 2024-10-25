@@ -56,6 +56,10 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+#page:has(#blog-container) {
+    overflow-y: hidden !important;
+}
+
 #page::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }

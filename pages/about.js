@@ -40,9 +40,9 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>&nbsp&nbsp&nbspArcaea: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspID: 288 414 570
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.6x ptt
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.78 ptt
 	<br>&nbsp&nbsp&nbsposu!mania:
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp2,467pp
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp2,680pp
 	<br>&nbsp&nbsp&nbspEndless Frontier: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1090+
 `

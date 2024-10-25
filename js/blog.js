@@ -10,7 +10,7 @@ function loadBlogPage() {
 
     left.innerHTML= `<span style="margin-right: 20%">Java's 'blog'</span>
 
-<img src="assets/images/mio-circle.png" style="width: 8rem; margin-right: 2rem">
+<img src="assets/images/mio-circle.png" style="width: 8rem; margin-right: 2.3rem">
 
 <a onclick="blogOpenPost('welcome')" href="javascript:void(0);">Welcome</a> -
 <a onclick="blogOpenPost('about')" href="javascript:void(0);">About</a> -
@@ -22,10 +22,7 @@ Go: <a onclick="template('home'); return false;" href="javascript:void(0);">Home
 
 Recent:
 
-
-
-
-    `
+`
 
     border = document.createElement('div')
     border.id = 'blog-border'
@@ -36,42 +33,85 @@ Recent:
     right.id = 'blog-right'
     div.append(right)
 
-    blogOpenPost('welcome')
-    blogLoadPosts()
+    blogSortByYear()
+    blogLoadRecent()
+    blogOpenPost(sessionStorage.getItem('blog-page'))
+}
+
+function blogSortByYear() {
+    for (i = 1; i <= numPosts; i++) {
+        post = posts.get('' + i)
+        postYear = post.postYear
+        if (postYear in byYear) {
+            byYear[postYear].push(post)
+        } else {
+            byYear[postYear] = [post]
+        }
+    }
+    years = Object.keys(byYear)
 }
 
 function blogLoadRecent() {
-
+    let count = 0;
+    ret = ''
+    for (i = years.length - 1; i >= 0; i--) {
+        let year = years[i]
+        let postsInYear = byYear[year]
+        for (post of postsInYear) {
+            ret += `<a onclick="blogOpenPost(${post.postID})" href="javascript:void(0)">${post.postTitle}</a>
+`
+            count++
+            if (count == 5) { i = -1; break; }
+        }
+    }
+    let blogLeft = document.getElementById('blog-left')
+    blogLeft.innerHTML += ret
 }
 
-let posts = [
-    ['August 2022', 'Post 1'], 
-    ['July 2023', 'Post 2'], 
-    ['September 2023', 'Post 3']
-]
-function blogLoadPosts() {
-    // for (i = 0; i < 10; i++) {
-    //     if (test2) {
-    //         return
-    //     }
-    //     console.log('test', i)
-    //     import(`/posts/1.js`).then(post => {
-    //         if (!post) {
-    //             console.log('tosijoawijfoewij')
-    //         }
-    //         posts.append([posts.postDate, posts.postTitle, posts.postContent])
-    //     }).catch((error) => { console.log(test2); test2 = true; return })
-    // }
+let numPosts = 6; // this website is static :(
+let posts = new Map()
+let byYear = {}
+let years = []
+let extraPages = ['posts', 'welcome', 'about']
+// load all pages
+for (i = 1; i <= numPosts; i++) {
+    import(`/posts/${i}.js`).then(post => {
+        posts.set(post.postID, Object.assign({}, post))
+    })
+}
+for (page of extraPages) {
+    import(`/posts/${page}.js`).then(post => {
+        posts.set(post.postID, Object.assign({}, post))
+    })
 }
 
-function blogOpenPost(post) {
+function blogOpenPost(postID) {
+    postID = '' + postID
     let blogRight = document.getElementById('blog-right')
-    import(`/posts/${post}.js`).then(post => {
-        blogRight.innerHTML = `<h1 class="post-title">${post.postTitle}</h1>
+    let post = posts.get(postID)
+    let postContent = post.postContent
+    if (postID == 'posts') { postContent = listOfPosts() }
+    blogRight.innerHTML = `<h1 class="post-title">${post.postTitle}</h1>
 <p class="post-date">${post.postDate}</p>
 <hr>
 
-${post.postContent}
+<div class="post-content">${postContent}</div>
 `
-    })
+    sessionStorage.setItem('blog-page', postID)
+}
+
+function listOfPosts() {
+    let ret = ''
+    for (i = years.length - 1; i >= 0; i--) {
+        let year = years[i]
+        ret += `<h4>${year}</h4><ul>
+`
+        let postsInYear = byYear[year]
+        for (post of postsInYear) {
+            ret += `<li>${post.postDate} - <a onclick="blogOpenPost(${post.postID})" href="javascript:void(0)">${post.postTitle}</a></li>
+`
+        }
+        ret += '</ul>'
+    }
+    return ret;
 }
