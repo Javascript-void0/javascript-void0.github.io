@@ -36,13 +36,13 @@ const aboutTemplate = `
 	<img src="assets/images/mc.png" width="80" style="margin-left: 30px; border-radius: 15px; ">
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
 	<br>
-	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a> (<span class="strikethrough">quit</span>) (<span class="strikethrough">un-quit</span>) (re-quit)
+	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a>
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>&nbsp&nbsp&nbspArcaea: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspID: 288 414 570
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.78 ptt
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.80 ptt
 	<br>&nbsp&nbsp&nbsposu!mania:
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp2,680pp
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp2,957pp
 	<br>&nbsp&nbsp&nbspEndless Frontier: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1090+
 `

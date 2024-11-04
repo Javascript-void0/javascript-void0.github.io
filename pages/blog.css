@@ -3,6 +3,11 @@
     --accent3: #676661;
 }
 
+@font-face {
+    font-family: Space Grotesk;
+    src: url(../assets/fonts/SpaceGrotesk[wght].ttf)
+}
+
 #blog-container {
     display: grid;
     max-width: 100%;
@@ -30,7 +35,7 @@
 }
 
 #blog-right {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Space Grotesk, Georgia, 'Times New Roman', Times, serif;
     margin-left: 1rem;
     margin-right: 1rem;
     white-space: pre-wrap;

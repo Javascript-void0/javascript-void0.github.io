@@ -59,7 +59,8 @@ Laptop:
   <span class="color">Sony Xperia 5 iii</span>
 <hr>Audio: 
   Microsoft Surface Headphones 2
-  <span class="color">Moondrop SSP</span>
+  <span class="color">Truthear Hexa</span>
+  Moondrop SSP
   Moondrop CHU II
   Sony WF-1000XM3
   <span class="color">Sony MDR-7506</span>
@@ -68,5 +69,6 @@ Laptop:
 <hr>Keyboard: 
   <span class="color">Moondrop Dash75</span>
   Libra Mini 40%
+  <span class="color">SayoDevice O3C++</span>
 </div>
 `
