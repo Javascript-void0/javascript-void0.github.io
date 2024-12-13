@@ -1,4 +1,6 @@
 const blogAnimation = false
+const blogRun = 'loadBlogPage()'
+const blogRunPost = null
 const blogTemplate = `
 	<link rel="stylesheet" href="pages/blog.css">
 `

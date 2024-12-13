@@ -1,4 +1,6 @@
 const homeAnimation = true
+const homeRun = null
+const homeRunPost = null
 const homeTemplate = `
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
   Home

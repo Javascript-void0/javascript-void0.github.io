@@ -38,7 +38,10 @@ function template(name, pushState = true) {
     
     // get function using name of template
     getTemplate = Function('return ' + name + 'Template')()
+    pageRun = Function('return ' + name + 'Run')()
+    pageRunPost = Function('return ' + name + 'RunPost')()
     doAnimation = Function('return ' + name + 'Animation')()
+    
     // split string by newlines
     lines = getTemplate.split('<br>')
 
@@ -71,10 +74,8 @@ function template(name, pushState = true) {
         newContent.style.zIndex = ''
     }
 
-    if (name == 'apps') {
-        loadAppPage()
-    } else if (name == 'blog') {
-        loadBlogPage()
+    if (pageRun) {
+        eval(pageRun)
     }
 
     if (pushState) {
@@ -96,9 +97,14 @@ function docAnimation(text, total, i) {
             // continue covering up old content
             let filler = setInterval(function() {
                 if (newContentHeight > currentContentHeight) {
+                    // FINISHED LOADING BODY
                     currentContent.innerHTML = ''
                     insertTemplateContainer.removeChild(currentContent)
                     animationInProgress = false;
+
+                    if (pageRunPost) {
+                        eval(pageRunPost)
+                    }
 
                     // scroll up
                     let unfiller = setInterval(function() {

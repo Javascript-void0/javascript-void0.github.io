@@ -1,4 +1,6 @@
 const setupAnimation = true
+const setupRun = null 
+const setupRunPost = 'addImageZoom()'
 const setupTemplate = `
 	<style>
 	hr {
@@ -48,7 +50,7 @@ YouTube ReVanced
 	<br>
 	<br>## <span class="secondary">Hardware</span>
 	<br>
-	<br><img src="/assets/images/setup.jpg" style="width: 500px; margin-left: 20px">
+	<br><img src="/assets/images/setup.jpg" style="width: 500px; margin-left: 20px" class="zoom">
 	<br>
 
 <div style="white-space: pre; margin-left: 40px">

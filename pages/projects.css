@@ -6,8 +6,8 @@ hr {
 	margin-right: var(--margin);
 }
 
-img {
-	max-height: 8rem;
+.zoom {
+    height: 8rem;
 	border-radius: 10px;
 }
 

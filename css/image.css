@@ -1,0 +1,25 @@
+.zoom {
+    user-select: none;
+    cursor: zoom-in;
+}
+
+#image-zoom {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    cursor: zoom-in;
+}
+
+#image-zoom-image {
+    display: block;
+    margin: auto;
+    width: 60vw;
+    max-height: 100%;
+    border: var(--primary) 2px solid;
+
+    /* vertical */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}

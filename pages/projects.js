@@ -1,4 +1,6 @@
 const projectsAnimation = true
+const projectsRun = null
+const projectsRunPost = 'addImageZoom()'
 const projectsTemplate = `
     <link rel="stylesheet" href="pages/projects.css">
 	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap; z-index: 10">
@@ -11,7 +13,7 @@ const projectsTemplate = `
 
 	<br>## <span class="secondary">al-utils</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/al-utils-banner.png">
+	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/al-utils-banner.png" class="zoom">
 	<br>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspSmall utilities for <a href="https://anilist.co" target="_blank" rel="noopener nonreferrer">AniList</a>
 	<br>
@@ -32,7 +34,7 @@ const projectsTemplate = `
 
 	<br>## <span class="secondary">batch</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/batch-banner.png">
+	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/batch-banner.png" class="zoom">
 	<br>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspFlashcard App for Android, using Xamarin.Forms
 	<br>
@@ -51,7 +53,7 @@ const projectsTemplate = `
 
 	<br>## <span class="secondary">Umoria</span> (Oct 2021 - gave up)
 	<br>
-	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/umoria-banner.png">
+	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/umoria-banner.png" class="zoom">
 	<br>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspMinecraft RPG server hosted on <a href="https://minehut.com" target="_blank" rel="noopener nonreferrer">Minehut</a>
 	<br>
@@ -70,7 +72,7 @@ const projectsTemplate = `
 
 	<br>## <span class="secondary">Around the Clock</span> (Jan 2021 - Dec 2021)
 	<br>
-	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/atc-banner.png">
+	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/atc-banner.png" class="zoom">
 	<br>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspDiscord study server
 	<br>
@@ -84,7 +86,7 @@ const projectsTemplate = `
 
 	<br>## <span class="secondary">FarminFarm</span> (Sep 2020 - Jul 2021)
 	<br>
-	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/farminfarm-banner.png">
+	<br>&nbsp&nbsp&nbsp<img src="/assets/images/project-banners/farminfarm-banner.png" class="zoom">
 	<br>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspMinecraft farming server hosted on <a href="https://minehut.com" target="_blank" rel="noopener nonreferrer">Minehut</a>
 	<br>
