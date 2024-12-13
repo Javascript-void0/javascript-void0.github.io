@@ -115,7 +115,7 @@ function docAnimation(text, total, i) {
                 currentContentHeight = currentContent.clientHeight
 
                 continueAnimation.append(temp = document.createElement('div'))
-                temp.style.background = '#252423'
+                temp.style.background = 'var(--main-content-background)'
                 temp.innerHTML = '<br>'
 
             }, 15);
@@ -123,7 +123,7 @@ function docAnimation(text, total, i) {
             return;
         }
         insertTemplate.append(temp = document.createElement('div'))
-        temp.style.background = '#252423'
+        temp.style.background = 'var(--main-content-background)'
         temp.innerHTML = temp.innerHTML + text[i] + '<br>'
 
         docAnimation(text, total, i + 1);        

@@ -26,6 +26,7 @@ Recent:
 
     border = document.createElement('div')
     border.id = 'blog-border'
+    border.classList.add('border')
     border.innerHTML= leftBorder.innerHTML.slice(0, -1)
     div.append(border)
 

@@ -49,8 +49,8 @@ setInterval(function() {
 
 
 const editPosition = 24 // position in string where characters are removed/added (to resize)
-const charWidth = 8.595 // before?: (612.71 / 71)
-const charHeight = 19 // before?: getLineHeight(document.getElementById('page-body'))
+const charWidth = 8.6
+const charHeight = 16
 const r = document.querySelector(':root')
 
 function updateWidth(width, element, diff=0) { // diff is offset of left and right?
