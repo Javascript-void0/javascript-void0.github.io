@@ -34,7 +34,10 @@ Recent:
     right.id = 'blog-right'
     div.append(right)
 
-    blogSortByYear()
+    if (Object.keys(byYear).length === 0) {
+        blogSortByYear()
+    }
+        
     blogLoadRecent()
     blogOpenPost(sessionStorage.getItem('blog-page'))
 }
