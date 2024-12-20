@@ -2,9 +2,9 @@ const appsAnimation = false
 const appsRun = 'loadAppPage()'
 const appsRunPost = null
 const appsTemplate = `
-	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
-  <a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbspApps
-<br></div>
+	<div class="breadcrumb">
+<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbspApps
+	</div>
 	<br>
 	<br>
 	<link rel="stylesheet" href="pages/apps.css">

@@ -7,13 +7,13 @@ const setupTemplate = `
 		padding: 0;
 		margin: 8px 0px 8px -10px;
 		max-width: 350px;
-		opacity: 60%;
+    border: 1px solid #414141;
 	}
 	</style>
 
-	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
-  <a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
-<br></div>
+  <div class="breadcrumb">
+<a onclick="template('home');return false" href="javascript:void(0)">Home</a>&nbsp>&nbsp<a onclick="template('about');return false" href="javascript:void(0)">About</a>&nbsp>&nbspSetup
+  </div>
 	<br>
 	<br>
 	<br><img src="/assets/images/setup.gif" style="width: 200px; margin-left: 30px">

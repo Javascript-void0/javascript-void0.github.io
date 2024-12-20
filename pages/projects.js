@@ -3,9 +3,9 @@ const projectsRun = null
 const projectsRunPost = 'addImageZoom()'
 const projectsTemplate = `
     <link rel="stylesheet" href="pages/projects.css">
-	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap; z-index: 10">
-  <a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspProjects
-<br></div> 
+	<div class="breadcrumb">
+<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspProjects
+	</div> 
 	<br>
 	<br>
 

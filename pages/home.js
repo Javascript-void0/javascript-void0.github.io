@@ -2,16 +2,17 @@ const homeAnimation = true
 const homeRun = null
 const homeRunPost = null
 const homeTemplate = `
-	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
-  Home
-<br></div>
+	<div class="breadcrumb">
+Home
+	</div>
+	<link rel="stylesheet" href="pages/home.css">
 	<br>
 	<br>
 	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
 	<br>
-	<br><div class="center" style="max-width: 600px">welcome to my corner of the internet <span class="secondary">:3</span></div>
+	<br><div class="center" style="max-width: var(--center-width)">welcome to my corner of the internet <span class="secondary">:3</span></div>
 	<br>
-	<div class="center" style="max-width: 600px">
+	<div class="center" style="max-width: var(--center-width)">
 =================== <span class="secondary">***</span> ===================
 ** <span class="secondary">WARNING</span> **
 
@@ -39,15 +40,21 @@ c). yeets itself out the window
 	<br>
 	<br># <span class="secondary">Menu</span>
 	<br>
-	<br>&nbsp&nbsp> <a onclick="template('about');return false" href="javascript:void(0);">About</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
-	<br>&nbsp&nbsp> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
-	<br>&nbsp&nbsp&nbsp&nbsp> <a onclick="template('gallery');return false" href="javascript:void(0);">Gallery</a>
-	<br>&nbsp&nbsp> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
-	<br>&nbsp&nbsp> <a onclick="template('apps');return false" href="javascript:void(0);">Apps</a>
-	<br>&nbsp&nbsp> <a onclick="template('blog');return false" href="javascript:void(0);">Blog</a>
 	<br>
+	<div id="home-menu">
+		<div class="home-menu-category">
+			> <a onclick="template('about');return false" href="javascript:void(0);">About</a>
+			<br class="ignore">&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
+			<br class="ignore">&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
+			<br class="ignore">> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
+			<br class="ignore">&nbsp&nbsp> <a onclick="template('gallery');return false" href="javascript:void(0);">Gallery</a>
+		</div>
+		<div class="home-menu-category home-menu-left">
+			> <a onclick="template('resources');return false" href="javascript:void(0);">Resources</a>
+			<br class="ignore">> <a onclick="template('apps');return false" href="javascript:void(0);">Apps</a>
+			<br class="ignore">> <a onclick="template('blog');return false" href="javascript:void(0);">Blog</a>
+		</div>
+	</div>
 	<br>## <span class="secondary">Subpages</span>
 	<br>
 	<br>&nbsp&nbsp> None

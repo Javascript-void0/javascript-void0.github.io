@@ -2,9 +2,9 @@ const resourcesAnimation = true
 const resourcesRun = null
 const resourcesRunPost = null
 const resourcesTemplate = `
-	<div style="position: fixed; width: var(--page-width); background: var(--main-content-background); white-space: pre-wrap;">
-  <a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspResources
-<br></div>
+	<div class="breadcrumb">
+<a onclick="template('home');return false" href="javascript:void(0);">Home</a>&nbsp>&nbspResources
+	</div>
 	<br>
 	<br>
 	<br>&nbsp&nbspStuff I find online that I find useful. 

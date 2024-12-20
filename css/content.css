@@ -149,3 +149,12 @@ body {
 .navigation a {
     text-decoration: none;
 }
+
+.breadcrumb {
+    position: fixed;
+    width: calc(var(--page-width) - 1rem);
+    background: var(--main-content-background);
+    white-space: pre-wrap;
+    user-select: none;
+    padding-left: 1rem;
+}
