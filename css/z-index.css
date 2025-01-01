@@ -1,0 +1,7 @@
+.breadcrumb {
+    z-index: 120;
+}
+
+.toast {
+    z-index: 2000;
+}

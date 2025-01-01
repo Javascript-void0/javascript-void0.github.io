@@ -115,7 +115,6 @@ body {
     float: right;
     background: linear-gradient(to bottom, transparent var(--background-start), var(--background-color) var(--background-start));
     width: 395.6px; /* wtf */
-    z-index: 2000;
     line-height: 16px;
 }
 

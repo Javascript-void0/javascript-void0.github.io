@@ -41,7 +41,6 @@ hr {
     background: var(--color);
     width: 25px;
     height: 30px;
-    z-index: 1;
 }
 
 li {
