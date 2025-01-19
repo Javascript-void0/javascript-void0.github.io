@@ -11,7 +11,7 @@ const aboutTemplate = `
 	<br>
 	<br><img src="assets/images/takina.gif" style="width: 300px; padding-left: 30px;">
 	<br>
-	<br>## <span class="secondary">Interests</span>
+	<br>## <span class="secondary">Hobbies</span>
 	<br>
 	<br>&nbsp&nbsp&nbspCoding <span class="strikethrough">very inefficient programs</span>
 	<br>&nbsp&nbsp&nbspWeb Development
@@ -35,16 +35,16 @@ const aboutTemplate = `
 	<br>## <span class="secondary">Games</span>
 	<br>
 	<br><img src="assets/images/keqing.png" style="height: 90px; margin-left: 30px">
-	<img src="assets/images/mc.png" width="80" style="margin-left: 30px; border-radius: 15px; ">
+	<img src="assets/images/mc.png" width="85" style="margin-left: 30px; border-radius: 10px; ">
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a>
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>&nbsp&nbsp&nbspArcaea: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspID: 288 414 570
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.80 ptt
-	<br>&nbsp&nbsp&nbsposu!mania:
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp2,957pp
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.77 ptt
+	<br>&nbsp&nbsp&nbsposu!mania: <a href='https://osu.ppy.sh/users/21288466' target='_blank' rel='noopener nonreferrer'>vlucent</a>
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp3,079pp
 	<br>&nbsp&nbsp&nbspEndless Frontier: 
-	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1090+
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1135
 `
