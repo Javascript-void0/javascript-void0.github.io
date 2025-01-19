@@ -25,6 +25,10 @@
     line-height: 16px;
 }
 
+#right-border {
+    user-select: none;
+}
+
 .main-content-container {
     width: var(--main-content-width);
     height: 100vh;
