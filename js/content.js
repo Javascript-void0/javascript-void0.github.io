@@ -106,6 +106,8 @@ function updateHeight() { // height of content, not including header and footer
             blogBorder.innerHTML = leftBorder.innerHTML.slice(0, -1)
         }
     }
+
+    updateScrollBar();
 }
 
 // remove character at editPosition
