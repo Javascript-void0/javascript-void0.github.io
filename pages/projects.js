@@ -23,6 +23,7 @@ const projectsTemplate = `
 	<li>access user data found in api</li>
 	<li>generates table of watch list and airing progress</li>
 	<li>light and dark mode! (with fancy transitions)</li>
+	<li>android app port</li>
 	</ul>
 	<br>&nbsp&nbsp&nbsp-&nbsp[<a href="https://github.com/al-utils"><div class="button-github project-buttons"></div></a>]
 	[<a href="https://al-utils.github.io"><div class="button-website project-buttons"></div></a>]

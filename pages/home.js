@@ -66,7 +66,7 @@ c). yeets itself out the window
 	<br>
 	<br>&nbsp❤ <span class="secondary">Brought to you by my awful web development skills</span>
 	<br>
-	<br>&nbsp&nbsp&nbsp (c) 2022-2024 Java
+	<br>&nbsp&nbsp&nbsp (c) 2022-2025 Java
 	<br>
 	<br>
 `

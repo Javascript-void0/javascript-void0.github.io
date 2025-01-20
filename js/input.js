@@ -2,7 +2,7 @@ document.onkeydown = KeyPress;
 
 // prevent middle click on js:void(0)
 window.addEventListener("auxclick", (event) => {
-    console.log(event)
+    // console.log(event)
     if (event.button === 1) {
         href = event.target.href;
         if (href == 'javascript:void(0);') {

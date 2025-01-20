@@ -46,5 +46,5 @@ const aboutTemplate = `
 	<br>&nbsp&nbsp&nbsposu!mania: <a href='https://osu.ppy.sh/users/21288466' target='_blank' rel='noopener nonreferrer'>vlucent</a>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp3,079pp
 	<br>&nbsp&nbsp&nbspEndless Frontier: 
-	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1135
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1137
 `
