@@ -35,7 +35,6 @@
 
 .terminal-container {
     width: var(--terminal-width);
-    right: 50px;
     display: var(--terminal-display);
 }
 

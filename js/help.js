@@ -11,6 +11,8 @@ function HelpCommand(text) {
                  '               and echoing on or off.          ',
                  'EXIT           Quits the CMD.EXE program (comma',
                  '               nd interpreter).                ',
+                 'FLIP           Flip terminal and content contai',
+                 '               ners                            ',
                  'HELP           List the avaiable commands.     ',
                  'PAGES          List avaiable pages.            ',
                  'REPO           Opens the repository.           ',
@@ -48,6 +50,9 @@ function HelpCommand(text) {
                 break
             case 'EXIT':
                 lines = ['Quits the CMD.EXE program (command interpreter)']
+                break
+            case 'FLIP':
+                lines = ['Flip terminal and content containers           ']
                 break
             case 'HELP':
                 lines = ['Provides help information for Windows commands.',

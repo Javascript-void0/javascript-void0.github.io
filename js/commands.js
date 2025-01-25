@@ -6,6 +6,7 @@ const commands = [
     'DATE',
     'ECHO',
     'EXIT',
+    'FLIP',
     'HELP',
     'REPO',
     'SYSTEMINFO',
@@ -76,7 +77,6 @@ function RunCommand(text) {
                 break
             case 'CLS':
                 clearTerminalHistory()
-                // NewLine()
                 break
             case 'DATE':
                 today = new Date().toLocaleDateString()
@@ -113,6 +113,22 @@ function RunCommand(text) {
                 break
             case 'EXIT':
                 window.open('','_self').close()
+                break
+            case 'FLIP':
+                var mainContent = document.getElementById('main-content-container')
+                var terminal = document.getElementById('terminal-container')
+                if (mainContent.style.left == '50px') { // on left
+                    mainContent.style.left = '';
+                    mainContent.style.right = '50px';
+                    terminal.style.left = '50px';
+                    terminal.style.right = '';
+                } else {
+                    mainContent.style.left = '50px';
+                    mainContent.style.right = '';
+                    terminal.style.left = '';
+                    terminal.style.right = '50px';
+                }
+                NewLine();
                 break
             case 'HELP':
                 HelpCommand(text)

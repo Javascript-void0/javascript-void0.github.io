@@ -1,5 +1,5 @@
 :root {
-    --center-width: 600px;
+    --center-width: 650px;
 }
 
 #home-menu {
@@ -8,4 +8,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
     margin-left: 1rem;
+}
+
+hr {
+    display: inline-block;
+    margin-bottom: 4px;
 }

@@ -10,12 +10,12 @@ Home
 	<br>
 	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
 	<br>
+	<br>
 	<br><div class="center" style="max-width: var(--center-width)">welcome to my corner of the internet <span class="secondary">:3</span></div>
 	<br>
 	<div class="center" style="max-width: var(--center-width)">
-=================== <span class="secondary">***</span> ===================
-** <span class="secondary">WARNING</span> **
-
+====================== <span class="secondary">***</span> ======================
+......
 You might need a <a href='https://en.wikipedia.org/wiki/Pleiades_(supercomputer)' target='_blank' rel='noopener nonreferrer'>NASA supercomputer</a> to 
 load this stupid website...
 
@@ -26,9 +26,10 @@ b). starts doing backflips
 c). yeets itself out the window
 
 </div>
-=================== <span class="secondary">=.=</span> ===================
+====================== <span class="secondary">=.=</span> ======================
 	</div>
 	<br> ## <span class="secondary">Navigation</span>
+	<hr style="width: calc(100% - 130px); max-width: calc(var(--center-width) - 120px)">
     <br>
 	<br>&nbsp&nbspType <insert onclick="ableType('help')">'help'</insert> for a list of commands.
 	<br>&nbsp&nbspType <insert onclick="ableType('pages')">'pages'</insert> for list of pages. 
@@ -39,6 +40,7 @@ c). yeets itself out the window
 	<br><img src="assets/images/ina.gif">
 	<br>
 	<br># <span class="secondary">Menu</span>
+	<hr style="width: calc(100% - 70px); max-width: calc(var(--center-width) - 60px)">
 	<br>
 	<br>
 	<div id="home-menu">
