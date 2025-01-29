@@ -61,8 +61,8 @@ function returnMenuToggle() {
     }
 }
 
-const initialContentThreshold = 1050
-const onlyContentThreshold = 870
+// const initialContentThreshold = 1050
+const onlyContentThreshold = 1055
 const onlySidebarThreshold = 567
 
 function manageLayoutByWidth() {
@@ -84,8 +84,8 @@ function manageLayoutByWidth() {
     }
 }
 
-function manageInitialLayout() {
-    // if (window.innerWidth < initialContentThreshold) {
-    //     toggleMenu(false)
-    // }
-}
+// function manageInitialLayout() {
+//     if (window.innerWidth < initialContentThreshold) {
+//         toggleMenu(false)
+//     }
+// }

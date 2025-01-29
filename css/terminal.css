@@ -9,7 +9,7 @@
     background: var(--secondary);
 }
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 1055px) {
     .terminal-container {
         margin-right: auto;
         margin-left: auto;
@@ -23,7 +23,7 @@
     }
 }
 
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 1055px) {
     .terminal-container {
         position: fixed;
     }

@@ -1,9 +1,5 @@
-:root {
-    --center-width: 650px;
-}
-
 #home-menu {
-    max-width: var(--center-width);
+    max-width: var(--content-max-width);
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);

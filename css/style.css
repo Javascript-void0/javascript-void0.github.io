@@ -4,7 +4,6 @@
     --accent: #c6c3bb;
     --color: #f4e8a3;
     --selection-text-color: var(--primary);
-    --terminal-width: 405px;
 }
 
 @font-face {
