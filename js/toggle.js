@@ -66,7 +66,13 @@ const onlyContentThreshold = 1055
 const onlySidebarThreshold = 567
 
 function manageLayoutByWidth() {
-    // <870, only show content
+    if (currentPage == 'blog') {
+        // do stuff
+        // else?
+    }
+
+
+    // <1055, only show content
     if (window.innerWidth < onlyContentThreshold) {
         if (menuIsVisible()) {
             toggleMenu(false)

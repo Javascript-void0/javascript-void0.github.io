@@ -38,11 +38,12 @@ var page;
 
 function updateScrollBar() {
 
-    if (currentPage == 'blog') {
+    if (typeof currentPage !== 'undefined' && currentPage == 'blog') {
         page = document.getElementById('blog-right')
     } else {
         page = document.getElementById('page')
     }
+    if (page == null) { return; }
 
     if (page.scrollHeight < page.clientHeight) { // no scroll
         return;

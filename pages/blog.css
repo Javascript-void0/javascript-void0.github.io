@@ -24,7 +24,7 @@
     white-space: pre;
     margin-right: 1rem;
     overflow-y: scroll;
-    height: calc(var(--main-content-height) - 11%); /* idk */
+    height: calc(var(--main-content-height) - 100px);
 
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -40,15 +40,16 @@
     margin-right: 1rem;
     white-space: pre-wrap;
     overflow-y: scroll !important;
-    height: calc(var(--main-content-height) - 11%); /* idk */
-    max-width: 50rem;
+    height: calc(var(--main-content-height) - 80px);
+    font-size: 1.07rem;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-#blog-right {
-    font-size: 1.07rem;
+#blog-right-container {
+    /* max-width: var(--content-max-width); */
+    max-width: 50rem;
 }
 
 #blog-right::-webkit-scrollbar {

@@ -1,4 +1,7 @@
 function loadBlogPage() {
+    page = document.getElementById('page')
+    page.scrollTop = 0;
+
     insert = document.getElementById('insert-template')
     div = document.createElement('div')
     div.id = 'blog-container'
@@ -32,6 +35,9 @@ Recent:
 
     right = document.createElement('div')
     right.id = 'blog-right'
+    rightContainer = document.createElement('div')
+    rightContainer.id = 'blog-right-container'
+    right.append(rightContainer);
     div.append(right)
 
     if (Object.keys(byYear).length === 0) {
@@ -91,7 +97,7 @@ for (page of extraPages) {
 
 function blogOpenPost(postID) {
     postID = '' + postID
-    let blogRight = document.getElementById('blog-right')
+    let blogRight = document.getElementById('blog-right-container')
     let post = posts.get(postID)
     let postContent = post.postContent
     if (postID == 'posts') { postContent = listOfPosts() }
