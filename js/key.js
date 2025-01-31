@@ -37,7 +37,7 @@ function Key(e) {
 
     for (letter in letters) {
         try {
-            letters[letter].style.color = 'var(--primary)'
+            letters[letter].style.color = 'transparent'
         } catch (e) {
             return
         }

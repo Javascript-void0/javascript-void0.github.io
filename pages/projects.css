@@ -13,34 +13,16 @@ hr {
 	border-radius: 10px;
 }
 
-.button-github {
-    -webkit-mask: url(../assets/icons/button-github.svg) no-repeat center;
-    mask: url(../assets/icons/button-github.svg) no-repeat center;
-    transform: scale(0.8);
+.banner {
+    height: 135px;
+    max-width: 720px;
+    width: 90%;
+    object-fit: cover;
+    object-position: left;
 }
 
-.button-website {
-    -webkit-mask: url(../assets/icons/button-website.svg) no-repeat center;
-    mask: url(../assets/icons/button-website.svg) no-repeat center;
-    transform: scale(0.8);
-}
-
-.button-discord {
-    -webkit-mask: url(../assets/icons/button-discord.svg) no-repeat center;
-    mask: url(../assets/icons/button-discord.svg) no-repeat center;
-    transform: scale(0.8);
-}
-
-.project-buttons {
-    transform: scale(0.8);
-    padding-top: 0px;
-    margin-top: 0px;
-    display: inline-block;
-    position: relative;
-    top: 10px;
-    background: var(--color);
-    width: 25px;
-    height: 30px;
+.retire {
+    filter: grayscale(1);
 }
 
 li {
