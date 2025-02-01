@@ -55,10 +55,10 @@ function ableType(text) {
 }
 
 // able to if window width is within range
-function ableToggle() {
+function ableToggle(option, manualToggle=false) {
     if (window.innerWidth > onlyContentThreshold || 
         window.innerWidth < onlySidebarThreshold) {
-        toggleMenu()
+        toggleMenu(option, manualToggle)
     } else {
         alert(['window too narrow, sidebar', 'is unavailable'])
     }

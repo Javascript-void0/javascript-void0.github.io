@@ -21,15 +21,15 @@ function KeyPress(e) {
     if (e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
         Key(e)
-        if (menuIsVisible()) {
-            toggleMenu()
+        if (menuIsVisible) {
+            toggleMenu(null, true)
         } else {
-            ableToggle()
+            ableToggle(null, true)
         }
     }
 
     // console is not visible, ignore input
-    if (!menuIsVisible()) {
+    if (!menuIsVisible) {
         return;
     }
 
