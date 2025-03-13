@@ -45,7 +45,7 @@ function deleteToast(id) {
 
 // able to if terminal/sidebar is visible
 function ableType(text) {
-    if (menuIsVisible()) {
+    if (menuIsVisible) {
         document.getElementById('input').textContent = text
         // send/enter command automatically
         RunCommand(text)

@@ -13,6 +13,14 @@ window.addEventListener("auxclick", (event) => {
     }
 });
 
+function ctrlSToggle() {
+    if (menuIsVisible) {
+        toggleMenu(null, true)
+    } else {
+        ableToggle(null, true)
+    }
+}
+
 function KeyPress(e) {
 
     // console.log(e.keyCode)
@@ -21,11 +29,7 @@ function KeyPress(e) {
     if (e.ctrlKey && e.keyCode == 83) {
         e.preventDefault()
         Key(e)
-        if (menuIsVisible) {
-            toggleMenu(null, true)
-        } else {
-            ableToggle(null, true)
-        }
+        ctrlSToggle();
     }
 
     // console is not visible, ignore input

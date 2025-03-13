@@ -115,19 +115,7 @@ function RunCommand(text) {
                 window.open('','_self').close()
                 break
             case 'FLIP':
-                var mainContent = document.getElementById('main-content-container')
-                var terminal = document.getElementById('terminal-container')
-                if (mainContent.style.left == '50px') { // on left
-                    mainContent.style.left = '';
-                    mainContent.style.right = '50px';
-                    terminal.style.left = '50px';
-                    terminal.style.right = '';
-                } else {
-                    mainContent.style.left = '50px';
-                    mainContent.style.right = '';
-                    terminal.style.left = '';
-                    terminal.style.right = '50px';
-                }
+                flipContent();
                 NewLine();
                 break
             case 'HELP':

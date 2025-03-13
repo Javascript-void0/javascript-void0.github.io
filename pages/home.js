@@ -8,7 +8,7 @@ Home
 	<link rel="stylesheet" href="pages/home.css">
 	<br>
 	<br>
-	<br># <span class="secondary">Welcome <span lang="ch">欢迎</span>
+	<br># <span class="secondary">Welcome <span lang="zh">欢迎</span>
 	<br>
 	<br>
 	<br><div class="center" style="max-width: var(--content-max-width)">welcome to my corner of the internet <span class="secondary">:3</span></div>
@@ -33,7 +33,7 @@ c). yeets itself out the window
     <br>
 	<br>&nbsp&nbspType <insert onclick="ableType('help')">'help'</insert> for a list of commands.
 	<br>&nbsp&nbspType <insert onclick="ableType('pages')">'pages'</insert> for list of pages. 
-	<br>&nbsp&nbspDo <span class="secondary pointer no-sel" onclick="ableToggle()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
+	<br>&nbsp&nbspDo <span class="secondary pointer no-sel" onclick="ctrlSToggle()" style="cursor: pointer;">'ctrl + s'</span> to toggle side panel. 
 	<br>
 	<br>&nbsp&nbsp<span class="secondary">*</span> Side panel is unavailable if window too narrow. 
 	<br>

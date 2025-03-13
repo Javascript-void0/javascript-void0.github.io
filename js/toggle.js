@@ -37,6 +37,29 @@ function toggleMenu(option, manualToggle=false) {
     }
 }
 
+function flipContent() {
+    var mainContent = document.getElementById('main-content-container')
+    var terminal = document.getElementById('terminal-container')
+
+    if (mainContent.style.left == '50px') { // on left
+        mainContent.style.left = '';
+        mainContent.style.right = '50px';
+        terminal.style.left = '50px';
+        terminal.style.right = '';
+        // terminal left, content right
+        sessionStorage.setItem('flip', 'true')
+
+    } else {
+        mainContent.style.left = '50px';
+        mainContent.style.right = '';
+        terminal.style.left = '';
+        terminal.style.right = '50px';
+        // terminal right, content left
+        sessionStorage.setItem('flip', 'false')
+    }
+
+}
+
 function toggleContent(option) {
     container = document.querySelector('.main-content-container')
     if (option == true) {
@@ -57,6 +80,13 @@ function returnMenuToggle() {
         } else if (options == 'false') {
             toggleMenu(false, true)
         }
+    }
+
+    options = sessionStorage.getItem('flip')
+    if (options == null) {
+        sessionStorage.setItem('flip', 'false')
+    } else if (options == 'true') {
+        flipContent();
     }
 }
 
