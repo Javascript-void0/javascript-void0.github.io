@@ -7,10 +7,22 @@ function toggleMenu(option, manualToggle=false) {
     
     root = document.querySelector(':root')
 
+    let menuJump = 405 / 6;
+    let i = 0;
+
+    // open menu
     if (option == true || menuIsVisible == false) {
-        root.style.setProperty('--terminal-width', '405px')
-        root.style.setProperty('--terminal-display', '')
-        root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
+
+        let openInterval = setInterval(function() {
+            root.style.setProperty('--terminal-width', `${menuJump * i}px`)
+            i++;
+            
+            if (menuJump * i > 405) {
+                root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
+                root.style.setProperty('--terminal-display', '')
+                clearInterval(openInterval);
+            }
+        }, 15)
 
         // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 161px - var(--terminal-width))'
@@ -21,10 +33,24 @@ function toggleMenu(option, manualToggle=false) {
             sessionStorage.setItem('sidebar', 'true')
         }
 
+    // close menu
     } else if (option == false || menuIsVisible == true) {
-        root.style.setProperty('--terminal-width', '0px')
-        root.style.setProperty('--terminal-display', 'none')
-        root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
+        // root.style.setProperty('--terminal-width', '0px')
+        // root.style.setProperty('--terminal-display', 'none')
+        // root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
+        
+        let closeInterval = setInterval(function() {
+            root.style.setProperty('--terminal-width', `${405 - menuJump * i}px`)
+            // root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
+            i++;
+
+            if (405 - menuJump * i < 0) {
+                root.style.setProperty('--terminal-display', 'none')
+                root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
+                clearInterval(closeInterval);
+            }
+            // root.style.setProperty('--terminal-display', '')
+        }, 15)
 
         // idk
         document.querySelector('.main-content-background').style.width = 'calc(100vw - 101px - var(--terminal-width))'

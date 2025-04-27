@@ -51,7 +51,8 @@
     overflow: auto;
     overflow-wrap: anywhere;
     word-break: break-all;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
+    white-space: nowrap;
     line-break: anywhere; /* D:< */
     display: flex;
     flex-direction: column-reverse;
