@@ -29,6 +29,8 @@
 
 #right-border {
     user-select: none;
+    /* margin-left: 40px; */
+    /* position: relative; */
 }
 
 .main-content-container {
@@ -50,11 +52,15 @@
 
 #page-body {
     display: flex;
+    width: calc(var(--page-width) + 44.5px);
     flex-direction: row;
 }
 
 #page {
-    max-width: var(--page-width);
+    /* max-width: calc(var(--page-width) - 50px); */
+    flex-grow: 1;
+    /* width: calc(100% - 223px); */
+    width: 20%;
     /* no idea where this number comes from */
     /* height: calc(100vh - 210px); */
     padding-left: 5px;

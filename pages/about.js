@@ -40,11 +40,17 @@ const aboutTemplate = `
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a>
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
+	<br>
 	<br>&nbsp&nbsp&nbspArcaea: 
 	<br>&nbsp&nbsp&nbsp&nbsp&nbspID: 288 414 570
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp11.77 ptt
+	<br>
 	<br>&nbsp&nbsp&nbsposu!mania: <a href='https://osu.ppy.sh/users/21288466' target='_blank' rel='noopener nonreferrer'>vlucent</a>
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp3,079pp
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp3,632pp
+	<br>
 	<br>&nbsp&nbsp&nbspEndless Frontier: 
-	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1155
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspKL 1270
+	<br>
+	<br>&nbsp&nbsp&nbspPuzzle & Dragons:
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspID: 383,474,403
 `
