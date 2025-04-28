@@ -15,6 +15,7 @@
         margin-left: auto;
         position: relative;
         right: 0px !important;
+        left: 0px !important;
     }
 
     /* narrow only terminal view */
@@ -35,7 +36,6 @@
 
 .terminal-container {
     width: var(--terminal-width);
-    display: var(--terminal-display);
 }
 
 .terminal {
@@ -46,13 +46,12 @@
     position: relative;
     font-family: Envy-Code-R;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 53px;
 
     overflow: auto;
     overflow-wrap: anywhere;
     word-break: break-all;
-    /* word-wrap: break-word; */
-    white-space: nowrap;
+    word-wrap: break-word;
     line-break: anywhere; /* D:< */
     display: flex;
     flex-direction: column-reverse;

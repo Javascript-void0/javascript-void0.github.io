@@ -6,20 +6,20 @@ function toggleMenu(option, manualToggle=false) {
     if (currentMenuState == false && option != null) { return; }
     
     root = document.querySelector(':root')
+    terminal = document.getElementById('terminal-container')
 
-    let menuJump = 405 / 6;
+    let menuJump = 455 / 6;
     let i = 0;
 
     // open menu
     if (option == true || menuIsVisible == false) {
 
         let openInterval = setInterval(function() {
-            root.style.setProperty('--terminal-width', `${menuJump * i}px`)
+            root.style.setProperty('--main-content-width', `calc(100vw - (var(--terminal-width) + 3 * 50px) + ${455 - menuJump * i}px)`)
             i++;
             
-            if (menuJump * i > 405) {
-                root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
-                root.style.setProperty('--terminal-display', '')
+            if (menuJump * i > 455) {
+                terminal.style.display = ''
                 clearInterval(openInterval);
             }
         }, 15)
@@ -35,25 +35,19 @@ function toggleMenu(option, manualToggle=false) {
 
     // close menu
     } else if (option == false || menuIsVisible == true) {
-        // root.style.setProperty('--terminal-width', '0px')
-        // root.style.setProperty('--terminal-display', 'none')
-        // root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
-        
+
+        terminal.style.display = 'none'
         let closeInterval = setInterval(function() {
-            root.style.setProperty('--terminal-width', `${405 - menuJump * i}px`)
-            // root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 50px))')
+            root.style.setProperty('--main-content-width', `calc(100vw - (var(--terminal-width) + 3 * 50px) + ${menuJump * i}px)`)
             i++;
 
-            if (405 - menuJump * i < 0) {
-                root.style.setProperty('--terminal-display', 'none')
-                root.style.setProperty('--main-content-width', 'calc(100vw - (var(--terminal-width) + 3 * 30px))')
+            if (455 - menuJump * i < 0) {
                 clearInterval(closeInterval);
             }
-            // root.style.setProperty('--terminal-display', '')
         }, 15)
 
         // idk
-        document.querySelector('.main-content-background').style.width = 'calc(100vw - 101px - var(--terminal-width))'
+        document.querySelector('.main-content-background').style.width = 'calc(100vw - 111px)'
         menuIsVisible = false
 
         if (manualToggle) {
@@ -100,12 +94,8 @@ function returnMenuToggle() {
     if (options == null) {
         toggleMenu(true)
         sessionStorage.setItem('sidebar', 'true')
-    } else {
-        if (options == 'true') {
-            toggleMenu(true, true)
-        } else if (options == 'false') {
-            toggleMenu(false, true)
-        }
+    } else if (options == 'false') {
+        toggleMenu(false, true)
     }
 
     options = sessionStorage.getItem('flip')

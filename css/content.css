@@ -47,7 +47,7 @@
     /* background: var(--primary); */
     position: relative;
     font-family: Envy-Code-R;
-    padding-top: 50px;
+    padding-top: calc(50px - 16px);
 }
 
 #page-body {
@@ -87,7 +87,7 @@
 .main-content-background {
     background-color: var(--main-content-background);
     position: absolute;
-    top: 67px;
+    top: 50px;
     left: 4px;
     width: calc(100vw - 161px - var(--terminal-width));
     height: calc(round(up, calc(100vh - 180px), 16px) + 60px);
