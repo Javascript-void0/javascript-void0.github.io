@@ -92,10 +92,9 @@ function toggleContent(option) {
 function returnMenuToggle() {
     options = sessionStorage.getItem('sidebar')
     if (options == null) {
-        toggleMenu(true)
         sessionStorage.setItem('sidebar', 'true')
     } else if (options == 'false') {
-        toggleMenu(false, true)
+        toggleMenu(false)
     }
 
     options = sessionStorage.getItem('flip')
@@ -139,9 +138,3 @@ function manageLayoutByWidth() {
         toggleContent(true)
     }
 }
-
-// function manageInitialLayout() {
-//     if (window.innerWidth < initialContentThreshold) {
-//         toggleMenu(false)
-//     }
-// }
