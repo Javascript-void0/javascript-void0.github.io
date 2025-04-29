@@ -1,8 +1,25 @@
 :root {
-    --primary: #2D2B2A;
-    --secondary: #fefefe;
-    --accent: #bcbab3;
-    --color: #f4e8a3;
+    --dark-primary: #2D2B2A;
+    --dark-secondary: #fefefe;
+    --dark-accent: #bcbab3;
+    --dark-color: #f4e8a3;
+    --dark-main-content-background: #242322;
+    --dark-dot-background: #000;
+
+    --light-primary: #aaa79e;
+    --light-secondary: #282828;
+    --light-accent: #464542;
+    --light-color: #e0fce1;
+    --light-main-content-background: #9b9993;
+    --light-dot-background: #8888;
+
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --accent: var(--dark-accent);
+    --color: var(--dark-color);
+    --main-content-background: var(--dark-main-content-background);
+    --dot-background: var(--dark-dot-background);
+    
     --selection-text-color: var(--primary);
 }
 
@@ -34,7 +51,7 @@ body {
     /* dotted background grid */
     --spacing: 7px;
     --size: 1.5px;
-    background-color: #000;
+    background-color: var(--dot-background);
     background-image: radial-gradient(rgba(255, 255, 255, 0.1) var(--size), var(--primary) var(--size));
     background-size: var(--spacing) var(--spacing);
 }

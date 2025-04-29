@@ -13,6 +13,7 @@ const commands = [
     'TASKLIST',
     'TIME',
     'TITLE',
+    'THEME',
     'TREE',
     'VER',
     'VOL',
@@ -292,6 +293,10 @@ function RunCommand(text) {
                 } else {
                     document.title = title
                 }
+                NewLine()
+                break
+            case 'THEME': 
+                toggleTheme();
                 NewLine()
                 break
             case 'TREE':

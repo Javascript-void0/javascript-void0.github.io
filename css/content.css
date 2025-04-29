@@ -5,7 +5,6 @@
     --content-max-width: 650px;
     --page-width: 1000px;
     --page-padding: 5px;
-    --main-content-background: rgb(36, 35, 34);
 }
 
 @media only screen and (max-width: 567px) {

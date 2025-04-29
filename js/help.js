@@ -23,6 +23,7 @@ function HelpCommand(text) {
                  'TIME           Displays the system time.       ',
                  'TITLE          Sets the window title for a CMD.',
                  '               EXE session.                    ',
+                 'THEME          Toggle light/dark theme.        ',
                  'TREE           Graphically displays the directo',
                  '               ry structure of a drive or path.',
                  'VER            Displays the Windows version.   ',
