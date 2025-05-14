@@ -1,6 +1,7 @@
 :root {
     --c1: #2d2b2a;
     --c2: #e5dfce;
+    --c3: #87a589;
 }
 
 body {
@@ -26,25 +27,38 @@ body {
     height: 100vh;
 }
 
-#tester {
+#bottom-container {
     position: relative;
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
     height: 40rem;
     margin: auto;
     /* top: calc((100% - 30rem) * (1 / 3)); */
-    top: 2rem;
+    top: 1rem;
     display: grid;
     grid-template-rows: 17rem 5rem;
 }
 
 #keyboard {
-    height: calc(17rem - 4rem);
-    aspect-ratio: 40/13;
+    /* height: calc(17rem - 4rem); */
     display: grid;
     grid-template-rows: repeat(5, calc((17rem - 4rem - 8px) / 5));
     padding-top: 2rem;
     padding-bottom: 2rem;
     grid-gap: 2px;
+
+
+
+    margin: auto;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    /* background-color: orange; */
+}
+
+@media only screen and (max-width: 678px) {
+    #keyboard {
+        display: none;
+    }
 }
 
 .keyboard-row {
@@ -78,8 +92,8 @@ body {
 }
 
 .key[press="True"] {
-    border: 2px solid rgb(183, 136, 206);
-    color: rgb(183, 136, 206);
+    border: 2px solid var(--c3);
+    color: var(--c3);
     /* transition-duration: 0.15s; */
 }
 
@@ -120,6 +134,10 @@ body {
     outline: none;
 }
 
+#textbox::selection { background: var(--c3); color: var(--c2); }
+#textbox::-moz-selection { background: var(--c3); color: var(--c2); }
+#textbox::-webkit-selection { background: var(--c3); color: var(--c2); }
+
 #text {
     white-space: pre-line;
 }
@@ -143,6 +161,7 @@ body {
 .menu-button:hover {
     cursor: pointer;
     filter: brightness(110%);
+    color: var(--c3)
 }
 
 
@@ -152,10 +171,10 @@ body {
 
 
 #layout-label {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--c2);
     color: black;
     width: auto;
-    padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    padding: 0.3rem 0.8rem 0.3rem 1rem;
     width: fit-content;
     position: absolute;
     right: 0;
@@ -170,8 +189,11 @@ body {
     --width: 32rem;
     --height: 25rem;
     position: absolute;
-    background: #bbbbbb;
+    background: #808080;
+    /* max-width: var(--width); */
+    max-width: calc(100vw - 2 * var(--gap));
     width: var(--width);
+    /* width: calc(100vw - 2 * var(--gap)); */
     height: var(--height);
     left: calc((100vw - var(--width)) / 2);
     top: calc((100vh - var(--height)) / 2);
@@ -184,16 +206,20 @@ body {
 
 .layout-selector-item {
     background-color: #fefefe;
-    padding: 0.8rem 1rem;
-    text-transform: uppercase;
+    padding: 0.8rem 1remEnd;
+    /* text-transform: uppercase; */
     font-size: 14pt;
-}
-
-.layout-selector-item:hover {
-    background-color: #eaeaea;
     cursor: pointer;
     user-select: none;
 }
+
+.layout-selector-item[focused="True"] {
+    background-color: #bbbbbb;
+}
+
+/* .layout-selector-item:hover { */
+/*     background-color: #eaeaea; */
+/* } */
 
 #shade {
     width: 100vw;

@@ -45,9 +45,30 @@ const projectsTemplate = `
 	<li>organization, searching, and filtering of data</li>
 	</ul>
 	<br>&nbsp&nbsp&nbsp[<a href="https://github.com/Javascript-void0/batch"> GitHub </a>]
+
+
+
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span style="color: var(--secondary)">__ archived __</span>
 	<br>
 	<br>
 	<hr>
+
 
 
 

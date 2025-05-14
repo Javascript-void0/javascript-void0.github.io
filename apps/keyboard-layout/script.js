@@ -49,7 +49,7 @@ for (i = 1; i < 6; i++) {
     }
     // }}}
 
-    console.log(keyTranslate)
+    // console.log(keyTranslate)
 
 }
 
@@ -62,7 +62,11 @@ for (i = 1; i < 6; i++) {
 // }, false)
 
 setInterval(function() {
-    textbox.focus()
+    if (unfocus) {
+        textbox.blur();
+    } else {
+        textbox.focus()
+    }
 })
 
 // focus leave clear keys
@@ -71,6 +75,7 @@ window.addEventListener('blur', function() {
     for (key of keyElements) {
         key.setAttribute('press', '')
     }
+    lowercase()
 })
 
 
@@ -93,7 +98,7 @@ document.addEventListener('keydown', function() {
             } else {
                 layout = 'dvorakLower'
             }
-        } else if (currentLayoutLower == 'colemakLower' && keyTranslate[event.keyCode]['colemakLower'] && !uppercase) {
+        } else if (currentLayoutLower == 'colemakLower' && keyTranslate[event.keyCode]['colemakLower']) {
             if (nowUppercase) {
                 layout = 'colemakUpper'
             } else {
@@ -102,8 +107,12 @@ document.addEventListener('keydown', function() {
         }
 
         if (layout) {
+            cursorPos = textbox.selectionStart;
             translatedKey = keyTranslate[event.keyCode][layout]
-            textbox.value += translatedKey
+            // textbox.value += translatedKey
+            textbox.value = textbox.value.slice(0, cursorPos) + translatedKey + textbox.value.slice(cursorPos)
+            textbox.selectionStart = cursorPos + 1
+            textbox.selectionEnd = cursorPos + 1
             event.preventDefault()
 
         }
@@ -113,7 +122,36 @@ document.addEventListener('keydown', function() {
     if (event.ctrlKey && event.keyCode == 80) {
         event.preventDefault()
         // command palette
+        openLayoutSwitcher()
     }
+
+    // console.log(event.keyCode)
+
+    if (unfocus) {
+        event.preventDefault()
+        // close
+        if (event.keyCode == 27) {
+            closeLayoutSwitcher();
+
+        // enter
+        } else if (event.keyCode == 13) {
+            // changeLayout(layoutSelector.children[currentPosition].getAttribute('layout-name'))
+            eval(activeCommands[currentPosition].getAttribute('onclick'))
+            closeLayoutSwitcher()
+
+        // next - n, j, down
+        } else if (event.keyCode == 78 || event.keyCode == 74 || event.keyCode == 40) {
+            console.log('test')
+            commandNext();
+
+        // prev - p, k, up
+        } else if (event.keyCode == 80 || event.keyCode == 75 || event.keyCode == 38) {
+            commandPrev();
+        }
+        return;
+    }
+
+
 
     if (event.keyCode == 8) { // backspace
 
@@ -198,17 +236,27 @@ document.addEventListener('keyup', function() {
 
 
 var kbVisible = true
+// var topContainer = document.getElementById('top-container')
+var bottomContainer = document.getElementById('bottom-container')
 
 function toggleKeyboard() {
     var kb = document.getElementById('keyboard')
     if (!kbVisible) {
         kb.style.height = 'unset';
-        kb.style.visibility = ''
+        kb.style.display = ''
         kbVisible = true
+
+        textbox.style.height = 'calc(50vh - 2 * var(--padding))'
+        bottomContainer.style.gridTemplateRows = '17rem 5rem'
+
+
     } else {
         kb.style.height = '0';
-        kb.style.visibility = 'hidden'
+        kb.style.display = 'none'
         kbVisible = false
+
+        textbox.style.height = 'calc(83vh - 2 * var(--padding))'
+        bottomContainer.style.gridTemplateRows = '5rem'
     }
 }
 
@@ -224,15 +272,70 @@ function clearTextbox() {
 
 var shade = document.getElementById('shade')
 var layoutSelector = document.getElementById('layout-selector')
+var unfocus = false;
+var currentPosition = 0;
+var activeCommands = [];
 
-function openLayoutSwitcher() {
+function openLayoutSwitcher(filter=false) {
+    commands = layoutSelector.children;
+    if (filter) {
+        for (command of commands) {
+            if (!command.innerHTML.includes(filter)) {
+                command.style.display = 'none'
+            } else {
+                activeCommands.push(command)
+            }
+            command.setAttribute('focused', '')
+        }
+
+    // show all
+    } else {
+        for (command of commands) {
+            command.style.display = ''
+            command.setAttribute('focused', '')
+        }
+        activeCommands = commands
+    }
     shade.style.display = ''
     layoutSelector.style.display = ''
+
+    // unfocus
+    unfocus = true
+
+    currentPosition = 0
+    layoutSelector.children[0].setAttribute('focused', 'True')
+}
+
+function commandNext() {
+    // commands = layoutSelector.children;
+    if (currentPosition < activeCommands.length - 1) {
+        focused = activeCommands[currentPosition]
+        focused.setAttribute('focused', '')
+
+        currentPosition++;
+        newFocused = activeCommands[currentPosition]
+        newFocused.setAttribute('focused', 'True')
+    }
+}
+
+function commandPrev() {
+    // commands = layoutSelector.children;
+    if (currentPosition > 0) {
+        focused = activeCommands[currentPosition]
+        focused.setAttribute('focused', '')
+
+        currentPosition--;
+        newFocused = activeCommands[currentPosition]
+        newFocused.setAttribute('focused', 'True')
+    }
 }
 
 function closeLayoutSwitcher() {
     shade.style.display = 'none'
     layoutSelector.style.display = 'none'
+
+    unfocus = false;
+    currentPosition = 0;
 }
 
 

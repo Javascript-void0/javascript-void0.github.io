@@ -19,7 +19,7 @@
     </div>
 
     <div class='center'>
-        <div id="tester">
+        <div id="bottom-container">
             <div id="keyboard" style="visibility: none;">
                 <div class="keyboard-row" id="keyboard-row-1"> </div>
                 <div class="keyboard-row" id="keyboard-row-2"> </div>
@@ -30,7 +30,7 @@
 
             <div id="menu">
                 <div class="menu-button" onclick="clearTextbox()">clear textbox</div>
-                <div class="menu-button" onclick="openLayoutSwitcher()">switch layout</div>
+                <div class="menu-button" onclick="openLayoutSwitcher('switch layout')">switch layout</div>
                 <div class="menu-button" onclick="toggleKeyboard()">toggle keyboard</div>
             </div>
         </div>
@@ -40,9 +40,11 @@
     <div id="shade" style="display: none" onclick="closeLayoutSwitcher()"></div>
 
     <div id="layout-selector" style="display: none">
-        <div class="layout-selector-item" id="layout-qwerty" onclick="changeLayout('qwerty'); closeLayoutSwitcher();">qwerty</div>
-        <div class="layout-selector-item" id="layout-dvorak" onclick="changeLayout('dvorak'); closeLayoutSwitcher();">dvorak</div>
-        <div class="layout-selector-item" id="layout-colemak" onclick="changeLayout('colemak'); closeLayoutSwitcher();">colemak</div>
+        <div class="layout-selector-item" id="layout-qwerty" layout-name="qwerty" onclick="changeLayout('qwerty'); closeLayoutSwitcher();">switch layout: QWERTY</div>
+        <div class="layout-selector-item" id="layout-dvorak" layout-name="dvorak" onclick="changeLayout('dvorak'); closeLayoutSwitcher();">switch layout: DVORAK</div>
+        <div class="layout-selector-item" id="layout-colemak" layout-name="colemak" onclick="changeLayout('colemak'); closeLayoutSwitcher();">switch layout: COLEMAK</div>
+        <div class="layout-selector-item" id="command-clear-textbox" onclick="clearTextbox()">clear textbox</div>
+        <div class="layout-selector-item" id="command-toggle-keyboard" onclick="toggleKeyboard()">toggle keyboard</div>
     </div>
 
 </body>

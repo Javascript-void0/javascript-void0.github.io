@@ -97,10 +97,17 @@ function docAnimation(text, total, i) {
             // continue covering up old content
             let filler = setInterval(function() {
                 if (newContentHeight > currentContentHeight) {
+
+
                     // FINISHED LOADING BODY
                     currentContent.innerHTML = ''
                     insertTemplateContainer.removeChild(currentContent)
                     animationInProgress = false;
+
+                    // add extra padding on bottom
+                    for (i = 0; i < 3; i++) {
+                        insertTemplate.append(temp = document.createElement('br'))
+                    }
 
                     if (pageRunPost) {
                         eval(pageRunPost)
@@ -116,6 +123,8 @@ function docAnimation(text, total, i) {
                     }, 15);
 
                     clearInterval(filler)
+
+
                 }
                 newContentHeight = insertTemplate.clientHeight
                 currentContentHeight = currentContent.clientHeight
