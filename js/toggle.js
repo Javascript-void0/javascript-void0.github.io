@@ -1,5 +1,6 @@
 let currentMenuState = true;
 let menuIsVisible = true;
+let contentIsVisible = true;
 
 // update css variables to show/hide sidebar menu
 function toggleMenu(option, manualToggle=false) {
@@ -121,6 +122,7 @@ function manageLayoutByWidth() {
         if (!menuIsVisible) {
             toggleMenu()
         }
+        contentIsVisible = false
 
     // <1055, only show content
     } else if (window.innerWidth < onlyContentThreshold) {
@@ -128,6 +130,7 @@ function manageLayoutByWidth() {
             toggleMenu()
             toggleContent(true)
         }
+        contentIsVisible = true
 
     // normal return state
     } else {
@@ -136,5 +139,6 @@ function manageLayoutByWidth() {
         }
 
         toggleContent(true)
+        contentIsVisible = true
     }
 }

@@ -47,7 +47,13 @@ function RunCommand(text) {
 
         // command is page, open page in content
         if (pages.includes(upperBase)) {
-            template(texts[0].toLowerCase()) // open page
+            if (contentIsVisible) {
+                template(texts[0].toLowerCase()) // open page
+            } else {
+                line = 'Content is not visible'
+                header.append(temp = document.createElement('div'))
+                temp.innerHTML = fillSpace(line)
+            }
             NewLine()
             return
         }

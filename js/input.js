@@ -143,7 +143,7 @@ function KeyPress(e) {
 
 function tryTabComplete() {
     str = (before + beforeAfterCursor).trim().toUpperCase()
-    if (str.length == 1) { return }
+    if (str.length <= 2) { return }
 
     for (command of commands) {
         if (command.indexOf(str) == 0) { // starts with
