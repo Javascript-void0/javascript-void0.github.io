@@ -10,48 +10,41 @@
 </head>
 <body>
 
+    <script type="text/javascript" src="/apps/keyboard-layout/layout.js"></script>
+
+
+    <div id="top-container">
+        <textarea id="textbox"> </textarea>
+        <div id="layout-label">qwerty</div>
+    </div>
+
     <div class='center'>
-        <div id="layout-selector">
-            <div id="layout-qwerty"></div>
-            <div id="layout-dvorak"></div>
-            <div id="layout-colemak"></div>
-            <div id="layout-custom"></div>
-        </div>
-
         <div id="tester">
-            <div id="textbox">
-                <!-- <div id="layout-title"> -->
-                    <!-- Querty -->
-                <!-- </div> -->
-                <span id="text"></span>
-                <span id="cursor">_</span>
-            </div>
             <div id="keyboard" style="visibility: none;">
-                <div class="keyboard-row" id="keyboard-row-1">
-
-                </div>
-                <div class="keyboard-row" id="keyboard-row-2">
-
-                </div>
-                <div class="keyboard-row" id="keyboard-row-3">
-
-                </div>
-                <div class="keyboard-row" id="keyboard-row-4">
-
-                </div>
-                <div class="keyboard-row" id="keyboard-row-5">
-
-                </div>
+                <div class="keyboard-row" id="keyboard-row-1"> </div>
+                <div class="keyboard-row" id="keyboard-row-2"> </div>
+                <div class="keyboard-row" id="keyboard-row-3"> </div>
+                <div class="keyboard-row" id="keyboard-row-4"> </div>
+                <div class="keyboard-row" id="keyboard-row-5"> </div>
             </div>
 
             <div id="menu">
                 <div class="menu-button" onclick="clearTextbox()">clear textbox</div>
-                <div class="menu-button">switch layout</div>
+                <div class="menu-button" onclick="openLayoutSwitcher()">switch layout</div>
                 <div class="menu-button" onclick="toggleKeyboard()">toggle keyboard</div>
             </div>
         </div>
+
     </div>
-    
+
+    <div id="shade" style="display: none" onclick="closeLayoutSwitcher()"></div>
+
+    <div id="layout-selector" style="display: none">
+        <div class="layout-selector-item" id="layout-qwerty" onclick="changeLayout('qwerty'); closeLayoutSwitcher();">qwerty</div>
+        <div class="layout-selector-item" id="layout-dvorak" onclick="changeLayout('dvorak'); closeLayoutSwitcher();">dvorak</div>
+        <div class="layout-selector-item" id="layout-colemak" onclick="changeLayout('colemak'); closeLayoutSwitcher();">colemak</div>
+    </div>
+
 </body>
     <script type="text/javascript" src="/apps/keyboard-layout/script.js"></script>
 </html> 
