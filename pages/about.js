@@ -39,6 +39,7 @@ const aboutTemplate = `
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a>
+	<br>&nbsp&nbsp&nbspWuthering Waves: TBD
 	<br>&nbsp&nbsp&nbspMinecraft: <a href='https://namemc.com/profile/Javascript_void0.1' target='_blank' rel='noopener nonreferrer'>Javascript_void0</a>
 	<br>
 	<br>&nbsp&nbsp&nbspArcaea: 

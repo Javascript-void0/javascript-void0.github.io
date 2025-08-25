@@ -58,7 +58,8 @@ Laptop:
   <span class="color">Framework Laptop 13</span>
   Microsoft Surface Pro 6
 <hr>Phone: 
-  <span class="color">Sony Xperia 5 iii</span>
+  <span class="color">REDMAGIC 10S Pro (Moonlight)</span>
+  Sony Xperia 5 iii
 <hr>Audio: 
   Microsoft Surface Headphones 2
   <span class="color">Truthear Hexa</span>
