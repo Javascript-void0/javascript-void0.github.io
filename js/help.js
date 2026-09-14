@@ -7,6 +7,7 @@ function HelpCommand(text) {
                  '               dows command interpreter.       ',
                  'CLS            Clears the screen.              ',
                  'DATE           Displays the date.              ',
+                 'DANMU          Toggle danmaku bullet comments. ',
                  'ECHO           Displays messages, or turns comm',
                  '               and echoing on or off.          ',
                  'EXIT           Quits the CMD.EXE program (comma',

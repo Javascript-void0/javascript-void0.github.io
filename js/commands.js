@@ -4,6 +4,7 @@ const commands = [
     'CMD',
     'CLS',
     'DATE',
+    'DANMU',
     'ECHO',
     'EXIT',
     'FLIP',
@@ -111,6 +112,21 @@ function RunCommand(text) {
                 temp.innerHTML = fillSpace(line)
                 NewLine()
                 break
+            case 'DANMU':
+                danmuContainer = document.getElementById('danmu-container')
+                if (danmuContainer.style.display == '') {
+                    danmuContainer.style.display = 'none'
+
+                    line = 'Turned OFF bullet comments'
+                    header.append(temp = document.createElement('div'))
+                    temp.innerHTML = fillSpace(line)
+                } else {
+                    danmuContainer.style.display = ''
+
+                    line = 'Turned ON bullet comments'
+                    header.append(temp = document.createElement('div'))
+                    temp.innerHTML = fillSpace(line)
+                }
             case 'ECHO':
                 line = text.slice(5) // remove initial 'help '
                 if (line.length != 0) {
