@@ -1,4 +1,4 @@
-let comments = [
+var comments = [
     'comment 1',
     'comment 2',
     'comment 3',
@@ -11,12 +11,12 @@ let comments = [
     'comment 0',
 ]
 
-let danmuContainer = document.getElementById('danmu-container')
+var danmuContainer = document.getElementById('danmu-container')
 
 function createComment() {
-    let content = comments[Math.floor(Math.random() * comments.length)]
+    var content = comments[Math.floor(Math.random() * comments.length)]
     
-    let danmu = document.createElement('div')
+    var danmu = document.createElement('div')
     danmu.classList.add('danmu')
     danmu.style.top = '30px'
     randomX = Math.random() * window.innerWidth;
@@ -27,6 +27,7 @@ function createComment() {
     danmu.style.left = '-' + (8.6 * (content.length + randomX)) + 'px'
     // danmu.style.left = window.innerWidth + 'px';
     danmu.style.top = randomY + 'px'
+    danmu.style.zIndex = 100
     danmu.setAttribute('speed', randomSpeed)
     // set lang
     danmu.textContent = content;
@@ -35,13 +36,13 @@ function createComment() {
 }
 
 
-// for (i = 0; i < 500; i++) {
-//     createComment()
-// }
+for (i = 0; i < 500; i++) {
+    createComment()
+}
 
 
 setInterval(function() {
-    let allDanmu = document.getElementsByClassName('danmu')
+    var allDanmu = document.getElementsByClassName('danmu')
     for (danmu of allDanmu) {
         left = danmu.style.left.slice(0, -2);
         left = parseFloat(left);

@@ -13,14 +13,14 @@ const aboutTemplate = `
 	<br>
 	<br>## <span class="secondary">Hobbies</span>
 	<br>
-	<br>&nbsp&nbsp&nbspCoding <span class="strikethrough">very inefficient programs</span>
-	<br>&nbsp&nbsp&nbspWeb Development
+	<br>&nbsp&nbsp&nbspProgramming
 	<br>&nbsp&nbsp&nbsp<a onclick="template('setup')" href="javascript:void(0)">Tech</a>
 	<br>&nbsp&nbsp&nbsp<a onclick="template('anime')" href="javascript:void(0)">Anime</a>
 	<br>&nbsp&nbsp&nbspPiano
 	<br>&nbsp&nbsp&nbspRhythm Games
 	<br>&nbsp&nbsp&nbspArt
 	<br>&nbsp&nbsp&nbspBadminton
+	<br>&nbsp&nbsp&nbsp<a onclick="template('drama')" href="javascript:void(0)">Chinese Drama</a>
 	<br>
 	<br>## <span class="secondary">Socials</span>
 	<br>
@@ -37,6 +37,7 @@ const aboutTemplate = `
 	<br><img src="assets/images/keqing.png" style="height: 90px; margin-left: 30px">
 	<img src="assets/images/mc.png" width="85" style="margin-left: 30px; border-radius: 10px; ">
 	<img src="assets/images/lethe.png" width="90" style="margin-left: 30px">
+	<img src="assets/images/raijin.png" width="90" style="margin-left: 30px">
 	<br>
 	<br>&nbsp&nbsp&nbspGenshin: <a href='https://www.hoyolab.com/accountCenter/postList?id=200039946' target='_blank' rel='noopener nonreferrer'>juwaii</a>
 	<br>&nbsp&nbsp&nbspWuthering Waves: TBD

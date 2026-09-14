@@ -1,4 +1,4 @@
-const pages = ['ABOUT', 'ANIME', 'BLOG', 'GALLERY', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
+const pages = ['ABOUT', 'ANIME', 'BLOG', 'DRAMA', 'GALLERY', 'HOME', 'PROJECTS', 'RESOURCES', 'SETUP', 'APPS', 'SUDO']
 const commands = [
     'PAGES',
     'CMD',
@@ -62,10 +62,11 @@ function RunCommand(text) {
         switch (upperBase) {
             case 'PAGES':
                 lines = ['ABOUT          About nobody.                   ',
-                         'ANIME          Stats and stuff                 ',
+                         'ANIME          AniList                         ',
                          'APPS           Poorly made applications        ',
+                         'DRAMA          MyDramaList                     ',
                          'BLOG           I failed English                ',
-                         'GALLERY        project pics',
+                         'GALLERY        project pics                    ',
                          'HOME           Home Page.                      ',
                          'PROJECTS       (99% failures)                  ',
                          'RESOURCES      Collection of resources.        ',

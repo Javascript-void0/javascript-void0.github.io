@@ -47,6 +47,7 @@ c). yeets itself out the window
 		<div class="home-menu-category">
 			> <a onclick="template('about');return false" href="javascript:void(0);">About</a>
 			<br class="ignore">&nbsp&nbsp> <a onclick="template('anime');return false" href="javascript:void(0);">Anime</a>
+			<br class="ignore">&nbsp&nbsp> <a onclick="template('drama');return false" href="javascript:void(0);">Drama</a>
 			<br class="ignore">&nbsp&nbsp> <a onclick="template('setup');return false" href="javascript:void(0);">Setup</a>
 			<br class="ignore">> <a onclick="template('projects');return false" href="javascript:void(0);">Projects</a>
 			<br class="ignore">&nbsp&nbsp> <a onclick="template('gallery');return false" href="javascript:void(0);">Gallery</a>
