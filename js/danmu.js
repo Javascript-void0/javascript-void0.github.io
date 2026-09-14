@@ -59,14 +59,12 @@ function createComment() {
     var danmu = document.createElement('div')
     danmu.classList.add('danmu')
     danmu.style.top = '30px'
-    randomX = Math.random() * window.innerWidth;
+    randomX = Math.random() * window.innerWidth * 0.3;
     randomY = Math.floor(Math.random() * 20) * 30;
     speed = 15/content.length
     speed = Math.max(1, speed)
     speed = Math.min(3, speed)
     danmu.style.right = '-' + (8.6 * (content.length + randomX)) + 'px'
-    // danmu.style.right = window.innerWidth + randomX + 'px'
-    // danmu.style.left = window.innerWidth + 'px';
     danmu.style.top = randomY + 'px'
     danmu.style.zIndex = 100
     danmu.setAttribute('speed', speed)
@@ -77,7 +75,7 @@ function createComment() {
 }
 
 
-for (i = 0; i < 30; i++) {
+for (i = 0; i < 20; i++) {
     createComment()
 }
 
@@ -92,10 +90,7 @@ setInterval(function() {
             createComment();
             return;
         }
-
         speed = parseFloat(danmu.getAttribute('speed'))
-        // left += 8.6
-        // console.log("add: " + speed)
         right += speed;
         danmu.style.right = right + 'px'
     }
