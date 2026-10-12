@@ -14,9 +14,10 @@
 #image-zoom-image {
     display: block;
     margin: auto;
-    width: 60vw;
-    min-width: 60rem;
-    max-height: 100%;
+    /* width: 60vw; */
+    /* min-width: 60rem; */
+    max-height: 90%;
+    max-width: 90%;
     border: var(--primary) 2px solid;
 
     /* vertical */
